@@ -1,0 +1,158 @@
+/* Navbar.css */
+*{
+    margin:0;
+    padding: 0;
+}
+.navbar {
+    background-color: #33b38d;
+    padding: 10px 0;
+    font-family: Signika;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px ;
+    padding-right: 20px ;
+    margin: 0 auto;
+    height: 50px;
+    
+  }
+  
+  .navbar-left {
+    padding: left 0; ;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+  }
+  .navbar-center{
+    padding-top: 20px;
+    align-items: center;
+    
+  }
+  
+  .navbar-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    margin-left: 0;
+  }
+  .separator{
+    margin: 0 10px;
+    color: #fff;
+  }
+  
+  .navbar-link {
+    color: #fff;
+    text-decoration:none;
+    margin-right: 15px;
+    
+  }
+  .navbar-link:hover {
+    color: #438d7e;
+
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+
+  
+  .login-button {
+    background-color: #286c4894;
+    border: 2px solid #e7e7e7;
+  color: white;
+  border-color: #fff;
+  padding: 0px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 30px;
+  width: 150px;
+  cursor: pointer;
+  border-radius:20px;
+  font-family: Signika;
+  
+  }
+  
+  .login-button:hover {
+    background-color: #438d7e;
+  }
+
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbar-left,
+    .navbar-center,
+    .navbar-right {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .navbar-link {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .login-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+} 
+/* 
+.image-slider {
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .image {
+    width: 450px;
+    height: 300px;
+    border-radius: 12px;
+ }
+ .left {
+    position: absolute;
+    left: 3rem;
+    top: 50%;
+    font-size: 1rem;
+    color: blue;
+    z-index: 5;
+    cursor: pointer;
+    user-select: none;
+ }
+ .right {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    font-size: 2rem;
+    color: blue;
+    z-index: 5;
+    cursor: pointer;
+    user-select: none;
+ }
+ .currentSlide {
+    transition-duration: 0.5s ease;
+    opacity: 0;
+ }
+ .currentSlide.active {
+    opacity: 1;
+    transition-duration: 0.5s;
+    transform: scale(1.2);
+ }
+ h2 {text-align: center;}  */
