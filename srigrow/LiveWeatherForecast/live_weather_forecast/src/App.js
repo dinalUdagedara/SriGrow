@@ -8,6 +8,7 @@ import TempretureAndDetails from './components/TempretureAndDetails';
 import Forecast from './components/Forecast';
 import getFormattedWeatherData from './Services/weatherService';
 import WeatherService from './Services/weatherService';
+import { useEffect, useState } from 'react';
 
 
 
@@ -15,6 +16,21 @@ import WeatherService from './Services/weatherService';
 
 
 function App() {
+
+  // const [query, setQuery] = useState ({q:"Colombo"});
+  // const [units, setUnits] = useState ("metric");
+  // const [weather ,setWeather] = useState (null);
+
+  // useEffect(()=>{
+  //   const fetchWeatherData = async() =>{
+  //     await getFormattedWeatherData({...query,units}).then(
+  //       (data =>{
+  //         setWeather(weatherData);
+  //       })
+  //     )
+  //   };
+  //   fetchWeatherData();
+  // },[query,units]);
 
   
 
