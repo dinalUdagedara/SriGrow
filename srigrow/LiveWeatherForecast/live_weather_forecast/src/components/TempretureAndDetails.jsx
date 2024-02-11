@@ -1,5 +1,13 @@
 import React from 'react';
 import imageSun from '../Images/Sun.png';
+import cloudy from '../Images/cloudy.png';
+import scatteredClouds from '../Images/scatteredClouds.png'
+import brokenClouds from '../Images/overcastClouds.png'
+import heavyRain from '../Images/heavyRain.png'
+import lightRain from '../Images/lightrain.png'
+import lightRainWithSun from '../Images/lightRainwithSun.png'
+import overcastClouds from '../Images/overcastClouds.png'
+import sunny from '../Images/sunny.png'
 import {
     UilArrowUp,
     UilArrowDown,
@@ -11,15 +19,46 @@ import {
 } from"@iconscout/react-unicons";
 
 function TempretureAndDetails({weather,temp,realFeel,humidity,wind,sunrise,sunset,highTemp,lowTemp}) {
+
+
+    let image = getImageForWeather(weather);
+    function getImageForWeather(weather) {
+        switch (weather) {
+            case "overcast clouds":
+                return overcastClouds;
+            case "scattered clouds":
+                return scatteredClouds;
+            case "few clouds":
+                return cloudy;
+            case "Clouds":
+                return cloudy;
+            case "broken clouds":
+                return brokenClouds;
+            case "light rain":
+                return lightRain;
+            case "clear sky":
+                return sunny;
+            case "heavy rain":
+                return heavyRain;
+            default:
+                return sunny;
+        }
+    }
+
+
+
+
+
+
   return (
     <div>
     <div className='flex items-center justify-center py-6 text-xl text-cyan-300'>
         <p>{weather} </p>
     </div>
     <div className='flex flex-row items-center justify-between text-white py-3'>
-    <img src={imageSun} alt="Image of Sun" 
+    <img src={image} alt="Image of Sun" 
         className='w-20'></img>
-        <p className='text-5xl '>{Math.round(temp)}°</p>
+        <p className='text-5xl justify-center'>{Math.round(temp)}°</p>
         <div className='flex flex-col space-y-2'>
 
             <div className='flex font-light text-sm items-center justify-center'>

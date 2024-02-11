@@ -1,5 +1,13 @@
 import React from 'react'
 import imageSun from '../Images/Sun.png';
+import cloudy from '../Images/cloudy.png';
+import scatteredClouds from '../Images/scatteredClouds.png'
+import brokenClouds from '../Images/overcastClouds.png'
+import heavyRain from '../Images/heavyRain.png'
+import lightRain from '../Images/lightrain.png'
+import lightRainWithSun from '../Images/lightRainwithSun.png'
+import overcastClouds from '../Images/overcastClouds.png'
+import sunny from '../Images/sunny.png'
 
 function DailyForecast(
     {date1,weather1,tempreture1,
@@ -7,9 +15,44 @@ function DailyForecast(
     date3,weather3,tempreture3,
     date4,weather4,tempreture4,
     date5,weather5,tempreture5,
-    }
-    ) 
+    }) 
     {
+        let image1 = sunny
+        let image2 = sunny
+        let image3 = sunny
+        let image4 = sunny
+        let image5 = sunny
+        
+
+         image1 = getImageForWeather(weather1);
+         image2 = getImageForWeather(weather2);
+         image3 = getImageForWeather(weather3);
+         image4 = getImageForWeather(weather4);
+         image5 = getImageForWeather(weather5);
+    
+        function getImageForWeather(weather) {
+            switch (weather) {
+                case "overcast clouds":
+                    return overcastClouds;
+                case "scattered clouds":
+                    return scatteredClouds;
+                case "few clouds":
+                    return cloudy;
+                case "broken clouds":
+                    return brokenClouds;
+                case "light rain":
+                    return lightRain;
+                case "clear sky":
+                    return sunny;
+                case "heavy rain":
+                    return heavyRain;
+                default:
+                    return sunny;
+            }
+        }
+
+
+
     return (
       <div>
           <div className='flex items-center justify-start mt-6'>
@@ -22,30 +65,31 @@ function DailyForecast(
                   <p className='font-light text-sm'>
                       {date1}
                   </p>
-                  <img src={imageSun} alt="Image of Sun" 
+                  <img src={image1} alt="Image of Sun" 
                   className='w-12 my-1'/> 
-                 <p className='font-medium'>{weather1}</p>
-                   <p className='font-medium'>{tempreture1}°</p>
+                  
+                 <p className='font-medium'>{weather1} </p>
+                   <p className='font-medium'>{Math.round(tempreture1)}°</p>
               </div>
   
               <div className='flex flex-col items-center justify-center'>
                   <p className='font-light text-sm'>
                       {date2}
                   </p>
-                  <img src={imageSun} alt="Image of Sun" 
+                  <img src={image2} alt="Image of Sun" 
                   className='w-12 my-1'/> 
                   <p className='font-medium'>{weather2}</p>
-                   <p className='font-medium'>{tempreture2}°</p>
+                   <p className='font-medium'>{Math.round(tempreture2)}°</p>
               </div>
   
               <div className='flex flex-col items-center justify-center'>
                   <p className='font-light text-sm'>
                       {date3}
                   </p>
-                  <img src={imageSun} alt="Image of Sun" 
+                  <img src={image3} alt="Image of Sun" 
                   className='w-12 my-1'/> 
                   <p className='font-medium'>{weather3}</p>
-                   <p className='font-medium'>{tempreture3}°</p>
+                   <p className='font-medium'>{Math.round(tempreture3)}°</p>
               </div>
   
   
@@ -53,10 +97,10 @@ function DailyForecast(
                   <p className='font-light text-sm'>
                       {date4}
                   </p>
-                  <img src={imageSun} alt="Image of Sun" 
+                  <img src={image4} alt="Image of Sun" 
                   className='w-12 my-1'/> 
                   <p className='font-medium'>{weather4}</p>
-                   <p className='font-medium'>{tempreture4}°</p>
+                   <p className='font-medium'>{Math.round(tempreture4)}°</p>
               </div>
   
   
@@ -64,14 +108,15 @@ function DailyForecast(
                   <p className='font-light text-sm'>
                       {date5}
                   </p>
-                  <img src={imageSun} alt="Image of Sun" 
+                  <img src={image5} alt="Image of Sun" 
                   className='w-12 my-1'/> 
                   <p className='font-medium'>{weather5}</p>
-                   <p className='font-medium'>{tempreture5}°</p>
+                   <p className='font-medium'>{Math.round(tempreture5)}°</p>
               </div>
           </div>
           </div>
     )
-  }
+  
+}
 
 export default DailyForecast

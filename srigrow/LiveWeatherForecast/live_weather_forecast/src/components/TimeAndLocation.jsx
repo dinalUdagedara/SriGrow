@@ -10,7 +10,7 @@ function TimeAndLocation({city,currentDate,currentTime}) {
     </div>
     <div className='flex items-center justify-center my-3'>
         <p className='text-white text-3xl font-medium'>
-          {city}
+        {city.charAt(0).toUpperCase() + city.slice(1)}
           </p>
     </div>
     </div>

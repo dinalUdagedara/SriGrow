@@ -58,11 +58,10 @@ import TempretureAndDetails from "../components/TempretureAndDetails";
 import Forecast from "../components/Forecast";
 import DailyForecast from "../components/DailyForecast";
 
-function WeatherService() {
+function WeatherService({city}) {
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
   const [formattedWeatherData, setFormattedWeatherData] = useState(null);
-  const city = 'london';
   const forecastDataArray = [];
   const formattedForecastDataArray=[];
   
@@ -76,6 +75,11 @@ function WeatherService() {
         const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
         const responseWeather = await fetch(apiUrlWeather);
+
+        if (!responseWeather.ok) {
+        throw new Error('City not found');
+      }
+
         const dataWeather = await responseWeather.json();
         setWeatherData(dataWeather);
 
@@ -97,7 +101,7 @@ function WeatherService() {
     
 
     fetchWeatherData();
-  }, [createUtilityClassName]);
+  }, [city]);
 
   return (
     <div>
