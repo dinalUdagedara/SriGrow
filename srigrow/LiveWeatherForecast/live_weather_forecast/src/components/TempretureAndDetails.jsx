@@ -10,34 +10,34 @@ import {
     UilSunset,
 } from"@iconscout/react-unicons";
 
-function TempretureAndDetails() {
+function TempretureAndDetails({weather,temp,realFeel,humidity,wind,sunrise,sunset,highTemp,lowTemp}) {
   return (
     <div>
     <div className='flex items-center justify-center py-6 text-xl text-cyan-300'>
-        <p>Cloudy or whatever </p>
+        <p>{weather} </p>
     </div>
     <div className='flex flex-row items-center justify-between text-white py-3'>
     <img src={imageSun} alt="Image of Sun" 
         className='w-20'></img>
-        <p className='text-5xl '>34°</p>
+        <p className='text-5xl '>{Math.round(temp)}°</p>
         <div className='flex flex-col space-y-2'>
 
             <div className='flex font-light text-sm items-center justify-center'>
                 <UilTemperature size ={18} className ="mr-1" />
                 Real Feel: 
-                <span className='font-medium ml-1'>32°</span>
+                <span className='font-medium ml-1'>{Math.round(realFeel)} °</span>
             </div>
 
             <div className='flex font-light text-sm items-center justify-center'>
                 <UilTear size ={18} className ="mr-1" />
                 Humidity:
-                <span className='font-medium ml-1'>65%</span>
+                <span className='font-medium ml-1'>{humidity}%</span>
             </div>
 
             <div className='flex font-light text-sm items-center justify-center'>
                 <UilWind size ={18} className ="mr-1" />
                 Wind: 
-                <span className='font-medium ml-1'>11 km/h</span>
+                <span className='font-medium ml-1'>{wind}m/s</span>
             </div>
         </div>
     </div>
@@ -46,25 +46,25 @@ function TempretureAndDetails() {
     <div className='flex flex-row items-center justify-center space-x-2 text-white text-sm py-3'>
         <UilSun/>
         <p className='font-light'>Rise: <span className='font-medium ml-1'>
-            06.45 AM</span>
+            {sunrise}</span>
         </p>
         <p className='font-light'>|</p>
 
         <UilSunset/>
         <p className='font-light'>Set: <span className='font-medium ml-1'>
-            06.15 PM </span>
+            {sunset}</span>
         </p>
         <p className='font-light'>|</p>
 
         <UilSun/>
         <p className='font-light'>High: <span className='font-medium ml-1'>
-            40°</span>
+            {Math.round(highTemp)}°</span>
         </p>
         <p className='font-light'>|</p>
 
         <UilSun/>
         <p className='font-light'>Low: <span className='font-medium ml-1'>
-            30°</span>
+            {Math.round(lowTemp)}°</span>
         </p>
 
 
