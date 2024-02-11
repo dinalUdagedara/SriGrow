@@ -1,46 +1,53 @@
-// import React from "react";
-// import Slider from 'react-slick';
-// import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-// // import './Images/MainPage/slider1.webp';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Slide } from '@mui/material';
+import image1 from '../Images/slider3.jpg';
+import image2 from '../Images/slider4.jpg';
+import image3 from '../Images/slider5.jpg';
+import image4 from '../Images/slider6.jpg';
 
-// const SliderImage =[
-//     "./Images/MainPage/slider1.webp",
-//     "./Images/MainPage/slider2.jpeg",
-//     "./Images/MainPage/slider3.jpg"
-// ];
+const images = [
+  image2,
+  image1,
+  image3,
+  image4
+];
 
-// const SliderComp =()=>{
-//     const [activeImageNum, setCurrent] = useState(0);
-//   const length = sliderImages.length;
+const SliderComp = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-//   const nextSlide = () => {
-//     setCurrent((activeImageNum + 1) % length);
-// }
-// const prevSlide =()=>{
-//     setCurrent((activeImageNum - 1 + length) % length);
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
 
-// }
-// return (
-//     <div className="app">
-//       <section className="image-slider">
-//         <div className="left" onClick={prevSlide}>
-//           <ArrowBackIosIcon />
-//         </div>
-//         <div className="right" onClick={nextSlide}>
-//           <ArrowForwardIosIcon />
-//         </div>
-//         {sliderImages.map((currentSlide, ind) => (
-//           <div
-//             className={ind === activeImageNum ? "currentSlide active" : "currentSlide"}
-//             key={ind}
-//           >
-//             {ind === activeImageNum && <img src={currentSlide} alt={`Slide ${ind + 1}`} className="image" />}
-//           </div>
-//         ))}
-//       </section>
-//     </div>
-//   );
-// };
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+        nextSlide();
+    },4000);
+    return()=> clearInterval(interval);
+  },[currentIndex]);
 
-// export default SliderComp;
+  return (
+    <div className="carousel">
+      <button className='slider-button' onClick={prevSlide}>&lt;</button>
+      <AnimatePresence initial={false} >
+     <motion.div
+     key={currentIndex}
+     exit={{opacity:0}}
+     initial={{opacity:0}}
+     animate={{opacity:1}}
+     className="image-container">
+        <img src={images[currentIndex]} alt={`Slide ${currentIndex}`}/>
+
+     </motion.div>
+     </AnimatePresence>
+     <button className='slider-button' onClick={nextSlide}>&gt;</button>
+    </div>
+  );
+  };
+      
+
+export default SliderComp;

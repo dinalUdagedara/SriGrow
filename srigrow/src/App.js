@@ -1,15 +1,14 @@
 import React from 'react';
-import NavbarComp  from './Components/NavbarComp';
 import {BrowserRouter as Router} from 'react-router-dom';
-import SliderComp from './Components/SliderComp';
+import HomePage from './HomePage';
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <Router>
       <div>
-        <NavbarComp />
-      
+        <HomePage/>
       </div>
     </Router>
   );

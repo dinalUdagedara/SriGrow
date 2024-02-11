@@ -1,21 +1,30 @@
-/* Navbar.css */
+/* Styles of Navbar */
 *{
     margin:0;
     padding: 0;
+    
+}
+.body {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-type:y mandatory;
 }
 .navbar {
-    background-color: #33b38d;
+    background-color: #2DA884;
     padding: 10px 0;
-    font-family: Signika;
+    font-family:Montserrat;
+    
+    
   }
   
   .navbar-container {
-    display: flex;
+    display:flex;
     justify-content: space-between;
     padding-left: 20px ;
     padding-right: 20px ;
     margin: 0 auto;
     height: 50px;
+    
     
   }
   
@@ -74,7 +83,7 @@
   width: 150px;
   cursor: pointer;
   border-radius:20px;
-  font-family: Signika;
+  font-family:Montserrat;
   
   }
   
@@ -113,46 +122,166 @@
         margin-top: 10px;
     }
 } 
-/* 
-.image-slider {
-    position: relative;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
- .image {
-    width: 450px;
-    height: 300px;
-    border-radius: 12px;
- }
- .left {
-    position: absolute;
-    left: 3rem;
-    top: 50%;
-    font-size: 1rem;
-    color: blue;
-    z-index: 5;
-    cursor: pointer;
-    user-select: none;
- }
- .right {
-    position: absolute;
-    right: 3rem;
-    top: 50%;
-    font-size: 2rem;
-    color: blue;
-    z-index: 5;
-    cursor: pointer;
-    user-select: none;
- }
- .currentSlide {
-    transition-duration: 0.5s ease;
-    opacity: 0;
- }
- .currentSlide.active {
-    opacity: 1;
-    transition-duration: 0.5s;
-    transform: scale(1.2);
- }
- h2 {text-align: center;}  */
+/* styles of footer */
+.footer{
+  position:relative;
+  bottom: 0;
+  width: 100%;
+  justify-content: space-around;
+  background-color: #2DA884;
+  color: white;
+  padding: 20px;
+  font-family:Montserrat ;
+}
+.footer-content{
+  display: flex;
+  justify-content: space-around;
+
+}
+.footer-left,
+.footer-center,
+.footer-right,
+.footer-icons{
+  flex: 1;
+  margin-right: 20px;
+  
+}
+
+.footer-right p{
+  margin: 0;
+  
+}
+.social-media{
+   display: flex;
+   gap:10px ;
+   font-size: 32px;
+   margin-right: 10px;
+}
+h4{
+  font-size: 20px;
+}
+.parah{
+  text-align: le;
+  width: 150px;
+
+}
+ul{
+  list-style-type:none ;
+  padding: 0;
+}
+li {
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+/* Style for the cards */
+.cards-container{
+  
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: none;
+  margin-left: 100px;
+  margin-right: 100px;
+  align-items: center;
+  
+  
+}
+.card-title{
+    color: #2DA884;
+    font-family: Montserrat;
+    margin-left: 50px;
+
+}
+.card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  width: 350px;
+  Height: 268px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #2DA884;
+  padding-left: 2px;
+  
+  
+}
+
+.card-icon {
+  padding: 20px;
+  width: 64px;
+  
+
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  
+}
+.card-text{
+  padding: 20px;
+  text-align: justify;
+  margin-right: 60px;
+}
+.heading{
+  padding-bottom: 10px;
+  font-family:Montserrat;
+  font-weight: 600;
+  line-height: 32px;
+  size: 28px;
+}
+.disc{
+  font-family: Plus Jakarta Sans;
+ 
+}
+.card:hover{
+  background-color: #2DA884;
+  color: #fff;
+}
+
+/* image slider styles */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slider-button{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.image-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+
+
+.slider-button:first-child {
+  left: 10px;
+}
+
+.slider-button:last-child {
+  right: 10px;
+}
