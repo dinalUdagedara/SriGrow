@@ -5,19 +5,19 @@ function TopButtons() {
     const cities =[
     {
     id:1,
-    title:'london'
+    title:'Vavuniya'
     },
     {
         id:2,
-        title:'Sydney'
+        title:'Anuradhapura'
     },
     {
         id:3,
-        title:'Paris'
+        title:'Kurunegala'
     },
     {
         id:4,
-        title:'Tokyo'
+        title:'Ampara'
     }
 
     ]
