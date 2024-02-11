@@ -18,6 +18,11 @@ import { useEffect, useState } from 'react'
 function App() {
 
 
+  const [selectedCity,setSelectedCity] = useState('colombo');
+  const handleCityChange = (city) =>{
+    setSelectedCity(city);
+  };
+
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
   const city = 'Hingurakgoda';
@@ -49,36 +54,32 @@ function App() {
 
     fetchWeatherData();
   }, []);
+ const formatBackground = () => {
+  console.log("Weather Data:", weatherData);
 
-  // // const [query, setQuery] = useState ({q:"Colombo"});
-  // // const [units, setUnits] = useState ("metric");
-  // const [weather ,setWeather] = useState (null);
+  if (!weatherData) {
+    console.log("No weather data, returning default background");
+    return 'from-cyan-700 to-blue-700';
+  }
+  const temprature = weatherData.main.temp;
+  if (temprature <= 10) {
+    return 'from-cyan-700 to-blue-700'; // Cold temperature gradient
+  } else if (temprature <= 25) {
+    return 'from-yellow-300 to-yellow-800'; // Moderate temperature gradient
+  } else {
+    return 'from-red-500 to-red-900'; // Hot temperature gradient
+  }
+};
 
-  // useEffect(()=>{
-  //   const fetchWeatherData = async() =>{
-  //     await getFormattedWeatherData({...query,units}).then(
-  //       (data =>{
-  //         setWeather(weatherData);
-  //       })
-  //     )
-  //   };
-  //   fetchWeatherData();
-  // },[query,units]);
 
-  
 
   return (
-    <div className='mx-auto max-w-screen-1xl mt-4 py-5 px-32 bg-gradient-to-br from-green-600 to-blue-700 h-fit shadow-xl shadow-gray-400'>
-    <div className='mx-auto max-w-screen-xl mt-4 py-5 px-32 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl shadow-gray-600'>
+    <div className='mx-auto max-w-screen-1xl  py-7 px-32 bg-gradient-to-br from-green-600 to-blue-700 h-fit shadow-xl shadow-gray-400'>
+    <div className={`mx-auto max-w-screen-x2 mt-4 py-5 px-32 bg-gradient-to-br from-cyan-500 to-blue-600 h-fit shadow-xl shadow-gray-600 ${formatBackground}`}>
   
-      <TopButtons />
-      <Inputs />
-      <WeatherService />
-      
-      {/* <TempretureAndDetails /> */}
-      
-      {/* <Forecast title ="Hourly Forecast"/>
-      <Forecast title ="Daily Forecast"/> */}
+      <TopButtons onCityChange={handleCityChange}/>
+      <Inputs selectedCity={selectedCity} onCityChange={handleCityChange}/>
+      <WeatherService city ={selectedCity} />
     </div>
     </div>
     
