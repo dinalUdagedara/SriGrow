@@ -42,8 +42,6 @@ function DailyForecast(
                     return brokenClouds;
                 case "light rain":
                     return lightRain;
-                case "light rain with sun":
-                    return lightRainWithSun;
                 case "clear sky":
                     return sunny;
                 case "heavy rain":
