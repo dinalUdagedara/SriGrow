@@ -5,7 +5,7 @@ import scatteredClouds from '../Images/scatteredClouds.png'
 import brokenClouds from '../Images/overcastClouds.png'
 import heavyRain from '../Images/heavyRain.png'
 import lightRain from '../Images/lightrain.png'
-import lightRainWithSun from '../Images/lightRainwithSun.png'
+// import lightRainWithSun from '../Images/lightRainwithSun.png'
 import overcastClouds from '../Images/overcastClouds.png'
 import sunny from '../Images/sunny.png'
 
