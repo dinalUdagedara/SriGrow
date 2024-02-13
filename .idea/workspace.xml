@@ -23,7 +23,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Dinal's",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -40,6 +40,7 @@
       <option name="presentableId" value="Default" />
       <updated>1706982176596</updated>
       <workItem from="1706982178720" duration="515000" />
+      <workItem from="1707805059156" duration="10000" />
     </task>
     <servers />
   </component>

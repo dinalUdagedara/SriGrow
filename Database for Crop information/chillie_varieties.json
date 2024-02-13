@@ -1,0 +1,43 @@
+[
+    {
+      "varietyName": "K A 02",
+      "suitableAreas": ["Anuradhapura", "Polonnaruwa","Kurunagala","Matale","Puttalam","Badulla","Dambulla"],
+      "maxTimePeriod": 90,
+      "lowPrecipitation": 600,
+      "maxPrecipitation": 1000,
+      "atmosphericFeautures": "The ideal temperature range is 21°C – 27°C.",
+      "soilCondtion": "A deep sandy loam soil with good drainage is ideal.",
+      "specialNotes": "More Suitable for Dry zone. More suited to growing in the Yala season. Can harvest in 60 to 90 days."
+    },
+    {
+        "varietyName": "Arunalu",
+        "suitableAreas": ["Anuradhapura", "Polonnaruwa","Kurunagala","Matale","Puttalam","Badulla","Dambulla"],
+        "maxTimePeriod": 70,
+        "lowPrecipitation": 600,
+        "maxPrecipitation": 1000,
+        "atmosphericFeautures": "The ideal temperature range is 21°C – 27°C.",
+        "soilCondtion": "A deep sandy loam soil with good drainage is ideal.",
+        "specialNotes": "More Suitable for Yala season. Can harvest in 60 to 70 days."
+      },
+      {
+        "varietyName": "MI HOT",
+        "suitableAreas": ["Anuradhapura", "Polonnaruwa","Kurunagala","Matale","Puttalam","Badulla","Dambulla"],
+        "maxTimePeriod": 70,
+        "lowPrecipitation": 600,
+        "maxPrecipitation": 1000,
+        "atmosphericFeautures": "The ideal temperature range is 21°C – 27°C.",
+        "soilCondtion": "A deep sandy loam soil with good drainage is ideal.",
+        "specialNotes": "More Suitable for Dry and Wet zones. 60 to 70 days for harvest."
+      },
+      {
+        "varietyName": "MI GREEN",
+        "suitableAreas": ["Anuradhapura", "Polonnaruwa","Kurunagala","Matale","Puttalam","Badulla","Dambulla"],
+        "maxTimePeriod": 70,
+        "lowPrecipitation": 600,
+        "maxPrecipitation": 1000,
+        "atmosphericFeautures": "The ideal temperature range is 21°C – 27°C.",
+        "soilCondtion": "A deep sandy loam soil with good drainage is ideal.",
+        "specialNotes": "More suitable for the Northern Province. 60 to 70 days"
+      }
+  ]
+  
