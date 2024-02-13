@@ -1,0 +1,39 @@
+[
+    {
+      "varietyName": "MIBO-01",
+      "suitableAreas": ["North Central Province", "North Western Province"],
+      "maxTimePeriod": 80,
+      "maxPrecipitation": 750,
+      "atmosphericFeautures": "Atmospheric humidity should be less than 70%.",
+      "soilCondtion": "The p.h. value between 6.5 to 7.8 is more suitable.",
+      "specialNotes": "Short tearm variety. After planting, it takes about 75-85 days to harvest."
+    },
+    {
+        "varietyName": "Dambulla version",
+        "suitableAreas": ["North Central Province", "North Western Province"],
+        "maxTimePeriod": 90,
+        "maxPrecipitation": 750,
+        "atmosphericFeautures": "Atmospheric humidity should be less than 70%.",
+        "soilCondtion": "The p.h. value between 6.5 to 7.8 is more suitable.",
+        "specialNotes": "After planting, it takes about 85-90 days to harvest."
+    },
+    {
+        "varietyName": "Rampur",
+        "suitableAreas": ["North Central Province", "North Western Province"],
+        "maxTimePeriod": 85,
+        "maxPrecipitation": 750,
+        "atmosphericFeautures": "Atmospheric humidity should be less than 70%.",
+        "soilCondtion": "The p.h. value between 6.5 to 7.8 is more suitable.",
+        "specialNotes":"An Indian variety. After planting, it takes about 80-85 days to harvest."
+    },
+    {
+        "varietyName": "Bombay red variety ",
+        "suitableAreas": ["North Central Province", "North Western Province"],
+        "maxTimePeriod": 95,
+        "maxPrecipitation": 750,
+        "atmosphericFeautures": "Atmospheric humidity should be less than 70%.",
+        "soilCondtion": "The p.h. value between 6.5 to 7.8 is more suitable.",
+        "specialNotes":"After planting, it takes 90-100 days to harvest"
+    }
+  ]
+  

@@ -1,0 +1,33 @@
+[
+    {
+      "varietyName": "Badhra",
+      "suitableAreas": ["North Central Province", "North Western Province"],
+      "maxTimePeriod": 100,
+      "lowPrecipitation": 600,
+      "maxPrecipitation": 1000,
+      "atmosphericFeautures": "The temperature required for successful growth is 25-30 °C. The corn plant needs full sun.",
+      "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable",
+      "specialNotes": "Harvest time is between 105-110 days."
+    },
+    {
+        "varietyName": "M.I.Mase Hybrid 01 & M.I.Mase Hybrid",
+        "suitableAreas": ["North Central Province", "North Western Province"],
+        "maxTimePeriod": 110,
+        "lowPrecipitation": 600,
+        "maxPrecipitation": 1000,
+        "atmosphericFeautures": "The temperature required for successful growth is 25-30 °C. The corn plant needs full sun.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable",
+        "specialNotes": "Harvest time is between 105-110 days."
+    },
+    {
+        "varietyName": "M.I.Mase Hybrid 03",
+        "suitableAreas": ["North Central Province", "North Western Province"],
+        "maxTimePeriod": 105,
+        "lowPrecipitation": 600,
+        "maxPrecipitation": 1000,
+        "atmosphericFeautures": "The temperature required for successful growth is 25-30 °C. The corn plant needs full sun.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable",
+        "specialNotes":"Harvest time is between 100-105 days"
+    }
+  ]
+  
