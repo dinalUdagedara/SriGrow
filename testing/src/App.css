@@ -1,0 +1,48 @@
+.container {
+  margin-bottom: 20px;
+
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.imageBox {
+  width: 320px;
+  height: 280px;
+  position: relative;
+  margin-right: 90px ;
+ 
+  
+}
+
+.imageBox img {
+  width: 320px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.imageBox .textBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 290px;
+  height: 35px;
+  padding: 10px 15px;
+  background-color: rgba(228, 215, 215, 0.5);
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  font-family: signika;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+#h1 {
+  font-size: x-large;
+  font-family: signika;
+  margin-left: 50px;
+}
+
