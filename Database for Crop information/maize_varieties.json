@@ -1,7 +1,7 @@
 [
     {
       "varietyName": "Badhra",
-      "suitableAreas": ["North Central Province", "North Western Province"],
+      "suitableAreas": ["Ampara", "Anuradhapura","Polonnaruwa","Kurunagala","Moneragala","Badulla","Matale"],
       "maxTimePeriod": 100,
       "lowPrecipitation": 600,
       "maxPrecipitation": 1000,
@@ -11,7 +11,7 @@
     },
     {
         "varietyName": "M.I.Mase Hybrid 01 & M.I.Mase Hybrid",
-        "suitableAreas": ["North Central Province", "North Western Province"],
+        "suitableAreas": ["Ampara", "Anuradhapura","Polonnaruwa","Kurunagala","Moneragala","Badulla","Matale"],
         "maxTimePeriod": 110,
         "lowPrecipitation": 600,
         "maxPrecipitation": 1000,
@@ -21,7 +21,7 @@
     },
     {
         "varietyName": "M.I.Mase Hybrid 03",
-        "suitableAreas": ["North Central Province", "North Western Province"],
+        "suitableAreas": ["Ampara", "Anuradhapura","Polonnaruwa","Kurunagala","Moneragala","Badulla","Matale"],
         "maxTimePeriod": 105,
         "lowPrecipitation": 600,
         "maxPrecipitation": 1000,

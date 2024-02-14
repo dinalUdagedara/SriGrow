@@ -1,17 +1,21 @@
 [
     {
       "varietyName": "MIBO-01",
-      "suitableAreas": ["North Central Province", "North Western Province"],
+      "suitableAreas": ["Matale", "Anuradhapura","Dambulla","Kimbissa","Maradankadawala",
+                        "Polonnaruwa","Kurunegala","Vavuniya","Mullaitive","Mannar"],
       "maxTimePeriod": 80,
+      "lowPrecipitation": 400,
       "maxPrecipitation": 750,
       "atmosphericFeautures": "Atmospheric humidity should be less than 70%.",
       "soilCondtion": "The p.h. value between 6.5 to 7.8 is more suitable.",
-      "specialNotes": "Short tearm variety. After planting, it takes about 75-85 days to harvest."
+      "specialNotes": "Short term variety. After planting, it takes about 75-85 days to harvest."
     },
     {
         "varietyName": "Dambulla version",
-        "suitableAreas": ["North Central Province", "North Western Province"],
+        "suitableAreas": ["Matale", "Anuradhapura","Dambulla","Kimbissa","Maradankadawala",
+                        "Polonnaruwa","Kurunegala","Vavuniya","Mullaitive","Mannar"],
         "maxTimePeriod": 90,
+        "lowPrecipitation": 400,
         "maxPrecipitation": 750,
         "atmosphericFeautures": "Atmospheric humidity should be less than 70%.",
         "soilCondtion": "The p.h. value between 6.5 to 7.8 is more suitable.",
@@ -19,8 +23,10 @@
     },
     {
         "varietyName": "Rampur",
-        "suitableAreas": ["North Central Province", "North Western Province"],
+        "suitableAreas": ["Matale", "Anuradhapura","Dambulla","Kimbissa","Maradankadawala",
+                        "Polonnaruwa","Kurunegala","Vavuniya","Mullaitive","Mannar"],
         "maxTimePeriod": 85,
+        "lowPrecipitation": 400,
         "maxPrecipitation": 750,
         "atmosphericFeautures": "Atmospheric humidity should be less than 70%.",
         "soilCondtion": "The p.h. value between 6.5 to 7.8 is more suitable.",
@@ -28,8 +34,10 @@
     },
     {
         "varietyName": "Bombay red variety ",
-        "suitableAreas": ["North Central Province", "North Western Province"],
+        "suitableAreas": ["Matale", "Anuradhapura","Dambulla","Kimbissa","Maradankadawala",
+                        "Polonnaruwa","Kurunegala","Vavuniya","Mullaitive","Mannar"],
         "maxTimePeriod": 95,
+        "lowPrecipitation": 400,
         "maxPrecipitation": 750,
         "atmosphericFeautures": "Atmospheric humidity should be less than 70%.",
         "soilCondtion": "The p.h. value between 6.5 to 7.8 is more suitable.",

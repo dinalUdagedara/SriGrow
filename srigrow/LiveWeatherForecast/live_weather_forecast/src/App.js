@@ -74,9 +74,9 @@ function App() {
 
 
   return (
+    
     <div className='mx-auto max-w-screen-1xl  py-7 px-32 bg-gradient-to-br from-green-600 to-blue-700 h-fit shadow-xl shadow-gray-400'>
     <div className={`mx-auto max-w-screen-x2 mt-4 py-5 px-32 bg-gradient-to-br from-cyan-500 to-blue-600 h-fit shadow-xl shadow-gray-600 ${formatBackground}`}>
-  
       <TopButtons onCityChange={handleCityChange}/>
       <Inputs selectedCity={selectedCity} onCityChange={handleCityChange}/>
       <WeatherService city ={selectedCity} />

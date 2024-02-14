@@ -1,0 +1,138 @@
+
+
+[
+    {
+        "varietyName": "Bg 750",
+        "suitableAreas": ["Anuradhapura", "Kurunegala","Ampara","Polonnaruwa",
+                        "Batticaloa","Hambanthota","Monaragala","Trincomalee",
+                        "Kilinochchi","Badulla","Vavuniya","Mannar","Matale",
+                        "Mulativ","Puttlam","Rathnapura","Kandy","Matara",
+                        "Gampaha","Jaffna","Kalutara","Galle","Kegalle","Colombo","Nuwara Eliya"],
+        "maxTimePeriod": 78,
+        "maxPrecipitation":6000 ,
+        "atmosphericFeautures": "Maximum temperature is optimum (270C - 320C) more than 85% of humidity during Maha season 80 % and 85 % during Yala season.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable.",
+        "specialNotes": "Suitable for Low country intermediate zone. Can Harvest within 78 days."
+    },{
+        "varietyName": "Bg 300",
+        "suitableAreas": ["Anuradhapura", "Kurunegala","Ampara","Polonnaruwa",
+                        "Batticaloa","Hambanthota","Monaragala","Trincomalee",
+                        "Kilinochchi","Badulla","Vavuniya","Mannar","Matale",
+                        "Mulativ","Puttlam","Rathnapura","Kandy","Matara",
+                        "Gampaha","Jaffna","Kalutara","Galle","Kegalle","Colombo","Nuwara Eliya"],
+        "maxTimePeriod": 95,
+        "maxPrecipitation":6000 ,
+        "atmosphericFeautures": "Maximum temperature is optimum (270C - 320C) more than 85% of humidity during Maha season 80 % and 85 % during Yala season.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable.",
+        "specialNotes": "Suitable for Low country intermediate zone. Can Harvest within 78 days."
+    },
+    {
+        "varietyName": "Ld 253",
+        "suitableAreas": ["Anuradhapura", "Kurunegala","Ampara","Polonnaruwa",
+                        "Batticaloa","Hambanthota","Monaragala","Trincomalee",
+                        "Kilinochchi","Badulla","Vavuniya","Mannar","Matale",
+                        "Mulativ","Puttlam","Rathnapura","Kandy","Matara",
+                        "Gampaha","Jaffna","Kalutara","Galle","Kegalle","Colombo","Nuwara Eliya"],
+        "maxTimePeriod": 88,
+        "lowPrecipitation": 600,
+        "maxPrecipitation":6000 ,
+        "atmosphericFeautures": "Maximum temperature is optimum (270C - 320C) more than 85% of humidity during Maha season 80 % and 85 % during Yala season.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable.",
+        "specialNotes": " Suitable for General cultivation. Can harvest in 88 days."
+    },
+    {
+        "varietyName": "Bw 302 ",
+        "suitableAreas": ["Anuradhapura", "Kurunegala","Ampara","Polonnaruwa",
+                        "Batticaloa","Hambanthota","Monaragala","Trincomalee",
+                        "Kilinochchi","Badulla","Vavuniya","Mannar","Matale",
+                        "Mulativ","Puttlam","Rathnapura","Kandy","Matara",
+                        "Gampaha","Jaffna","Kalutara","Galle","Kegalle","Colombo","Nuwara Eliya"],
+        "maxTimePeriod": 90,
+        "lowPrecipitation": 600,
+        "maxPrecipitation":6000 ,
+        "atmosphericFeautures": "Maximum temperature is optimum (270C - 320C) more than 85% of humidity during Maha season 80 % and 85 % during Yala season.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable.",
+        "specialNotes": "Suitable for wet zone arias. Can get the harvest within 90 days."
+    },
+    {
+        "varietyName": "At 311 (Neeroga Basmathi type)",
+        "suitableAreas": ["Anuradhapura", "Kurunegala","Ampara","Polonnaruwa",
+                        "Batticaloa","Hambanthota","Monaragala","Trincomalee",
+                        "Kilinochchi","Badulla","Vavuniya","Mannar","Matale",
+                        "Mulativ","Puttlam","Rathnapura","Kandy","Matara",
+                        "Gampaha","Jaffna","Kalutara","Galle","Kegalle","Colombo","Nuwara Eliya"],
+        "maxTimePeriod": 93,
+        "lowPrecipitation": 600,
+        "maxPrecipitation":6000 ,
+        "atmosphericFeautures": "Maximum temperature is optimum (270C - 320C) more than 85% of humidity during Maha season 80 % and 85 % during Yala season.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable.",
+        "specialNotes": "General cultivation arias. Can harvest within 93 days."
+    },
+    {
+        "varietyName": "Bg 380 (Hangimuththan)",
+        "suitableAreas": ["Anuradhapura", "Kurunegala","Ampara","Polonnaruwa",
+                        "Batticaloa","Hambanthota","Monaragala","Trincomalee",
+                        "Kilinochchi","Badulla","Vavuniya","Mannar","Matale",
+                        "Mulativ","Puttlam","Rathnapura","Kandy","Matara",
+                        "Gampaha","Jaffna","Kalutara","Galle","Kegalle","Colombo","Nuwara Eliya"],
+        "maxTimePeriod": 78,
+        "lowPrecipitation": 600,
+        "maxPrecipitation":6000 ,
+        "atmosphericFeautures": "Maximum temperature is optimum (270C - 320C) more than 85% of humidity during Maha season 80 % and 85 % during Yala season.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable.",
+        "specialNotes": "Majorly irrigation in dry zone and intermediate zone. Can harvest within 123 days."
+    },{
+        "varietyName": "Bg 407H (1st Hybrid Rice)",
+        "suitableAreas": ["Anuradhapura", "Kurunegala","Ampara","Polonnaruwa",
+                        "Batticaloa","Hambanthota","Monaragala","Trincomalee",
+                        "Kilinochchi","Badulla","Vavuniya","Mannar","Matale",
+                        "Mulativ","Puttlam","Rathnapura","Kandy","Matara",
+                        "Gampaha","Jaffna","Kalutara","Galle","Kegalle","Colombo","Nuwara Eliya"],
+        "maxTimePeriod": 118,
+        "lowPrecipitation": 600,
+        "maxPrecipitation":6000 ,
+        "atmosphericFeautures": "Maximum temperature is optimum (270C - 320C) more than 85% of humidity during Maha season 80 % and 85 % during Yala season.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable.",
+        "specialNotes": "More sutable for High potential areas. Can harvest within 118 days."
+    },{
+        "varietyName": "Bw 451",
+        "suitableAreas": ["Anuradhapura", "Kurunegala","Ampara","Polonnaruwa",
+                        "Batticaloa","Hambanthota","Monaragala","Trincomalee",
+                        "Kilinochchi","Badulla","Vavuniya","Mannar","Matale",
+                        "Mulativ","Puttlam","Rathnapura","Kandy","Matara",
+                        "Gampaha","Jaffna","Kalutara","Galle","Kegalle","Colombo","Nuwara Eliya"],
+        "maxTimePeriod": 120,
+        "lowPrecipitation": 600,
+        "maxPrecipitation":6000 ,
+        "atmosphericFeautures": "Maximum temperature is optimum (270C - 320C) more than 85% of humidity during Maha season 80 % and 85 % during Yala season.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable.",
+        "specialNotes": "Suitable for Low country wet zone. Can get the harvest within 120 days. "
+
+    },{
+        "varietyName": "H 9 (Photoperiod sensitive veriety)",
+        "suitableAreas": ["Anuradhapura", "Kurunegala","Ampara","Polonnaruwa",
+                        "Batticaloa","Hambanthota","Monaragala","Trincomalee",
+                        "Kilinochchi","Badulla","Vavuniya","Mannar","Matale",
+                        "Mulativ","Puttlam","Rathnapura","Kandy","Matara",
+                        "Gampaha","Jaffna","Kalutara","Galle","Kegalle","Colombo","Nuwara Eliya"],
+        "maxTimePeriod": 155,
+        "lowPrecipitation": 600,
+        "maxPrecipitation":6000 ,
+        "atmosphericFeautures": "Maximum temperature is optimum (270C - 320C) more than 85% of humidity during Maha season 80 % and 85 % during Yala season.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable.",
+        "specialNotes": "Suitable for Mawee land. Can get the harvest within 155 days (Maha season). "
+    },{
+        "varietyName": "Bg 38 (Photoperiod sensitive veriety)",
+        "suitableAreas": ["Anuradhapura", "Kurunegala","Ampara","Polonnaruwa",
+                        "Batticaloa","Hambanthota","Monaragala","Trincomalee",
+                        "Kilinochchi","Badulla","Vavuniya","Mannar","Matale",
+                        "Mulativ","Puttlam","Rathnapura","Kandy","Matara",
+                        "Gampaha","Jaffna","Kalutara","Galle","Kegalle","Colombo","Nuwara Eliya"],
+        "maxTimePeriod": 160,
+        "lowPrecipitation": 600,
+        "maxPrecipitation":6000 ,
+        "atmosphericFeautures": "Maximum temperature is optimum (270C - 320C) more than 85% of humidity during Maha season 80 % and 85 % during Yala season.",
+        "soilCondtion": "The p.h. value between 5.8 to 7.0 is more suitable.",
+        "specialNotes": "Suitable for Mawee land. Can get the harvest within 155-160 days (Maha season)"
+    }
+]
