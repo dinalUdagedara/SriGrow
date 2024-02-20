@@ -34,9 +34,11 @@ export default class Login extends Component {
       if(data.status == "ok"){
         alert ("login Successfull");
         window.localStorage.setItem("token",data.data);
-        window.location.href="./userDetails";
+        window.location.href="./AddNewPlant";
       }else if(data.error == "Invalid Password"){
         alert ("Email or the Password you Entered is Incorrect Please Try Again ");
+      }else if(data.error == "User not Found"){
+        alert ("User not Found");
       }
     })
 
