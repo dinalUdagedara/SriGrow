@@ -5,6 +5,8 @@ import Footer from './Components/footer';
 import CardComp from './Components/CardComp';
 
 
+
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomePage=()=> {
