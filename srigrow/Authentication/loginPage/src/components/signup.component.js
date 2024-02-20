@@ -7,14 +7,15 @@ export default class SignUp extends Component {
       fname:"",
       lname:"",
       email:"",
+      regID:"",
       password:""
     };
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleSubmit(e){
     e.preventDefault();
-    const{fname,lname,email,password} = this.state;
-    console.log(fname,lname,email,password);
+    const{fname,lname,email,regID,password} = this.state;
+    console.log(fname,lname,email,regID,password);
     fetch("http://localhost:5000/register",{
       method:"POST",
       crossDomain:true,
@@ -27,6 +28,7 @@ export default class SignUp extends Component {
         fname:fname,
         lname:lname,
         email:email,
+        regID:regID,
         password:password
 
       }),
@@ -36,8 +38,8 @@ export default class SignUp extends Component {
       console.log(data,"userRegister")
       console.log(data.status)
       if(data.status == "ok"){
-        alert ("SignUp Complete Please login using your details now");
-        window.location.href="./sign-in";
+        // alert ("SignUp Complete Please login using your details now");
+        // window.location.href="./sign-in";
       }else if(data.error == "Invalid Password"){
         alert ("Email or the Password you Entered is Incorrect Please Try Again");
       }else if (data.error == "User Exists"){
@@ -84,6 +86,20 @@ export default class SignUp extends Component {
           
 
         </div>
+
+
+        <div className="mb-3">
+          <label>Registration ID</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter Registration ID"
+            onChange={e=>this.setState({regID:e.target.value})}
+          />
+          
+
+        </div>
+
 
         <div className="mb-3">
           <label>Password</label>
