@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "react-loader-spinner": "^6.1.6"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
