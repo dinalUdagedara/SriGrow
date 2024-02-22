@@ -1,0 +1,137 @@
+*{
+  text-align: justify;
+}
+
+.grid-rows-2 {
+  color: rgb(0, 0, 0);
+  size: 2rem;
+}
+
+img {
+  margin: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  margin-left: 50px;
+  margin-right: 50px;
+  gap: 5rem; 
+}
+
+.grid-rows-2 {
+  grid-template-rows: auto 1fr;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  padding: 0.5rem;
+  margin-bottom: 8rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+  background-color: rgb(255, 254, 254); /* Initial background color */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  /*background-color: rgb(30, 176, 146);*/ /* Background color on hover */
+  box-shadow:0 2px 5px black;
+}
+
+
+.card-content {
+  padding: 0.5rem;
+}
+
+.transition-details {
+  background-color: #77879b;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.transition-details:hover {
+  transform: translateY(-5px);
+}
+
+.transition-details {
+  background-color: #77879b;
+  color: #fff; /* Set the text color to white */
+  padding: 1rem;
+  margin-left:20px;
+  margin-right: 20px;
+  margin-bottom: 60px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-image: url('https://t3.ftcdn.net/jpg/07/20/50/44/240_F_720504418_bCh8Ey7t10mnwLWiGBtObri6Qvn8vKn2.jpg');
+  background-size: contain; /* Changed from 'cover' to 'contain' */
+  background-position: center;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  
+}
+
+
+.transition-details img {
+  margin-right: 1rem;
+}
+
+.transition-details p {
+  margin: 1rem 1; 
+  font-size: 1.25rem;
+}
+
+.rounded-xl {
+  border-radius: 1rem;
+}
+
+h2 {
+  text-align: center;
+}
+.about-us{
+  color: #ffffff;
+  text-align: center;
+}
+h2{
+  font-size: 3rem;
+}
+.facebook-logo,
+.instagram-logo,
+.Linding-logo,
+.Twitter-logo{
+  width: 40px; 
+  height: 40px; 
+}
+
+/* index.css */
+
+body[data-theme="dark"] {
+  /* Dark mode styles here */
+  background-color: #000000;
+  color: #fff;
+}
+.dark-button {
+  position: fixed;
+  top: 2px;
+  right: 5px;
+  padding: 1px 2px;
+  border: none;
+  border-radius: px;
+  align-items: center; /* Center the icon vertically */
+}
+
+.dark-button img {
+  max-width: 10px;/* Add some spacing between the icon and text */
+}
+
+
+
