@@ -10,12 +10,47 @@ import { Grid, Select, MenuItem } from '@mui/material';
 import { IoLocation } from "react-icons/io5";
 import { Button } from "bootstrap";
 import CropsVar from "./CropsVar";
+import { TextField, IconButton } from '@mui/material';
+import Slider from "react-slick";
+import slide1 from "../Images/cropdetail1.jpg";
+// import slide2 from "../Images/cropdetail2.jpg";
+import slide2 from "../Images/cropdetail2.jpg";
+import slide3 from "../Images/cropdetail3.jpg";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const Container = () => {
     //const [showContainer, setShowContainer]= useState(false);
     const [showGuide, setShowGuide] = useState(false);
     const [showDetails, setShowDetails] = useState(false)
     const [showCrops, setShowCrops] = useState(false);
+    const [selectedProvince, setSelectedProvince] = useState("");
+    const [selectedDistrict, setSelectedDistrict] = useState("");
+    const [date, setDate] = useState();
+    const [growingTimeValue, setGrowingTimeValue] = useState('');
+    const [inputValue, setInputValue] = useState('');
+    const [selectedOption, setSelectedOption] = useState(null);
+    const [Type, setType] = useState('');
+    const [cities, setCities] = useState([
+        'Colombo',
+        'Kandy',
+        'Galle',
+        'Jaffna',
+        'Anuradhapura',
+        // Add more cities as needed
+    ]);
+    const [Types, setTypes] = useState([
+        'Rice',
+        'Potato',
+        'Chilli',
+        'Corn',
+        'Onion',
+        'Finger Millet',
+        // Add more crop types as needed
+    ]);
+    const images = [slide1, slide2, slide3]
+
+
+    const [city, setCity] = useState('');
 
     const toggleGuide = () => {
         setShowGuide(true);
@@ -37,9 +72,6 @@ const Container = () => {
     };
 
 
-    const [selectedProvince, setSelectedProvince] = useState("");
-    const [selectedDistrict, setSelectedDistrict] = useState("");
-    const [date, setDate] = useState();
 
 
     console.log("Date", date);
@@ -59,6 +91,25 @@ const Container = () => {
 
 
     };
+    const handleTypeChange = (event) => {
+        setType(event.target.value);
+    };
+    const handleGrowingTimeChange = (event) => {
+        setGrowingTimeValue(event.target.value);
+    };
+    const handleCityChange = (event) => {
+        setCity(event.target.value);
+    };
+
+    const handleChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
+    const handleOptionSelect = (option) => {
+        setSelectedOption(option);
+        setShowDetails(false);
+    };
+
     const handleProvinceChange = (event) => {
         setSelectedProvince(event.target.value);
         // Reset selected district when province changes
@@ -71,18 +122,47 @@ const Container = () => {
     const handleSubmit = () => {
         console.log("form submitted")
     }
+    const options = ['Rice', 'Chilli', 'Big onion','Corn','Potato'];
+
+    const NextArrow =({onClick}) =>{
+        return(
+            <div className="arrow-next" onClick={onClick}>
+                <FaArrowRight/>
+
+            </div>
+        )
+    };
+    const PrevArrow =({onClick}) =>{
+        return(
+            <div className="arrow-prev" onClick={onClick}>
+                <FaArrowLeft/>
+
+            </div>
+        )
+    };
 
 
+    const settings = {
+        infinite: true,
+        lazyload: true,
+        speed: 300,
+        slidesToShow: 3,
+        centerMode: true,
+        centerMode: true,
+        centerPadding: 0,
+        nextArrow:<nextArrow/>,
+        prevArrow:<prevArrow/>
 
-
+    };
 
 
     return (
         <div className="container">
             <div className="header">
-                <h1>SriGrow</h1>
+
                 <div className="row">
                     <div className="column">
+                        <h1>SriGrow</h1>
                         <ul>
                             <li className={showGuide ? "hover-box active" : "hover-box"}>
                                 <Link to="#" className="option" onClick={toggleGuide}><PiChalkboardTeacher className="option-icon" />Guide </Link>
@@ -100,7 +180,9 @@ const Container = () => {
                         </ul>
                     </div>
                     <div className="sub-container">
-                        <div className="d flex guide-content">
+                        <div className="d flex 
+                        
+                        ent">
                             {showGuide && (
                                 <Grid container spacing={3} className="grid-container" >
                                     <Grid item xs={3}>
@@ -151,9 +233,110 @@ const Container = () => {
 
                             )}
                             {showDetails && (
-                                <Grid container spacing={3} className="grid-container">
-                                    {/* Content for the Details section */}
-                                    <h1>Details Content</h1>
+                                <Grid container spacing={2} className="d flex detail-container">
+                                    <div className="left-container">
+                                        <h3>Crop details</h3>
+                                        <div className="variety-dropdown">
+                                            <p>Crop Variety </p>
+                                            <Select value={selectedOption} onChange={(e) => handleOptionSelect(e.target.value)} className="variety-dropDown-box">
+                                                <MenuItem value="">Select Variety</MenuItem>
+                                                {options.map((option, index) => (
+                                                    <MenuItem key={index} value={option}>{option}</MenuItem>
+                                                ))}
+                                            </Select>
+                                        </div>
+                                        <div className="growing-time-container">
+                                            <p>Growing Time</p>
+                                            <div className="growing-time-input">
+                                                <TextField
+                                                    label="Growing time"
+                                                    value={growingTimeValue}
+                                                    onChange={handleGrowingTimeChange}
+                                                    variant="outlined"
+                                                    className="timetext-field"
+                                                />
+
+                                            </div>
+                                        </div>
+                                        <br></br>
+
+
+                                        <div className="growing-time-input">
+                                            <p>Time</p>
+                                            <TextField
+                                                label="Time"
+                                                value={inputValue}
+                                                onChange={handleChange}
+                                                variant="outlined"
+                                                className="timetext-field"
+                                            />
+                                        </div>
+                                        <div className="location-and-type">
+                                            <div className="location-field">
+                                                <p>Location</p>
+                                                <TextField
+                                                    select
+                                                    label="Location"
+                                                    value={city}
+                                                    onChange={handleCityChange}
+                                                    variant="outlined"
+                                                    className="location-textField"
+                                                >
+                                                    {cities.map((city) => (
+                                                        <MenuItem key={city} value={city}>
+                                                            {city}
+                                                        </MenuItem>
+                                                    ))}
+                                                </TextField>
+                                            </div>
+
+                                            <div className="type-dropdown">
+                                                <p>Type</p>
+                                                <TextField
+                                                    select
+                                                    label="Type"
+                                                    value={Type}
+                                                    onChange={handleTypeChange}
+                                                    variant="outlined"
+                                                    className="type-field"
+                                                >
+                                                    {Types.map((crop) => (
+                                                        <MenuItem key={crop} value={crop}>
+                                                            {crop}
+                                                        </MenuItem>
+                                                    ))}
+                                                </TextField>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div className="right-container">
+                                        <div className="detail-right-container">
+                                            <div className="detailPage-slider">
+                                                <Slider {...settings}>
+                                                    {images.map((img, idx) => (
+                                                        <div >
+                                                            <img src={img} alt={img} className="slider-img" />
+                                                        </div>
+                                                    ))}
+                                                </Slider>
+                                            </div>
+                                            <div className="right-content">
+                                                <h3>Plant content</h3>
+                                                <br></br>
+                                                <ul>
+                                                    <li>Water</li>
+                                                    <li>Weather</li>
+                                                    <li>Soil</li>
+                                                </ul>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
                                 </Grid>
                             )}
 
