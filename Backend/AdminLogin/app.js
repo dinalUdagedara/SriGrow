@@ -10,6 +10,11 @@ const jwt = require("jsonwebtoken");
 
 const JWT_SECRET = "fdghgffghdtrh561324(){}sgfgrthter"
 
+const RiceModel = require('./models/RiceVarieties')
+const OnionModel = require('./models/OnionVarieties')
+const MaizeModel = require('./models/MaizeVarieties')
+const ChillieModel = require('./models/ChillieVarieties')
+
 
 const mongoUrl = "mongodb://localhost:27017/sdgp_se_35_crop_info";
 
@@ -18,7 +23,47 @@ mongoose.connect(mongoUrl).then(()=>{console.log("Connceted to Database")})
 
 
 
+
+//Rice Varieties Fetching
+
+app.get('/getRiceVarieties',(req,res)=>{
+  RiceModel.find()
+  .then(varieties=>res.json(varieties))
+  .catch(err=>res.json("Error is in /getRiceVarieties",err))
+})
+
+
+//Onion Varieties Fetching
+
+app.get('/getOnionVarieties',(req,res)=>{
+  OnionModel.find()
+  .then(varieties=>res.json(varieties))
+  .catch(err=>res.json("Error is in /getOnionVarieties",err))
+})
+
+//Maize Varieties Fetching
+
+app.get('/getMaizeVarieties',(req,res)=>{
+  MaizeModel.find()
+  .then(varieties=>res.json(varieties))
+  .catch(err=>res.json("Error is in /getMaizeVarieties",err))
+})
+
+//Chillie Varieties Fetching
+
+app.get('/getChillieVarieties',(req,res)=>{
+  ChillieModel.find()
+  .then(varieties=>res.json(varieties))
+  .catch(err=>res.json("Error is in /getChillieVarieties",err))
+})
+
+
+
+
+
+
 require("./userDetals")
+
 const User = mongoose.model("UserInfo");
 
 app.post("/register",async(req,res)=>{

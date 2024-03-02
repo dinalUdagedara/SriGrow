@@ -18,7 +18,8 @@ import slide2 from "../Images/cropdetail2.jpg";
 import slide3 from "../Images/cropdetail3.jpg";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
-const Container = () => {
+
+const Container = ({OnionVarieties}) => {
     //const [showContainer, setShowContainer]= useState(false);
     const [showGuide, setShowGuide] = useState(false);
     const [showDetails, setShowDetails] = useState(false)
@@ -26,6 +27,7 @@ const Container = () => {
     const [selectedProvince, setSelectedProvince] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
     const [date, setDate] = useState();
+    const [endDate,setEndDate]=useState();
     const [growingTimeValue, setGrowingTimeValue] = useState('');
     const [inputValue, setInputValue] = useState('');
     const [selectedOption, setSelectedOption] = useState(null);
@@ -48,6 +50,8 @@ const Container = () => {
         // Add more crop types as needed
     ]);
     const images = [slide1, slide2, slide3]
+
+    const [cropType,setCropType] = useState('Rice');
 
 
     const [city, setCity] = useState('');
@@ -74,7 +78,7 @@ const Container = () => {
 
 
 
-    console.log("Date", date);
+  
 
     //define lists of provinces and districts
     const provinces = ["Nothern Province", "Western Province", "Central Province", "Eastern province", "Southern Province", "North west Province", "Noth Cenral Province", "Uva Province", "Sabaragamuwa Province"];
@@ -104,6 +108,7 @@ const Container = () => {
     const handleChange = (event) => {
         setInputValue(event.target.value);
     };
+    
 
     const handleOptionSelect = (option) => {
         setSelectedOption(option);
@@ -120,8 +125,37 @@ const Container = () => {
     };
 
     const handleSubmit = () => {
-        console.log("form submitted")
+
+      // Calculate the number of days between start and end dates
+    const startDate = new Date(date);
+    const calculatedEndDate = new Date(endDate); // Changed from endDate to calculatedEndDate
+    const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
+    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+        // Update formData with the latest values
+    setformData({
+        selectedProvince: selectedProvince,
+        selectedDistrict: selectedDistrict,
+        startDate: date,
+        endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
+        numberOfDays: differenceInDays  // Save the calculated number of days
+    });
+      
+
+        
+        console.log("Form Data : ",formData)
+        console.log("form submitted ")
     }
+
+    const [formData,setformData] = useState({
+        selectedProvince: "",
+        selectedDistrict: "",
+        startDate: "",
+        endDate: ""
+    })
+
+
+   
     const options = ['Rice', 'Chilli', 'Big onion','Corn','Potato'];
 
     const NextArrow =({onClick}) =>{
@@ -180,9 +214,7 @@ const Container = () => {
                         </ul>
                     </div>
                     <div className="sub-container">
-                        <div className="d flex 
-                        
-                        ent">
+                        <div className="d flexent">
                             {showGuide && (
                                 <Grid container spacing={3} className="grid-container" >
                                     <Grid item xs={3}>
@@ -217,7 +249,7 @@ const Container = () => {
 
                                     <Grid item xs={3}>
                                         <div className="date">
-                                            <input type="date" onChange={(e) => setDate(e.target.value)} />
+                                            <input type="date" onChange={(e) => setEndDate(e.target.value)} />
                                         </div>
                                     </Grid>
                                     <div className="process-button">
@@ -229,7 +261,7 @@ const Container = () => {
                             )}
                             {showCrops && (
 
-                                <CropsVar />
+                                <CropsVar formData = {formData} cropType = {cropType} />
 
                             )}
                             {showDetails && (
