@@ -115,10 +115,6 @@ const CropsVar = ({formData,cropType}) => {
     }
   }, [cropType]);
 
-  // // Function to handle crop type change
-  // const handleCropTypeChange = (type) => {
-  //   setCropType(type);
-  // }
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
