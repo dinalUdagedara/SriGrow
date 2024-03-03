@@ -555,21 +555,51 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                                 <br></br>
 
                                                 <ul>
-                                                    {ChillieVarities.length > 0 && (
-                                                            <li>Variety Name: {ChillieVarities[0].varietyName}</li>
-                                                    )}
-                                                    <li><Typography variant="body1">
+                                                   
+                                                            <li>
+                                                            <Typography variant="body1">
                                                 {selectedOption && (
                                                     <span>
                                                         {(() => {
                                                             switch (cropType) {
                                                                 case 'Rice':
                                                                     const riceVariety = RiceVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return riceVariety ? riceVariety.soilCondition : '';
+                                                                    return riceVariety ? riceVariety.varietyName : '';
 
                                                                 case 'Chillie':
                                                                     const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return chillieVariety ? chillieVariety.atmosphericFeautures : '';
+                                                                    return chillieVariety ? chillieVariety.varietyName : '';
+                                                                    
+                                                                case 'Maize':
+                                                                const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
+                                                                    return maizeVariety ? `Soil Condition: ${maizeVariety.varietyName} `: '';
+
+                                                                case 'Onion':
+                                                                    const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
+                                                                    return onionVariety ? onionVariety.varietyName : '';
+
+                                                                default:
+                                                                    return '';
+                                                            }
+                                                        })()}
+                                                    </span>
+                                                )}
+                                            </Typography>
+                                                            </li>
+                                           
+                                                    <li>
+                                                        <Typography variant="body1">
+                                                {selectedOption && (
+                                                    <span>
+                                                        {(() => {
+                                                            switch (cropType) {
+                                                                case 'Rice':
+                                                                    const riceVariety = RiceVarities.find(variety => variety.varietyName === selectedOption);
+                                                                    return riceVariety ? `Soil Condition: ${riceVariety.soilCondtion} `: '';
+
+                                                                case 'Chillie':
+                                                                    const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
+                                                                    return chillieVariety ? `Soil Condition: ${chillieVariety.soilCondtion} `: '';
                                                                     
                                                                 case 'Maize':
                                                                 const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
@@ -577,7 +607,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
                                                                 case 'Onion':
                                                                     const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return onionVariety ? onionVariety.atmosphericFeautures : '';
+                                                                    return onionVariety ? `Soil Condition: ${onionVariety.soilCondtion} `: '';
 
                                                                 default:
                                                                     return '';
