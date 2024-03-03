@@ -684,10 +684,10 @@ button:hover {
 .crop-varity-card {
   display: inline-block;
   width: 259px;
-  height: 259px;
+  height: 300px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  white-space: nowrap;
+  white-space: wrap;
 }
 
 .crop-varity-card:hover {
@@ -732,6 +732,7 @@ button:hover {
   padding-right: 8px;
   flex-wrap: nowrap;
   
+  
 }
 
 .card-stuff h3 {
@@ -746,6 +747,7 @@ button:hover {
   margin-bottom: 0;
   color: #285A43;
   margin-left: 5px;
+  
 }
 
 .card-stuff button {
@@ -881,3 +883,6 @@ button:hover {
   padding-left: 29px;
   padding-top: 20px;
 }
+
+
+

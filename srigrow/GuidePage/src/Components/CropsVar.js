@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../Containers/MainPage.css";
 import { FaSearch } from 'react-icons/fa';
 import Rice from '../Images/rice.jpeg';
@@ -8,6 +8,8 @@ import Corn from '../Images/corn.jpg';
 import Onion from '../Images/crop1.jpeg';
 import FingerMillet from '../Images/fingerMillet.jpeg';
 import { LuUser2 } from "react-icons/lu";
+import axios from 'axios'
+
 
 const CropsCard = ({ title, description, image }) => {
   return (
@@ -16,7 +18,9 @@ const CropsCard = ({ title, description, image }) => {
       <div className=" d-flex card-stuff">
         <div>
           <h3>{title}</h3>
-          <p>{description}</p>
+        
+          <p >{description}</p>
+        
         </div>
 
         <button>See More</button>
@@ -26,9 +30,91 @@ const CropsCard = ({ title, description, image }) => {
 }
 
 
-const CropsVar = () => {
+const CropsVar = ({formData,cropType}) => {
   const [searchTerm, setSearchTerm] = useState('');
+
+
+  console.log('Form Data Passed',formData)
+
+  //Rice Varieties API
   
+  const [RiceVarities, setRiceVarieties] = useState([]);
+  useEffect(()=>{
+    axios.get('http://localhost:5000/getRiceVarieties')
+    .then(response => {
+      setRiceVarieties(response.data);
+    })
+    .catch(err=>console.log('Error fetching Rice varieties: ',err))
+  },[])
+
+  //Onion Variety API
+
+  const [OnionVarities, setOnionVarieties] = useState([]);
+  useEffect(()=>{
+    axios.get('http://localhost:5000/getOnionVarieties')
+    .then(response => {
+      setOnionVarieties(response.data);
+    })
+    .catch(err=>console.log('Error fetching Onion varieties: ',err))
+  },[])
+
+  //Maize Variety API
+
+  const [MaizeVarities, setMaizeVarieties] = useState([]);
+  useEffect(()=>{
+    axios.get('http://localhost:5000/getMaizeVarieties')
+    .then(response => {
+      setMaizeVarieties(response.data);
+    })
+    .catch(err=>console.log('Error fetching Maize varieties: ',err))
+  },[])
+
+   //Chillie Variety API
+
+   const [ChillieVarities, setChillieVarieties] = useState([]);
+   useEffect(()=>{
+     axios.get('http://localhost:5000/getChillieVarieties')
+     .then(response => {
+       setChillieVarieties(response.data);
+  
+     })
+     .catch(err=>console.log('Error fetching Chillie varieties: ',err))
+   },[])
+ 
+
+ 
+
+  // Function to fetch crop varieties based on the crop type
+  const fetchCropVarieties = (type) => {
+    axios.get(`http://localhost:5000/get${type}Varieties`)
+      .then(response => {
+        switch (type) {
+          case 'Rice':
+            setRiceVarieties(response.data);
+            break;
+          case 'Onion':
+            setOnionVarieties(response.data);
+            break;
+          case 'Maize':
+            setMaizeVarieties(response.data);
+            break;
+          case 'Chillie':
+            setChillieVarieties(response.data);
+            break;
+          default:
+            break;
+        }
+
+      })
+      .catch(err => console.log(`Error fetching ${type} varieties: `, err));
+  }
+
+  useEffect(() => {
+    if (cropType) {
+      fetchCropVarieties(cropType);
+    }
+  }, [cropType]);
+
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -40,13 +126,30 @@ const CropsVar = () => {
     console.log('Search term:', searchTerm);
   }
   const cardData = [
-    { title: 'Potato', description: 'Des', image: Potato },
-    { title: 'Rice', description: 'Desc', image: Rice },
-    { title: 'Chilli', description: 'Descr', image: Chilli },
-    { title: 'Corn', description: 'Desc', image: Corn },
-    { title: 'Onion', description: 'Descr', image: Onion },
-    { title: 'Finger Millet', description: 'Descr', image: FingerMillet },
+    // { title: 'Potato', description: 'Des', image: Potato },
+    // { title: 'Finger Millet', description: 'Descr', image: FingerMillet },
+    ...(cropType === 'Rice' ? RiceVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays).map(variety => ({
+      title: variety.varietyName,
+      description: variety.specialNotes,
+      image: Rice // same image for all rice varieties
+    })) : []),
+    ...(cropType === 'Onion' ? OnionVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays).map(variety => ({
+      title: variety.varietyName,
+      description: variety.specialNotes,
+      image: Onion // same image for all onion varieties
+    })) : []),
+    ...(cropType === 'Maize' ? MaizeVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays).map(variety => ({
+      title: variety.varietyName,
+      description: variety.specialNotes,
+      image: Corn // same image for all maize varieties
+    })) : []),
+    ...(cropType === 'Chillie' ?  ChillieVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays).map(variety => ({
+      title: variety.varietyName,
+      description: variety.specialNotes,
+      image: Chilli // same image for all chilli varieties
+    })) : [])
   ];
+  
   const cardsData = [
     //  see more ... datas of the crops
   ];
@@ -71,12 +174,13 @@ const CropsVar = () => {
       </form>
       <div className="crops-cards">
         <div className='cards-wrapper'>
-          {cardData.map((cardData) => (
-            <CropsCard {...cardData} key={cardData.title} />
+          {cardData.map((cardData,index) => (
+            <CropsCard {...cardData} key={index} />
           ))}
         </div>
 
       </div>
+
     </div>
 
   );
