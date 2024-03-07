@@ -1,6 +1,6 @@
 // import React, { useState } from "react";
 import React, { useEffect, useState } from 'react';
-import '../Containers/MainPage.css';
+import '../Containers/Style.css';
 import { Link } from "react-router-dom";
 import { PiPlant } from "react-icons/pi";
 import { PiChalkboardTeacher } from "react-icons/pi";
@@ -289,7 +289,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
 
     return (
-        <div className="container">
+        <div className="guide-container">
             <div className="header">
 
                 <div className="row">
@@ -297,22 +297,28 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                         <h1>SriGrow</h1>
                         <ul>
                             <li className={showGuide ? "hover-box active" : "hover-box"}>
-                                <Link to="#" className="option" onClick={toggleGuide}><PiChalkboardTeacher className="option-icon" />Guide </Link>
+                                <Link to="#" className="option" onClick={toggleGuide}>
+                                    <PiChalkboardTeacher className="option-icon" />
+                                    <span className="icon-text">Guide</span>
+                                </Link>
                             </li>
                             <li className={showCrops ? "hover-box active" : "hover-box"} >
-                                <Link to="#" className="option" onClick={toggleCrops}><PiPlant className="option-icon" />Crops </Link>
+                                <Link to="#" className="option" onClick={toggleCrops}>
+                                    <PiPlant className="option-icon" />
+                                    <span className="icon-text">Crops</span>
+                                </Link>
                             </li>
                             <li className={showDetails ? "hover-box active" : "hover-box"}>
-                                <Link to="#" className="option" onClick={toggleDetails} ><MdHistory className="option-icon" />Details</Link>
+                                <Link to="#" className="option" onClick={toggleDetails} >
+                                    <MdHistory className="option-icon" />
+                                    <span className="icon-text">Details</span>
+                                </Link>
                             </li>
-                            <li className="hover-box">
-
-                                <Link to="/percentage" className="option"><MdBarChart className="option-icon" />Percentage</Link>
-                            </li>
+                
                         </ul>
                     </div>
                     <div className="sub-container">
-                        <div className="d flexent">
+                        <div className='variety-container'>
                             {showGuide && (
                                 <Grid container spacing={3} className="grid-container" >
                                     <Grid item xs={3}>
@@ -335,6 +341,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                             ))}
                                         </Select>
                                     </Grid>
+                                    
                                     <Grid item xs={3}>
                                         <h2>Date</h2>
                                     </Grid>
@@ -365,9 +372,9 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                 />
 
                             )}
-                            {showDetails && (
+                            {showDetails&& (
 
-                              
+
                                 <Grid container spacing={2} className="d flex detail-container">
                                     <div className="left-container">
                                         <h3>Crop details</h3>
@@ -387,7 +394,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                         
                                             <Typography variant="body1">
                                                 {selectedOption && (
-                                                    <span>
+                                                    <span >
                                                         {(() => {
                                                             switch (cropType) {
                                                                 case 'Rice':
@@ -410,6 +417,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                                                     return '';
                                                             }
                                                         })()}
+                                                        <br></br>
                                                     </span>
                                                 )}
                                             </Typography>
@@ -513,10 +521,9 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
                                     <div className="location-and-type">
                                         <div className="location-field">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }}>Locations Suitable</p>
-                                            <TextField
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', paddingRight: '110px' }}>Locations Suitable</p>
+                                            <Select
                                                 select
-                                                label="Locations"
                                                 value={city}
                                                 variant="outlined"
                                                 className="location-textField"
@@ -533,7 +540,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                                     </MenuItem>
                                             ))}
                                                 
-                                            </TextField>
+                                            </Select>
                                         </div>
                                     </div>
 
@@ -552,7 +559,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                             </div>
                                             <div className="right-content">
                                                 <h3>Variety Specilaities</h3>
-                                                <br></br>
+                                                
 
                                                 <ul>
                                                    
@@ -656,6 +663,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                     </div>
 
                                 </Grid>
+                             
                             )}
 
                         </div>

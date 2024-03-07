@@ -4,7 +4,6 @@ import { Switch } from '@mui/material';
 
 
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Guide=()=> {
   const cropType = 'Rice'; // Define the cropType here or get it dynamically

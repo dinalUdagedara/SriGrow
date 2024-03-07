@@ -5,7 +5,7 @@ import image1 from '../Images/slider3.jpg';
 import image2 from '../Images/slider4.jpg';
 import image3 from '../Images/slider5.jpg';
 import image4 from '../Images/slider6.jpg';
-import '../Containers/MainPage.css';
+import '../Containers/Style.css';
 const images = [
   image2,
   image1,

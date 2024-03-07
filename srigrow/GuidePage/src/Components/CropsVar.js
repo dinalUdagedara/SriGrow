@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "../Containers/MainPage.css";
+import '../Containers/Style.css';
 import { FaSearch } from 'react-icons/fa';
 import Rice from '../Images/rice.jpeg';
 import Potato from '../Images/potato.jpg';
@@ -9,9 +9,12 @@ import Onion from '../Images/crop1.jpeg';
 import FingerMillet from '../Images/fingerMillet.jpeg';
 import { LuUser2 } from "react-icons/lu";
 import axios from 'axios'
+import { Link } from 'react-router-dom';
+
 
 
 const CropsCard = ({ title, description, image }) => {
+  
   return (
     <div className="crop-varity-card">
       <img className='card-img' src={image} alt={title} />
@@ -23,7 +26,7 @@ const CropsCard = ({ title, description, image }) => {
         
         </div>
 
-        <button>See More</button>
+        <button >See More</button>
       </div>
     </div>
   )
@@ -150,9 +153,7 @@ const CropsVar = ({formData,cropType}) => {
     })) : [])
   ];
   
-  const cardsData = [
-    //  see more ... datas of the crops
-  ];
+ 
 
   return (
     <div className='crops'>
@@ -161,13 +162,7 @@ const CropsVar = ({formData,cropType}) => {
         <div className='search-container'>
           <FaSearch className='search-icon' />
           <input type='text' placeholder='Search...' value={searchTerm} onChange={handleChange} className='search-input' />
-          <div>
-            <LuUser2 className='d-flex user-icon' />
-          </div>
-        {/* profile box */}
-            <div className="user-profile-box">
-              {/* Profile details */}
-            </div>
+          
         
         </div>
 

@@ -4,7 +4,7 @@ import { GrUserManager } from "react-icons/gr";
 import { GoGraph } from "react-icons/go";
 import { PiPlant } from "react-icons/pi";
 import { GiPlantRoots } from "react-icons/gi";
-import '../Containers/MainPage.css';
+import '../Containers/Style.css';
 import { Grid } from '@mui/material';
 
 
@@ -58,7 +58,8 @@ function CardComp() {
               <br></br>
             </Grid>
             <Grid item xs={6} md={4}>
-              <div className="card">
+              
+              <div className="card" >
                 <div className="card-content">
                   <div className="card-icon">
                     <PiPlant size={60} />
@@ -69,6 +70,7 @@ function CardComp() {
                   </div>
                 </div>
               </div>
+              
             </Grid>
             <Grid item xs={6} md={4}>
               <div className="card">

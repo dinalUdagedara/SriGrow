@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {Link} from "react-router-dom";
 import { Component } from "react";
 import { FaBars } from "react-icons/fa";
-import '../Containers/MainPage.css';
+import '../Containers/Style.css';
 
 
 const NavbarComp=()=> {
@@ -15,7 +15,7 @@ const NavbarComp=()=> {
     setMobileMenuOpen(!mobileMenuOpen);
   };
     return(
-      <nav className="navbar">
+      <div className="navbar">
       <div className="navbar-container">
         <div className="navbar-left">
           <Link to="/" className="navbar-logo">
@@ -27,7 +27,7 @@ const NavbarComp=()=> {
           <span className="separator"> | </span>
           <Link to="/weather" className="navbar-link">Weather Prediction</Link>
           <span className="separator"> | </span>
-          <Link to="/crop-guide" className="navbar-link">Crop Guide</Link>
+          <Link to="/guide" className="navbar-link">Crop Guide</Link>
           <span className="separator"> | </span>
           <Link to="/pests-disease-alerts" className="navbar-link">Pests & Disease Alerts</Link>
           <span className="separator"> | </span>
@@ -36,7 +36,7 @@ const NavbarComp=()=> {
           <Link to="/about-us" className="navbar-link">About Us</Link>
           </div>
         <div className="navbar-right">
-          <button className="login-button">Login</button>
+          <Link to="/sign-in" className="login-button">Sign-in</Link>
           <div id="icon" className="mobile-menu-icon" onClick={handleMenuClick}>
             <FaBars />
           </div>
@@ -46,12 +46,12 @@ const NavbarComp=()=> {
       <div className="mobile-navbar" style={{ display: mobileMenuOpen ? 'block' : 'none' }}>
           <Link to="/" className="navbar-link">Home </Link>
           <Link to="/weather" className="navbar-link">Weather Prediction</Link>
-          <Link to="/crop-guide" className="navbar-link">Crop Guide</Link>
+          <Link to="/guide" className="navbar-link">Crop Guide</Link>
           <Link to="/pests-disease-alerts" className="navbar-link">Pests & Disease Alerts</Link>
           <Link to="/market-price" className="navbar-link">Market Price</Link>
           <Link to="/about-us" className="navbar-link">About Us</Link>
       </div>
-    </nav>
+    </div>
     
   );
 }

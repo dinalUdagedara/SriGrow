@@ -6,7 +6,7 @@ import { FaSquareTwitter } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareYoutube } from "react-icons/fa6";
-import '../Containers/MainPage.css';
+import '../Containers/Style.css';
 const Footer=()=>{
     return(
         <div className="footer">
