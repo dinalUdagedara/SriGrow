@@ -7,7 +7,8 @@ import CropsVar from './Components/CropsVar';
 import Login from './Authentication/loginPage';
 import SignUp from './Authentication/signupPage';
 import AddNewPlant from './Components/AddNewPlant';
-
+import CropGuidance from './CropGuide/cropGuidance';
+import About from './AboutUs/About';
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
 
         <Route path="/AddNewPlant" element={<AddNewPlant />} />
+        <Route path="/cropguidance" element={<CropGuidance/>} />
+        <Route path="/about-us" element={<About/>} />
       </Routes>
     </Router>
   );

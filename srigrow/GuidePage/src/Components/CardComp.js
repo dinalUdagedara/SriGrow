@@ -6,7 +6,8 @@ import { PiPlant } from "react-icons/pi";
 import { GiPlantRoots } from "react-icons/gi";
 import '../Containers/Style.css';
 import { Grid } from '@mui/material';
-
+import CropGuidance from '../CropGuide/cropGuidance';
+import { Link } from 'react-router-dom';
 
 
 function CardComp() {
@@ -58,7 +59,7 @@ function CardComp() {
               <br></br>
             </Grid>
             <Grid item xs={6} md={4}>
-              
+              <Link to="/cropguidance">
               <div className="card" >
                 <div className="card-content">
                   <div className="card-icon">
@@ -70,7 +71,7 @@ function CardComp() {
                   </div>
                 </div>
               </div>
-              
+              </Link>
             </Grid>
             <Grid item xs={6} md={4}>
               <div className="card">

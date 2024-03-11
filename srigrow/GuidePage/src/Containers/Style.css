@@ -1,11 +1,12 @@
-
 /* @import url("https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"); */
-@import "~slick-carousel/slick/slick.css"; 
-@import "~slick-carousel/slick/slick-theme.css"; 
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 /* Styles of Navbar  */
 * {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 
@@ -16,11 +17,12 @@
   padding: 0;
   overflow: hidden;
 }
+
 .navbar {
   background-color: #2DA884;
   padding: 10px 0;
   font-family: Montserrat;
-  
+
 }
 
 .navbar-container {
@@ -30,23 +32,23 @@
   padding-right: 20px;
   margin: 0 auto;
   height: 50px;
- 
+
 
 
 }
 
 .navbar-left {
   padding: left 0;
-  
+
   display: flex;
-  align-items: center; 
+  align-items: center;
   margin-left: 0;
 }
 
 .navbar-center {
   padding-top: 20px;
   align-items: center;
-  
+
 
 }
 
@@ -79,7 +81,7 @@
 .navbar-right {
   display: flex;
   align-items: center;
- 
+
 }
 
 
@@ -106,7 +108,8 @@
 #icon {
   display: none;
 }
-.mobile-navbar{
+
+.mobile-navbar {
   display: none;
 }
 
@@ -122,6 +125,7 @@
     top: 15px;
     left: 35px;
   }
+
   .mobile-navbar {
     display: flex;
     justify-content: space-between;
@@ -129,6 +133,7 @@
     padding: 1rem;
     background-color: #2DA884;
   }
+
   .mobile-menu-icon {
     display: block;
   }
@@ -155,14 +160,15 @@
     /* height: 33px; */
     position: relative;
   }
+
   .mobile-navbar {
-    display: flex;    
+    display: flex;
     justify-content: space-between;
     height: auto;
     padding: 1rem;
-    background-color:#2DA884;
+    background-color: #2DA884;
   }
-  
+
   .mobile-menu-icon {
     display: block;
   }
@@ -171,7 +177,7 @@
     position: fixed;
     top: 0;
     right: -100%;
-    
+
     width: 80%;
     height: 100%;
     padding: 6rem 3rem 0;
@@ -353,10 +359,11 @@ li {
     height: 183px;
     display: block;
     margin-bottom: 20px; */
-    flex:1 0 auto;
+    flex: 1 0 auto;
     margin: 0 5px;
   }
-  .mobile-cont{
+
+  .mobile-cont {
     display: flex;
   }
 
@@ -450,7 +457,7 @@ li {
 
 .guide-container {
   display: flex;
-  
+
   align-items: center;
   background-color: #2DA884;
   width: 100%;
@@ -470,10 +477,7 @@ li {
   padding: 50px;
   color: white;
   width: 100%;
-  margin-top: 56px 
- 
-
-
+  margin-top: 56px
 }
 
 
@@ -481,13 +485,13 @@ li {
   padding-bottom: 10px;
   margin-top: -31px;
   color: #fff;
-  
+
 }
 
 .guide-content {
   align-items: flex-start;
   display: flex;
-  
+
 
 }
 
@@ -530,7 +534,7 @@ li {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-around;
- 
+
 
 
 }
@@ -548,7 +552,7 @@ li {
   font-size: 22px;
   display: block;
   padding: 20px;
-  
+
 }
 
 
@@ -557,9 +561,9 @@ li {
   text-decoration: none;
 }
 
- .icon-text{
+.icon-text {
   margin-left: 5px;
- }
+}
 
 
 
@@ -617,7 +621,7 @@ h1 {
   padding-left: 67px;
   align-items: center;
   padding-top: 100px;
- 
+
 
 }
 
@@ -700,9 +704,19 @@ button:hover {
 
 
 /* crops varity cards */
-.variety-container{
+.variety-container {
   width: 824px;
   padding-right: 25px;
+  padding-left: 32px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.crops-container{
+  overflow-y: auto;
+}
+.detail-cont{
+  /* width: 824px;
+  padding-right: 177px; */
   padding-left: 32px;
 }
 .crop-varity-card {
@@ -745,7 +759,7 @@ button:hover {
 .card-img {
   height: 172px;
   border-radius: 5px;
-  
+
 
 }
 
@@ -755,14 +769,14 @@ button:hover {
   justify-content: space-between;
   padding-right: 8px;
   flex-wrap: wrap;
-  
-  
+
+
 }
 
 .card-stuff h3 {
   margin-top: 10px;
   margin-bottom: 0;
-  color:  #285A43;
+  color: #285A43;
   margin-left: 5px;
   font-size: 13px;
 }
@@ -773,7 +787,7 @@ button:hover {
   color: #285A43;
   margin-left: 5px;
   font-size: 13px;
-  
+
 }
 
 .card-stuff button {
@@ -781,10 +795,10 @@ button:hover {
   float: right;
   background-color: transparent;
   border: 1px solid black;
-  color:#285A43;
+  color: #285A43;
   margin-left: 100px;
   width: 154px;
-  height:31px;
+  height: 31px;
 }
 
 /* .user-profile-box{
@@ -796,53 +810,60 @@ button:hover {
 } */
 
 /* scroll bar style */
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 10px;
-  
+
 }
-::-webkit-scrollbar-track{
-  box-shadow: inset 0 0 px ;
-  
-  
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 px;
+
+
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
   border: 1px solid rgb(186, 184, 184);
   border-radius: 5px;
 }
-::-webkit-scrollbar-thumb:hover{
+
+::-webkit-scrollbar-thumb:hover {
   border: 1px solid grey;
 }
+
 /* styles of details page */
 
 .left-container {
-    display: flex;
-    color: black;
-    flex-direction: column;
-    width: 454px;
-    margin-top: -21px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    
+  display: flex;
+  color: black;
+  flex-direction: column;
+  width: 454px;
+  margin-top: -21px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
 }
-.left-container h3{
-  padding-bottom:10px ;
+
+.left-container h3 {
+  padding-bottom: 10px;
 }
-.right-container{
-    padding-left:20px ;
-    margin-top: -310px;
-    position: fixed;
-    padding-left: 475px;
+
+.right-container {
+  padding-left: 20px;
+  margin-top: -310px;
+  position: fixed;
+  padding-left: 475px;
 }
-.variety-dropdown{
+
+.variety-dropdown {
   display: flex;
   flex-direction: row;
   width: 500px;
-  
+
 }
-.variety-dropdown p{
-  
-}
-.variety-dropDown-box{
+
+.variety-dropdown p {}
+
+.variety-dropDown-box {
   justify-content: right;
   width: 200px;
   height: 40px;
@@ -853,47 +874,54 @@ button:hover {
   appearance: none;
   background-color: #B4E0A066;
 }
-.detail-right-container{
+
+.detail-right-container {
   background-color: #2DA884;
   width: 50%;
-  height: 441px ;
+  height: 441px;
   border-radius: 35px;
- overflow: auto;
+  overflow: auto;
   margin-top: 0;
   position: fixed;
   transform: translate(0%, 0%);
-  
-  
+
+
 }
-.detail-container{
+
+.detail-container {
   margin: 369px;
   width: 100%;
   padding-left: -600px;
   align-items: center;
   padding-top: 100px;
   height: 424px;
-}
-.growing-time-container{
-    /* padding-top: 20px; */
-    /* padding-bottom: 50px; */
-    
+  overflow: hidden;
 }
 
-.align-text{
- width: 100px;
+.growing-time-container {
+  /* padding-top: 20px; */
+  /* padding-bottom: 50px; */
+
 }
-.timetext-field{
+
+.align-text {
+  width: 100px;
+}
+
+.timetext-field {
   width: 435px;
   height: px;
 }
-.growing-time-input{
+
+.growing-time-input {
   display: inline-block;
   position: relative;
   padding-top: 20px;
   padding-bottom: 63px;
 
 }
-.location-textField{
+
+.location-textField {
   width: 200px;
   height: 40px;
   display: flex;
@@ -902,56 +930,68 @@ button:hover {
   outline: none;
   appearance: none;
   background-color: #B4E0A066;
-  
- 
+
+
 }
-.type-field{
+
+.type-field {
   width: 200px;
 
 }
-.location-field{
+
+.location-field {
   display: flex;
 }
+
 /* .type-dropdown{
   display: flex;
 } */
-.location-and-type{
+.location-and-type {
   display: flex;
   gap: 36px;
 }
 
 /* detail page slider style */
-.detailPage-slider{
-   width: 39%; 
+.detailPage-slider {
+  width: 39%;
   /* margin: 2px auto; */
   /* height: 200px; */
   margin-left: 72px;
   margin-top: 10px;
- 
-  
+
+
 
 }
-.slider-img{
-  width:auto;
+
+.slider-img {
+  width: auto;
   height: 150px;
- 
+
 }
+
 .right-content {
   padding-left: 29px;
   padding-top: 15px;
   width: 415px;
 }
-.details-column{
 
-  border: 1px solid #ccc; /* Add a border around the column */
-  padding: 10px; /* Add some padding inside the column */
+.details-column {
+
+  border: 1px solid #ccc;
+  /* Add a border around the column */
+  padding: 10px;
+  /* Add some padding inside the column */
 
 }
-.details-row{
-  padding: px; /* Add padding to each row */
-  margin-bottom: 10px; /* Add margin at the bottom of each row */
-  background-color: #561616; /* Add background color to the rows */
-  border: 1px solid #285A43; 
+
+.details-row {
+  padding: px;
+  /* Add padding to each row */
+  margin-bottom: 10px;
+  /* Add margin at the bottom of each row */
+  background-color: #561616;
+  /* Add background color to the rows */
+  border: 1px solid #285A43;
 }
 
 /* 

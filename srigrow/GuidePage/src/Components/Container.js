@@ -364,14 +364,17 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
 
                             )}
+                            
                             {showCrops && (
-
+                                
                                 <CropsVar 
                                 formData = {formData} 
                                 cropType = {cropType}
                                 />
-
+                            
                             )}
+                            
+                            {/* <div className='detail-cont'> */}
                             {showDetails&& (
 
 

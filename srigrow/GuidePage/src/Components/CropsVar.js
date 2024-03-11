@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom';
 const CropsCard = ({ title, description, image }) => {
   
   return (
+    
     <div className="crop-varity-card">
       <img className='card-img' src={image} alt={title} />
       <div className=" d-flex card-stuff">
