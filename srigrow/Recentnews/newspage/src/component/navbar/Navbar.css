@@ -1,0 +1,74 @@
+.navbar {
+    background-color: #2DA884;
+    padding: 10px 0;
+    font-family: Montserrat;
+  }
+  .navbar-logo {
+    width: 100px;
+    height: px;
+  }
+    
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-center {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-right: 20px;
+  }
+  
+  .separator {
+    margin: 0 10px;
+    color: #fff;
+  }
+  
+  .navbar-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+  }
+  
+  .navbar-link:hover {
+    color: #438d7e;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-button {
+    background-color: #286c48;
+    border: 2px solid #e7e7e7;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  .login-button:hover {
+    background-color: #438d7e;
+  }
+  
+  

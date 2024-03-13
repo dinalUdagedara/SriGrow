@@ -1,0 +1,51 @@
+/* styles of footer */
+.footer{
+    position:relative;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #2DA884;
+    color: white;
+    padding: 20px;
+    font-family:Montserrat ;
+  }
+  .footer-content{
+    display: flex;
+    justify-content: space-around;
+  
+  }
+  .footer-left,
+  .footer-center,
+  .footer-right,
+  .footer-icons{
+    flex: 1;
+    margin-right: 20px;
+    
+  }
+  
+  .footer-right p{
+    margin: 0;
+    
+  }
+  .social-media{
+     display: flex;
+     gap:10px ;
+     font-size: 32px;
+     margin-right: 10px;
+  }
+  h4{
+    font-size: 20px;
+  }
+  .parah{
+    text-align: le;
+    width: 150px;
+  
+  }
+  ul{
+    list-style-type:none ;
+    padding: 0;
+  }
+  li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
