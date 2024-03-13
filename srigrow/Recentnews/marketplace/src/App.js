@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from '../src/components/navbar/navbar';
+// import Footer from '../src/components/ footer /footer'; // Corrected the import path
+import Footer from '../src/components/footer/footer'
+import Cardcomponents from './cardcomponents/cardcomponents'; // Corrected the import and component name
+//import images from './src/images';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <div className="App">
+                <Navbar/>
+                <Cardcomponents/>
+                {/* Define your routes */}
+                {/* <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/weather" component={Weather} />
+                    <Route path="/crop-guide" component={CropGuide} />
+                    <Route path="/pests-disease-alerts" component={PestsDiseaseAlerts} />
+                    <Route path="/market-price" component={MarketPrice} />
+                    <Route path="/about-us" component={AboutUs} />
+                </Switch> */}
+                <Footer/>
+            </div>
+        </Router>
+    );
 }
+       
 
 export default App;
