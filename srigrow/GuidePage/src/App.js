@@ -9,6 +9,8 @@ import SignUp from './Authentication/signupPage';
 import AddNewPlant from './Components/AddNewPlant';
 import CropGuidance from './CropGuide/cropGuidance';
 import About from './AboutUs/About';
+import CardComponent from './RecentNews/CardComponent';
+import MarketPlace from './MarketPlace/MarketPlace';
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
         <Route path="/AddNewPlant" element={<AddNewPlant />} />
         <Route path="/cropguidance" element={<CropGuidance/>} />
         <Route path="/about-us" element={<About/>} />
+        <Route path="/recentnews" element={<CardComponent/>} />
+        <Route path="/marketplace" element={<MarketPlace/>} />
       </Routes>
     </Router>
   );
