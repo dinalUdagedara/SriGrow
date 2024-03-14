@@ -22,161 +22,161 @@ const MarketPlace = () => {
       <div className="news-banner">
         <h2>StoreMarket</h2>
       </div>
-      <div className="heading">
+      <div className="mp-heading">
         <h2>Southern Province</h2>
       </div>
-      <div className="card-container">
-        <div className="card">
+      <div className="mp-card-container">
+        <div className="marketplace-card">
           <img className='cardimage' src={sourthern1} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={sourthern2} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={sourthern3} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={sourthern4} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={sourthern5} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
       </div>
-      <div className="heading">
+      <div className="mp-heading">
         <h2>Western Province</h2>
       </div>
-      <div className="card-container">
-        <div className="card">
+      <div className="mp-card-container">
+        <div className="marketplace-card">
           <img className='cardimage' src={image1} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image2} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image3} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image4} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image5} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
       </div>
-      <div className="heading">
+      <div className="mp-heading">
         <h2>Western Province</h2>
       </div>
-      <div className="card-container">
-        <div className="card">
+      <div className="mp-card-container">
+        <div className="marketplace-card">
           <img className='cardimage' src={image1} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image2} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image3} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image4} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image5} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
       </div>
-      <div className="heading">
+      <div className="mp-heading">
         <h2>Western Province</h2>
       </div>
-      <div className="card-container">
-        <div className="card">
+      <div className="mp-card-container">
+        <div className="marketplace-card">
           <img className='cardimage' src={image1} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image2} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image3} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image4} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>
         </div>
-        <div className="card">
+        <div className="marketplace-card">
           <img className='cardimage' src={image5} alt="alternatetext"></img>
-          <div className="card-info">
+          <div className="mp-card-info">
             <p> fresh and vegetables</p>
             <p> price</p>
           </div>

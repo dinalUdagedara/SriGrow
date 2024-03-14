@@ -9,8 +9,9 @@ import SignUp from './Authentication/signupPage';
 import AddNewPlant from './Components/AddNewPlant';
 import CropGuidance from './CropGuide/cropGuidance';
 import About from './AboutUs/About';
-import CardComponent from './RecentNews/CardComponent';
-import MarketPlace from './MarketPlace/MarketPlace';
+// import CardComponent from './RecentNews/RecentNews.js';
+import MarketPlace from './MarketPlace/MarketPlace.js';
+import Recentnews from './RecentNews/RecentNews.js';
 
 
 function App() {
@@ -28,8 +29,11 @@ function App() {
         <Route path="/AddNewPlant" element={<AddNewPlant />} />
         <Route path="/cropguidance" element={<CropGuidance/>} />
         <Route path="/about-us" element={<About/>} />
-        <Route path="/recentnews" element={<CardComponent/>} />
+        
+        <Route path="/recentnews" element={<Recentnews/>} />
         <Route path="/marketplace" element={<MarketPlace/>} />
+        
+        
       </Routes>
     </Router>
   );

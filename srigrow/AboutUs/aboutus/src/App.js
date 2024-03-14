@@ -53,7 +53,7 @@ const About = () => {
 
     return (
         <div>
-            <h2>About Us</h2>
+            <h2 className='about-heading'>About Us</h2>
             <div className='transition-details'>
                 <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrI3IAJQYJYJdN_PGzTo1qyn6kl8ZaF3a0LDkTsnu5RhYi5z6qXV_Jl64pm2hryrQ3jwE&usqp=CAU' alt='group-process-image' />
                 <p>Agriculture in Sri Lanka is vital, supporting a significant portion of the population and directly impacting the nation's economy. However, the sector faces multifaceted challenges, including erratic weather, soil conditions, and pests, leading to reduced crop yields and financial instability. Trained agricultural officers play a crucial role in assisting farmers, yet they lack real-time data and digital resources, hindering their effectiveness. Our project aims to address these challenges by developing a mobile application tailored for these officers. This app will provide them with the tools needed to deliver timely, localized agricultural advice, ultimately improving the livelihoods of Sri Lankan farmers.</p>
@@ -62,7 +62,7 @@ const About = () => {
                 <div className='grid grid-rows-2'>
                     <div className='p-5 grid grid-cols-3'>
                         {people.map(person => (
-                            <div key={person.id} className='card'>
+                            <div key={person.id} className='about-card'>
                                 <img className='rounded-xl' src={person.imageUrl} alt='image' />
                                 <div className='card-content'>
                                     <h5>{person.name}</h5>
@@ -79,9 +79,9 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <button className="dark-button" onClick={toggleTheme}>
+            {/* <button className="dark-button" onClick={toggleTheme}>
   <img src="https://cdn1.iconfinder.com/data/icons/tiny-iconz-line-vol-09/20/dark_mode_eclipse_solar-64.png" alt="icon" />
-</button>
+</button> */}
 
         </div>
     );
