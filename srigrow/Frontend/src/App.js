@@ -20,9 +20,9 @@ function App() {
       <Routes>
 
         <Route path="/" element={<MainPage />} />
-        <Route path="/guide" element={<Guide />} />
-        <Route path="/Crops" component={<Guide />} />
-        <Route path="/details" component={<Guide />} />
+        {/* <Route path="/guide" element={<Guide />} /> */}
+        <Route path="/guide/:cropType" element={<Guide />} />
+        {/* <Route path="/details" component={<Guide />} /> */}
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
 

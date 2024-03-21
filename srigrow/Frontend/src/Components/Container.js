@@ -24,6 +24,9 @@ import axios from 'axios'
 
 
 const Container = ({cropType}) => {
+
+
+    console.log("CropType Passed to Contanier",{cropType})
     //const [showContainer, setShowContainer]= useState(false);
     const [showGuide, setShowGuide] = useState(false);
     const [showDetails, setShowDetails] = useState(false)
@@ -373,9 +376,11 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                 />
                             
                             )}
+                            console.log({cropType})
                             
                             {/* <div className='detail-cont'> */}
                             {showDetails&& (
+                                
 
 
                                 <Grid container spacing={2} className="d flex detail-container">
