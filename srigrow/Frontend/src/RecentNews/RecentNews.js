@@ -22,42 +22,42 @@ const Recentnews = () => {
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button>Read More</button>
+            <button className="button">Read More</button>
           </div>
         </div>
         <div className="news-card" style={{ backgroundImage: `url(${image02})` }}>
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button>Read More</button>
+            <button className="button">Read More</button>
           </div>
         </div>
         <div className="news-card" style={{ backgroundImage: `url(${image03})` }}>
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button>Read More</button>
+            <button className="button">Read More</button>
           </div>
         </div>
         <div className="news-card" style={{ backgroundImage: `url(${image04})` }}>
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button>Read More</button>
+            <button className="button">Read More</button>
           </div>
         </div>
         <div className="news-card" style={{ backgroundImage: `url(${image05})` }}>
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button>Read More</button>
+            <button className="button">Read More</button>
           </div>
         </div>
         <div className="news-card" style={{ backgroundImage: `url(${image06})` }}>
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button>Read More</button>
+            <button className="button">Read More</button>
           </div>
         </div>
       </div>
