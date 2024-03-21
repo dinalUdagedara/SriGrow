@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './Containers/MainPage';
 import Guide from './Containers/Guide';
@@ -12,9 +12,15 @@ import About from './AboutUs/About';
 // import CardComponent from './RecentNews/RecentNews.js';
 import MarketPlace from './MarketPlace/MarketPlace.js';
 import Recentnews from './RecentNews/RecentNews.js';
+import WeatherPrediction from './WeatherPred/weatherPred.js';
 
 
 function App() {
+  const [path, setPath] = useState('weather');
+
+  const handlePathChange = newPath => {
+    setPath(newPath);
+  };
   return (
     <Router>
       <Routes>
@@ -29,7 +35,7 @@ function App() {
         <Route path="/AddNewPlant" element={<AddNewPlant />} />
         <Route path="/cropguidance" element={<CropGuidance/>} />
         <Route path="/about-us" element={<About/>} />
-        
+        <Route path="/weather" element={<WeatherPrediction/>}/>
         <Route path="/recentnews" element={<Recentnews/>} />
         <Route path="/marketplace" element={<MarketPlace/>} />
         

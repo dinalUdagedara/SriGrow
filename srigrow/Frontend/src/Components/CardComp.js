@@ -19,6 +19,7 @@ function CardComp() {
         <div className='mobile-cont'>
           <Grid container spacing={2} margin={2}>
             <Grid item xs={6} md={4}>
+              <Link to="/weather">
               <div className="card">
                 <div className="card-content">
                   <div className="card-icon">
@@ -30,6 +31,7 @@ function CardComp() {
                   </div>
                 </div>
               </div>
+              </Link>
             </Grid>
             <Grid item xs={6} md={4}>
               <div className="card">

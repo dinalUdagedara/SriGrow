@@ -65,6 +65,9 @@ const Container = ({cropType}) => {
 
 
     const [city, setCity] = useState('');
+    useEffect(() => {
+        setShowGuide(true);
+    }, []);
 
     const toggleGuide = () => {
         setShowGuide(true);
@@ -385,18 +388,18 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                     </Grid>
                                     <Grid item xs={4}>
                                         <div >
-                                            <input type="date" onChange={(e) => setDate(e.target.value)} />
+                                            <input class="input"type="date" onChange={(e) => setDate(e.target.value)} />
                                         </div>
 
                                     </Grid>
 
                                     <Grid item xs={3}>
                                         <div className="date">
-                                            <input type="date" onChange={(e) => setEndDate(e.target.value)} />
+                                            <input class="input" type="date" onChange={(e) => setEndDate(e.target.value)} />
                                         </div>
                                     </Grid>
                                     <div className="process-button">
-                                        <button onClick={handleSubmit}>Process</button>
+                                        <button className="button" onClick={handleSubmit}>Process</button>
                                     </div>
                                 </Grid>
 
@@ -411,13 +414,16 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                 />
                             
                             )}
+                            
+
                             console.log({cropType})
+                            </div>
                             
                             {/* <div className='detail-cont'> */}
                             {showDetails&& (
                                 
 
-
+                                <div className='detail'>
                                 <Grid container spacing={2} className="d flex detail-container">
                                     <div className="left-container">
                                         <h3>Crop details</h3>
@@ -706,11 +712,10 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                     </div>
 
                                 </Grid>
-                             
+                             </div>
                             )}
 
-                        </div>
-
+                        
                     </div>
                 </div>
 
