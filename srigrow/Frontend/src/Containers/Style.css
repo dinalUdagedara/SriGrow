@@ -341,7 +341,7 @@ li {
 .disc {
   padding-top: 10px;
   font-family: Montserrat;
-
+  width: 118%;
 }
 
 
@@ -417,42 +417,12 @@ li {
   overflow: hidden;
   display: flex;
 }
-
-.slider-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  outline: none;
-}
-
-.image-container {
-  position: absolute;
+.carousel-image{
   width: 100%;
-  overflow: hidden;
+  height: auto; 
+  border-radius: 10px;
+  
 }
-
-.image-container img {
-  width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
-}
-
-
-
-.slider-button:first-child {
-  left: 2px;
-}
-
-.slider-button:last-child {
-
-  right: 2px;
-}
-
 
 
 .guide-container {

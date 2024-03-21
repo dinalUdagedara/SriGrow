@@ -74,17 +74,19 @@ function CardComp() {
               </Link>
             </Grid>
             <Grid item xs={6} md={4}>
+              <Link to="/recentnews">
               <div className="card">
                 <div className="card-content">
                   <div className="card-icon">
                     <GiPlantRoots size={60} />
                   </div>
                   <div className='card-text'>
-                    <h3 className='heading'><span style={{ color: 'black' }}>Pest </span> Alerts</h3>
+                    <h3 className='heading'><span style={{ color: 'black' }}>Recent </span>News & <span style={{ color: 'black' }}>Pest </span> Alerts</h3>
                     <p className='disc'>Timely notifications via app on prevalent pests, aiding officers in identifying, managing, and advising farmers on pest control measures for crop protection.</p>
                   </div>
                 </div>
               </div>
+              </Link>
             </Grid>
             <Grid item xs={6} md={4}>
               <div className="card">

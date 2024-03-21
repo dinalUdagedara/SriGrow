@@ -1,53 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Slide } from '@mui/material';
-import image1 from '../Images/slider3.jpg';
-import image2 from '../Images/slider4.jpg';
-import image3 from '../Images/slider5.jpg';
-import image4 from '../Images/slider6.jpg';
+import React, {useState, useEffect} from 'react';
+import Slider from "react-slick";
+import slider3 from '../Images/slider3.jpg';
+import slider4 from '../Images/slider4.jpg';
+import slider5 from '../Images/slider5.jpg';
+import slider6 from '../Images/slider6.jpg';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import '../Containers/Style.css';
-const images = [
-  image2,
-  image1,
-  image3,
-  image4
-];
 
-const SliderComp = () => {
+
+
+
+const SliderComp = ({images}) => {
+  
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 2000); 
+
+    return () => clearInterval(intervalId);
+  }, [currentIndex, images]);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
-  useEffect(()=>{
-    const interval = setInterval(()=>{
-        nextSlide();
-    },4000);
-    return()=> clearInterval(interval);
-  },[currentIndex]);
-
+  
   return (
-    <div className="carousel">
-      <button className='slider-button' onClick={prevSlide}>&lt;</button>
-      <AnimatePresence initial={false} >
-     <motion.div
-     key={currentIndex}
-     exit={{opacity:0}}
-     initial={{opacity:0}}
-     animate={{opacity:1}}
-     className="image-container">
-        <img src={images[currentIndex]} alt={`Slide ${currentIndex}`}/>
 
-     </motion.div>
-     </AnimatePresence>
-     <button className='slider-button' onClick={nextSlide}>&gt;</button>
+    <div className='carousel'>
+        
+      <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="carousel-image" />
+     
     </div>
   );
-  };
-      
+};
+
 
 export default SliderComp;
