@@ -295,7 +295,7 @@ export default class AddNewPlant extends Component {
 
                 <div className="d-grid">
                 <Link to="/guide">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="button">
                   Add Plant
                   </button>
                   </Link>
