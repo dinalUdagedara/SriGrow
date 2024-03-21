@@ -33,7 +33,7 @@ const Container = ({cropType}) => {
     const [showCrops, setShowCrops] = useState(false);
     const [selectedProvince, setSelectedProvince] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
-    const [predictedAveragePrecipitation,setpredictedAveragePrecipitation] = useState ("")
+    const [predictedMaxPrecipitation,setpredictedMaxPrecipitation] = useState (0)
 
 
     const [date, setDate] = useState();
@@ -210,11 +210,11 @@ const Container = ({cropType}) => {
         })
         .then(response => {
             // const predictedAveragePrecipitation = response.data
-            setpredictedAveragePrecipitation(response.data)
-            const averagePrecipitation = response.data
+            setpredictedMaxPrecipitation(response.data)
+            const maxPrecipitation = response.data
             // Handle successful response (predictions)
-          console.log('Response Data:',averagePrecipitation);
-          console.log('Correct Predicted Precipitation',predictedAveragePrecipitation)
+        //   console.log('Response Data:',maxPrecipitation);
+          console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
             // Display predictions to the user
             // You can set predictions to state or display them directly
         })
@@ -237,7 +237,7 @@ const Container = ({cropType}) => {
         startDate: date,
         endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
         numberOfDays: differenceInDays,  // Save the calculated number of days
-        prediction : predictedAveragePrecipitation
+        prediction : predictedMaxPrecipitation
    
     });
       

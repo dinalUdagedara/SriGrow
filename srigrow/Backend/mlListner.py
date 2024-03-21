@@ -10,8 +10,8 @@ CORS(app)
 model_path = r"C:\Users\HP\Desktop\ML-Model\ML-model-SDGP.pkl"
 rf_regressor = joblib.load(model_path)
 
-# Define the function to predict average precipitation
-def predict_average_precipitation(city, start_date, end_date, model):
+# Define the function to predict maximum precipitation
+def predict_max_precipitation(city, start_date, end_date, model):
     # Preprocess user input
     start_date = pd.to_datetime(start_date)
     end_date = pd.to_datetime(end_date)
@@ -30,9 +30,10 @@ def predict_average_precipitation(city, start_date, end_date, model):
     # Make predictions for each date
     predictions = model.predict(prediction_features)
 
-    # Calculate average precipitation
-    average_precipitation = predictions.mean()
-    return average_precipitation
+    # Calculate maximum precipitation
+    max_precipitation = predictions.max()
+    return max_precipitation
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -41,15 +42,13 @@ def predict():
     start_date = data['start_date']
     end_date = data['end_date']
 
-    average_precipitation = predict_average_precipitation(city, start_date, end_date, rf_regressor)
-     # Log the data being sent in the response
+    max_precipitation = predict_max_precipitation(city, start_date, end_date, rf_regressor)
+    
     # Prepare the response data
-    response_data = {'average_precipitation': average_precipitation}
+    response_data = {'max_precipitation': max_precipitation}
     
-    # Log the response data
-    app.logger.info(f"Response Data: {response_data}")
-    
-    return jsonify({'average_precipitation': average_precipitation})
+    return jsonify(response_data)
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
