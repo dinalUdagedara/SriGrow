@@ -24,12 +24,18 @@ import axios from 'axios'
 
 
 const Container = ({cropType}) => {
+
+
+    console.log("CropType Passed to Contanier",{cropType})
     //const [showContainer, setShowContainer]= useState(false);
     const [showGuide, setShowGuide] = useState(false);
     const [showDetails, setShowDetails] = useState(false)
     const [showCrops, setShowCrops] = useState(false);
     const [selectedProvince, setSelectedProvince] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
+    const [predictedMaxPrecipitation,setpredictedMaxPrecipitation] = useState (0)
+
+
     const [date, setDate] = useState();
     const [endDate,setEndDate]=useState();
     const [growingTimeValue, setGrowingTimeValue] = useState('');
@@ -193,6 +199,31 @@ const Container = ({cropType}) => {
         setShowDetails(false);
 
 
+
+
+        //Model Calling and Getting Prediction
+        // Send data to Flask backend
+        axios.post('http://localhost:5001/predict', {
+            city: selectedDistrict, // Assuming you want to use province as city for now
+            start_date: date,
+            end_date: endDate
+        })
+        .then(response => {
+            // const predictedAveragePrecipitation = response.data
+            setpredictedMaxPrecipitation(response.data)
+            const maxPrecipitation = response.data
+            // Handle successful response (predictions)
+        //   console.log('Response Data:',maxPrecipitation);
+          console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
+            // Display predictions to the user
+            // You can set predictions to state or display them directly
+        })
+        .catch(error => {
+            // Handle error
+            console.error('Error:', error);
+        });
+
+
       // Calculate the number of days between start and end dates
     const startDate = new Date(date);
     const calculatedEndDate = new Date(endDate); // Changed from endDate to calculatedEndDate
@@ -205,20 +236,27 @@ const Container = ({cropType}) => {
         selectedDistrict: selectedDistrict,
         startDate: date,
         endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
-        numberOfDays: differenceInDays  // Save the calculated number of days
+        numberOfDays: differenceInDays,  // Save the calculated number of days
+        prediction : predictedMaxPrecipitation
+   
     });
       
 
         
         console.log("Form Data : ",formData)
         console.log("form submitted ")
+
+
+
+        
     }
 
     const [formData,setformData] = useState({
         selectedProvince: "",
         selectedDistrict: "",
         startDate: "",
-        endDate: ""
+        endDate: "",
+        prediction:""
     })
 
 
@@ -373,9 +411,11 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                 />
                             
                             )}
+                            console.log({cropType})
                             
                             {/* <div className='detail-cont'> */}
                             {showDetails&& (
+                                
 
 
                                 <Grid container spacing={2} className="d flex detail-container">

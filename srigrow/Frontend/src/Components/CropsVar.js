@@ -38,7 +38,7 @@ const CropsVar = ({formData,cropType}) => {
   const [searchTerm, setSearchTerm] = useState('');
 
 
-  console.log('Form Data Passed',formData)
+  console.log('Form Data Recieved',formData)
 
   //Rice Varieties API
   
@@ -129,32 +129,38 @@ const CropsVar = ({formData,cropType}) => {
 
     console.log('Search term:', searchTerm);
   }
+
+// Get the predicted amount of precipitation from formData
+const predictedPrecipitation = formData.prediction ? formData.prediction.max_precipitation : 0;
+
+console.log("Predicted rainsum:",predictedPrecipitation)
+
   const cardData = [
     // { title: 'Potato', description: 'Des', image: Potato },
     // { title: 'Finger Millet', description: 'Descr', image: FingerMillet },
-    ...(cropType === 'Rice' ? RiceVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays).map(variety => ({
+    ...(cropType === 'Rice' ? RiceVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays && variety.maxPrecipitation > predictedPrecipitation ).map(variety => ({
       title: variety.varietyName,
       description: variety.specialNotes,
       image: Rice // same image for all rice varieties
     })) : []),
-    ...(cropType === 'Onion' ? OnionVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays).map(variety => ({
+    ...(cropType === 'Onion' ? OnionVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays && variety.maxPrecipitation > predictedPrecipitation ).map(variety => ({
       title: variety.varietyName,
       description: variety.specialNotes,
       image: Onion // same image for all onion varieties
     })) : []),
-    ...(cropType === 'Maize' ? MaizeVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays).map(variety => ({
+    ...(cropType === 'Maize' ? MaizeVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays && variety.maxPrecipitation > predictedPrecipitation ).map(variety => ({
       title: variety.varietyName,
       description: variety.specialNotes,
       image: Corn // same image for all maize varieties
     })) : []),
-    ...(cropType === 'Chillie' ?  ChillieVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays).map(variety => ({
+    ...(cropType === 'Chillie' ?  ChillieVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays && variety.maxPrecipitation > predictedPrecipitation ).map(variety => ({
       title: variety.varietyName,
       description: variety.specialNotes,
       image: Chilli // same image for all chilli varieties
     })) : [])
   ];
   
- 
+
 
   return (
     <div className='crops'>

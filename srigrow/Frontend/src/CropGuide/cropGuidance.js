@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+// import React, { useState } from 'react'; 
 import '../CropGuide/cropGuidance.css';
 import Chilli from '../Images/Chilli_cg.jpg';
 import Onion from '../Images/big_onion_cg.jpg';
@@ -9,6 +10,23 @@ import NavbarComp from '../Components/NavbarComp';
 import Footer from '../Components/footer';
 import { Link } from 'react-router-dom';
 const CropGuidance=()=> {
+  const [cropType, setCropType] = useState(""); // State to hold the selected crop type
+
+
+
+  const handleCropTypeChange = (newCropType) => {
+    console.log("Old Crop Type:", cropType); // Log the old cropType
+    setCropType(() => {
+      console.log("New Crop Type:", newCropType); // Log the new cropType
+      return newCropType; // Update the state with the new cropType
+    });
+  };
+  
+
+  useEffect(() => {
+    console.log("Crop Type State:", cropType); // Log the updated cropType state
+  }, [cropType]); // Execute this effect whenever cropType changes
+
   return (
        
     <div className='guidance-title'>
@@ -22,7 +40,7 @@ const CropGuidance=()=> {
       
       <div className="cropguide-container">
         <div className="row">
-          <Link to="/guide">
+        <Link to={`/guide/${"Rice"}` }onClick={() => handleCropTypeChange("Rice")}>
           <div className="imageBox">
             <img src={Rice} alt="placeholder" />
             <div className="textBox">Rice Crop
@@ -32,7 +50,7 @@ const CropGuidance=()=> {
           </div>
           </Link>
 
-          <Link to="/guide">
+          <Link to={`/guide/${"Onion"}` }onClick={() => handleCropTypeChange("Onion")}>
           <div className="imageBox">
             <img src={Onion} alt="placeholder" />
             <div className="textBox">Big Onion Yield
@@ -40,7 +58,7 @@ const CropGuidance=()=> {
             </div>
           </div>
           </Link>
-          <Link to="/guide">
+          <Link to={`/guide/${"Maize"}` }onClick={() => handleCropTypeChange("Maize")}>
           <div className="imageBox">
             <img src={Maize} alt="placeholder" />
             <div className="textBox">Maize(Corn) Cultivation
@@ -51,7 +69,7 @@ const CropGuidance=()=> {
           
         </div>
         <div className="row">
-        <Link to="/guide">
+        <Link to={`/guide/${"Maize"}` }onClick={() => handleCropTypeChange("Maize")}>
           <div className="imageBox">
             <img src={FingerMillet} alt="placeholder" />
             <div className="textBox">Finger Millet Cultivation
@@ -59,7 +77,7 @@ const CropGuidance=()=> {
             </div>
           </div>
           </Link>
-          <Link to="/guide">
+          <Link to={`/guide/${"Chillie"}` }onClick={() => handleCropTypeChange("Chillie")}>
           <div className="imageBox">
             <img src={Chilli} alt="placeholder" />
             <div className="textBox">Chilli Cultivation

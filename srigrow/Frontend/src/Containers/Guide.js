@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 
 
 const Guide=()=> {
+  // const  cropType  = "Rice";
   const { cropType } = useParams(); // Define the cropType here or get it dynamically
   return (
 
