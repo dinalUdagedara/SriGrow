@@ -33,6 +33,9 @@ const Container = ({cropType}) => {
     const [showCrops, setShowCrops] = useState(false);
     const [selectedProvince, setSelectedProvince] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
+    const [predictedAveragePrecipitation,setpredictedAveragePrecipitation] = useState ("")
+
+
     const [date, setDate] = useState();
     const [endDate,setEndDate]=useState();
     const [growingTimeValue, setGrowingTimeValue] = useState('');
@@ -196,6 +199,31 @@ const Container = ({cropType}) => {
         setShowDetails(false);
 
 
+
+
+        //Model Calling and Getting Prediction
+        // Send data to Flask backend
+        axios.post('http://localhost:5001/predict', {
+            city: selectedDistrict, // Assuming you want to use province as city for now
+            start_date: date,
+            end_date: endDate
+        })
+        .then(response => {
+            // const predictedAveragePrecipitation = response.data
+            setpredictedAveragePrecipitation(response.data)
+            const averagePrecipitation = response.data
+            // Handle successful response (predictions)
+          console.log('Response Data:',averagePrecipitation);
+          console.log('Correct Predicted Precipitation',predictedAveragePrecipitation)
+            // Display predictions to the user
+            // You can set predictions to state or display them directly
+        })
+        .catch(error => {
+            // Handle error
+            console.error('Error:', error);
+        });
+
+
       // Calculate the number of days between start and end dates
     const startDate = new Date(date);
     const calculatedEndDate = new Date(endDate); // Changed from endDate to calculatedEndDate
@@ -208,20 +236,27 @@ const Container = ({cropType}) => {
         selectedDistrict: selectedDistrict,
         startDate: date,
         endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
-        numberOfDays: differenceInDays  // Save the calculated number of days
+        numberOfDays: differenceInDays,  // Save the calculated number of days
+        prediction : predictedAveragePrecipitation
+   
     });
       
 
         
         console.log("Form Data : ",formData)
         console.log("form submitted ")
+
+
+
+        
     }
 
     const [formData,setformData] = useState({
         selectedProvince: "",
         selectedDistrict: "",
         startDate: "",
-        endDate: ""
+        endDate: "",
+        prediction:""
     })
 
 
