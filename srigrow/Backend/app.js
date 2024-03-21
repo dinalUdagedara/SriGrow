@@ -13,7 +13,10 @@ const JWT_SECRET = "fdghgffghdtrh561324(){}sgfgrthter"
 const RiceModel = require('./models/RiceVarieties')
 const OnionModel = require('./models/OnionVarieties')
 const MaizeModel = require('./models/MaizeVarieties')
-const ChillieModel = require('./models/ChillieVarieties')
+const ChillieModel = require('./models/ChillieVarieties');
+const NewsModel = require("./Components/news");
+const CropPriceModel = require("./Components/marketInfo");
+
 
 
 const mongoUrl = "mongodb://localhost:27017/sdgp_se_35_crop_info";
@@ -56,6 +59,32 @@ app.get('/getChillieVarieties',(req,res)=>{
   .then(varieties=>res.json(varieties))
   .catch(err=>res.json("Error is in /getChillieVarieties",err))
 })
+
+
+
+
+
+//Fetch news Data
+
+app.get('/getNews',(req,res)=>{
+  NewsModel.find()
+  .then(news=>res.json(news))
+  .catch(err=>res.json("Error is in /getNews",err))
+})
+
+
+
+// Fetch Crop Price Data
+app.get('/getMarketItems', (req, res) => {
+  CropPriceModel.find()
+      .then(info => res.json(info))
+      .catch(err => res.status(500).json({ error: "Error fetching market items", details: err }));
+});
+
+
+
+
+
 
 
 

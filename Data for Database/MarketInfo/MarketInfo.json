@@ -1,0 +1,249 @@
+[
+    {
+        "location": "Anuradhapura",
+        "crop_details": [
+            {
+                "crop_name": "Paddy_(Short_Grain)",
+                "previous_week_price": "92.00",
+                "last_week_price": "92.40",
+                "this_week_price": "94.00",
+                "image_type":"image1"
+            },
+            {
+                "crop_name": "Paddy_(Long_Grain)",
+                "previous_week_price": "91.20",
+                "last_week_price": "91.60",
+                "this_week_price": "92.40",
+                "image_type":"image1"
+            },
+            {
+                "crop_name": "Green Chillies",
+                "previous_week_price": "252.00",
+                "last_week_price": "208.40",
+                "this_week_price": "182.00",
+                "image_type":"image2"
+            },
+            {
+                "crop_name": "Pumpkin",
+                "previous_week_price": "84.00",
+                "last_week_price": "84.40",
+                "this_week_price": "78.00",
+                "image_type":"image3"
+            }
+        ]
+    },
+    {
+        "location": "Polonnaruwa",
+        "crop_details": [
+            {
+                "crop_name": "Paddy_(Short_Grain)",
+                "previous_week_price": "98.58",
+                "last_week_price": "102.42",
+                "this_week_price": "103.33"
+            },
+            {
+                "crop_name": "Paddy_(Long_Grain)",
+                "previous_week_price": "102.33",
+                "last_week_price": "99.50",
+                "this_week_price": "100.50"
+            }
+        ]
+    },
+    {
+        "location": "Kurunagala",
+        "crop_details": [
+            {
+                "crop_name": "Paddy_(Short_Grain)",
+                "previous_week_price": "93.75",
+                "last_week_price": "94.50",
+                "this_week_price": "99.33"
+            },
+            {
+                "crop_name": "Paddy_(Long_Grain)",
+                "previous_week_price": "91.00",
+                "last_week_price": "94.50",
+                "this_week_price": "99.33"
+            }
+        ]
+    },
+    {
+        "location": "Ampara",
+        "crop_details": [
+            {
+                "crop_name": "Paddy_(Short_Grain)",
+                "previous_week_price": "100.00",
+                "last_week_price": "100.00",
+                "this_week_price": "100.00"
+            },
+            {
+                "crop_name": "Paddy_(Long_Grain)",
+                "previous_week_price": "90.50",
+                "last_week_price": "88.75",
+                "this_week_price": "89.33"
+            }
+        ]
+    },
+    {
+        "location": "Dehiattakandiya",
+        "crop_details": [
+            {
+                "crop_name": "Paddy_(Short_Grain)",
+                "previous_week_price": "97.67",
+                "last_week_price": "98.00",
+                "this_week_price": "98.17"
+            },
+            {
+                "crop_name": "Paddy_(Long_Grain)",
+                "previous_week_price": "94.67",
+                "last_week_price": "96.67",
+                "this_week_price": "96.67"
+            }
+        ]
+    },
+    {
+        "location": "Kalawewa",
+        "crop_details": [
+            {
+                "crop_name": "Paddy_(Short_Grain)",
+                "previous_week_price": "92.40",
+                "last_week_price": "92.60",
+                "this_week_price": "94.80"
+            },
+            {
+                "crop_name": "Paddy_(Long_Grain)",
+                "previous_week_price": "90.00",
+                "last_week_price": "91.00",
+                "this_week_price": "93.20"
+            }
+        ]
+    },
+    {
+        "location": "Hanguranketha",
+        "crop_details": [
+            {
+                "crop_name": "Carrot",
+                "previous_week_price": "98.00",
+                "last_week_price": "89.00",
+                "this_week_price": "77.00"
+            },
+            {
+                "crop_name": "Cabbage",
+                "previous_week_price": "31.00",
+                "last_week_price": "26.00",
+                "this_week_price": "28.00"
+            }
+        ]
+    },
+    {
+        "location": "Welimada",
+        "crop_details": [
+            {
+                "crop_name": "Carrot",
+                "previous_week_price": "78.00",
+                "last_week_price": "80.00",
+                "this_week_price": "50.00"
+            },
+            {
+                "crop_name": "Cabbage",
+                "previous_week_price": "39.00",
+                "last_week_price": "23.00",
+                "this_week_price": "12.20"
+            }
+        ]
+    },
+    {
+        "location": "Nuwara_Eliya",
+        "crop_details": [
+            {
+                "crop_name": "Carrot",
+                "previous_week_price": "129.00",
+                "last_week_price": "119.00",
+                "this_week_price": "69.00"
+            },
+            {
+                "crop_name": "Cabbage",
+                "previous_week_price": "63.00",
+                "last_week_price": "34.00",
+                "this_week_price": "18.80"
+            }
+        ]
+    },
+    {
+        "location": "Dambulla",
+        "crop_details": [
+            {
+                "crop_name": "Green_Chillies",
+                "previous_week_price": "316.00",
+                "last_week_price": "220.00",
+                "this_week_price": "212.00"
+            },
+            {
+                "crop_name": "Pumpkin",
+                "previous_week_price": "104.00",
+                "last_week_price": "64.00",
+                "this_week_price": "54.60"
+            }
+        ]
+    },
+    {
+        "location": "Puttalam",
+        "crop_details": [
+            {
+                "crop_name": "Green_Chillies",
+                "previous_week_price": "243.33",
+                "last_week_price": "242.00",
+                "this_week_price": "198.00"
+            }
+        ]
+    },
+    {
+        "location": "Embilipitiya",
+        "crop_details": [
+            {
+                "crop_name": "Green_Chillies",
+                "previous_week_price": "388.00",
+                "last_week_price": "388.00",
+                "this_week_price": "304.00"
+            },
+            {
+                "crop_name": "Pumpkin",
+                "previous_week_price": "148.00",
+                "last_week_price": "98.00",
+                "this_week_price": "98.00"
+            }
+        ]
+    },
+    {
+        "location": "Hambantota",
+        "crop_details": [
+            {
+                "crop_name": "Pumpkin",
+                "previous_week_price": "114.00",
+                "last_week_price": "116.00",
+                "this_week_price": "108.00"
+            }
+        ]
+    },
+    {
+        "location": "Matara",
+        "crop_details": [
+            {
+                "crop_name": "Pumpkin",
+                "previous_week_price": "76.25",
+                "last_week_price": "60.00",
+                "this_week_price": "55.00"
+            }
+        ]
+    },
+    {
+        "location": "Badulla",
+        "crop_details": [
+            {
+                "crop_name": "Cabbage",
+                "previous_week_price": "48.00",
+                "last_week_price": "37.00",
+                "this_week_price": "304.00"
+            }
+        ]
+    }
+]
