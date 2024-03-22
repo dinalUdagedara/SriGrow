@@ -23,7 +23,7 @@ export default class AddNewPlant extends Component {
   }
   
   // componentDidMount() {
-  //   fetch("http://localhost:5000/userData", {
+  //   fetch("http://localhost:5001/userData", {
   //     method: "POST",
   //     crossDomain: true,
   //     headers: {
@@ -59,7 +59,7 @@ export default class AddNewPlant extends Component {
 
     // You can perform form validation here if needed
 
-    fetch("http://localhost:5000/addPlant", {
+    fetch("http://localhost:5001/addPlant", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -84,7 +84,11 @@ export default class AddNewPlant extends Component {
       .then((data) => {
         console.log(data, "plantAdded");
         // Handle success or error response accordingly
-      });
+      })
+      .catch((error) => {
+        console.error('There was a problem with the fetch operation:', error);
+      ;
+      })
   }
   handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
@@ -294,11 +298,11 @@ export default class AddNewPlant extends Component {
 
 
                 <div className="d-grid">
-                <Link to="/guide">
+                
                   <button type="submit" className="button">
                   Add Plant
                   </button>
-                  </Link>
+                 
                   
                 </div>
 

@@ -4,13 +4,24 @@ import { Link } from 'react-router-dom';
 import '../Containers/Style.css'
 import AddNewPlant from './AddNewPlant';
 import AddtoMArket from './AddtoMarket'
+import AddNews from './AddNews';
+import AdminRightPanel from './AdminRightPanel'
 
 export default function AdminPanel() {
 
-
+    const [showAdminPanel,setShowAdminPanel] = useState(true)
+    const toggleAdmin = () =>{
+        setAddPlant(false);
+        setshowAddtoMarket(false)
+        setShowAddNews(false)
+        setShowAdminPanel(true)
+    }
     const [showAddPlant,setAddPlant] = useState(false)
     const toggleAddPlant = () =>{
         setAddPlant(true);
+        setshowAddtoMarket(false)
+        setShowAdminPanel(false)
+        setShowAddNews(false)
     }
 
 
@@ -18,11 +29,22 @@ export default function AdminPanel() {
     const toggleAddtoMArket = () =>{
         setshowAddtoMarket(true);
         setAddPlant(false)
+        setShowAdminPanel(false)
+        setShowAddNews(false)
+    }
+
+
+    const [showAddNews,setShowAddNews] = useState(false)
+    const toggleAddNews = () =>{
+        setshowAddtoMarket(false);
+        setAddPlant(false);
+        setShowAddNews(true)
+        setShowAdminPanel(false)
     }
 
     
   return (
-    <div className="admin-panel-container">
+<div className="admin-panel-container">
     
       
         {/* <div className='MainBox'>
@@ -51,7 +73,7 @@ export default function AdminPanel() {
  */}
 
 
-<div class="container">
+        <div class="container">
       
       
      
@@ -84,17 +106,19 @@ export default function AdminPanel() {
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
                         <Link to = '#' className='' onClick={toggleAddtoMArket}>
-                        <span class="title">Update Recent News</span>
+                        <span class="title">Update Market Store</span>
                         </Link>
                     </a>
                 </li>
 
-                <li>
+                <li className={showAddNews ? 'admin-box active':"admin-box"}>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="chatbubble-outline"></ion-icon>
+                            <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Update Market Place</span>
+                        <Link to = '#' className='' onClick={toggleAddNews}>
+                        <span class="title">Update Recent News</span>
+                        </Link>
                     </a>
                 </li>
 
@@ -137,7 +161,10 @@ export default function AdminPanel() {
         </div>
 
        
-        <div class="RightContent">
+    <div class="RightContent">
+
+           
+
             
          {showAddPlant && (
             
@@ -149,6 +176,16 @@ export default function AdminPanel() {
           <AddtoMArket/>
          )
             
+         }
+         {showAddNews && (
+            <AddNews/>
+         )
+
+         }
+         {
+            showAdminPanel && (
+                <AddNewPlant/>
+            )
          }
         
             {/* <div class="topbar">
@@ -375,10 +412,7 @@ export default function AdminPanel() {
             </div> */}
         </div>
     </div>
-
-
-
-        </div>
+</div>
 
 
   );

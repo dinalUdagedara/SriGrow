@@ -16,7 +16,7 @@ const Recentnews = () => {
 
   const [NewsItems, setNewsItems] = useState([]);
   useEffect(()=>{
-    axios.get('http://localhost:5000/getNews')
+    axios.get('http://localhost:5001/getNews')
     .then(response => {
       console.log(response.data)
       setNewsItems(response.data);

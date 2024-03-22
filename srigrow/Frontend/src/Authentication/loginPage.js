@@ -17,7 +17,7 @@ export default class Login extends Component {
     const{email,password} = this.state;
     console.log(email,password);
 
-    fetch("http://localhost:5000/login-user",{
+    fetch("http://localhost:5001/login-user",{
       method:"POST",
       crossDomain:true,
       headers:{
@@ -36,7 +36,7 @@ export default class Login extends Component {
       if(data.status == "ok"){
         alert ("login Successfull");
         window.localStorage.setItem("token",data.data);
-        window.location.href="./AddNewPlant";
+        window.location.href="./AdminPanel";
       }else if(data.error == "Invalid Password"){
         alert ("Email or the Password you Entered is Incorrect Please Try Again ");
       }else if(data.error == "User not Found"){
