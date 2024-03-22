@@ -14,6 +14,7 @@ import MarketPlace from './MarketPlace/MarketPlace.js';
 import Recentnews from './RecentNews/RecentNews.js';
 import WeatherPrediction from './WeatherPred/weatherPred.js';
 import AdminPanel from './Components/AdminPanel.js'
+import AddtoMarket from './Components/AddtoMarket.js'
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path="/recentnews" element={<Recentnews/>} />
         <Route path="/marketplace" element={<MarketPlace/>} />
         <Route path= "/AdminPanel" element={<AdminPanel/>}></Route>
+        <Route path= '/AddtoMarket' element={<AddtoMarket/>}></Route>
         
         
       </Routes>

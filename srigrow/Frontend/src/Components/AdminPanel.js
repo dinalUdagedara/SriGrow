@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // import '../styles/AdminPanel.css'; // Import your CSS file
 import '../Containers/Style.css'
 import AddNewPlant from './AddNewPlant';
+import AddtoMArket from './AddtoMarket'
 
 export default function AdminPanel() {
 
@@ -12,7 +13,14 @@ export default function AdminPanel() {
         setAddPlant(true);
     }
 
-    var  isClicked = false
+
+    const [showAddtoMarket,setshowAddtoMarket] = useState(false)
+    const toggleAddtoMArket = () =>{
+        setshowAddtoMarket(true);
+        setAddPlant(false)
+    }
+
+    
   return (
     <div className="admin-panel-container">
     
@@ -70,12 +78,14 @@ export default function AdminPanel() {
                     </a>
                 </li>
 
-                <li>
+                <li className={showAddtoMarket ? 'admin-box active':"admin-box"}>
                     <a href="#">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
+                        <Link to = '#' className='' onClick={toggleAddtoMArket}>
                         <span class="title">Update Recent News</span>
+                        </Link>
                     </a>
                 </li>
 
@@ -127,13 +137,17 @@ export default function AdminPanel() {
         </div>
 
        
-        <div class="main">
+        <div class="RightContent">
             
          {showAddPlant && (
-            <h1>Add Plant</h1>
+            
+            <AddNewPlant/>
          )
          }
-         {
+         {showAddtoMarket && (
+           
+          <AddtoMArket/>
+         )
             
          }
         
