@@ -503,7 +503,7 @@ li {
   margin-left: 50px;
   margin-bottom: 20px;
   justify-content: space-around;
-
+ overflow-y: auto;
 
 
 }
@@ -676,7 +676,7 @@ button:hover {
 
 /* crops varity cards */
 .variety-container {
-  
+  /* overflow-y: auto; */
   padding-right: 25px;
   padding-left: 32px;
   
@@ -818,7 +818,7 @@ button:hover {
   margin-top: -21px;
   overflow-y: auto;
   overflow-x: hidden;
-
+  position: fixed;
 }
 
 .left-container h3 {

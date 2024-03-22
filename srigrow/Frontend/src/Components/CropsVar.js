@@ -169,6 +169,7 @@ console.log("Predicted rainsum:",predictedPrecipitation)
           <h1>crop</h1>
           </div> 
         </div>
+        <br></br>
 
      
       <div className="crops-cards">
