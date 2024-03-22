@@ -18,7 +18,7 @@ export default class SignUp extends Component {
     e.preventDefault();
     const{fname,lname,email,regID,password} = this.state;
     console.log(fname,lname,email,regID,password);
-    fetch("http://localhost:5000/register",{
+    fetch("http://localhost:5001/register",{
       method:"POST",
       crossDomain:true,
       headers:{

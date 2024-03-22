@@ -37,7 +37,7 @@ const NavbarComp=()=> {
           <Link to="/about-us" className="navbar-link">About Us</Link>
           </div>
         <div className="navbar-right">
-          <Link to="/AdminPanel" className="login-button">Sign-in</Link>
+          <Link to="/sign-in" className="login-button">Sign-in</Link>
           <div id="icon" className="mobile-menu-icon" onClick={handleMenuClick}>
             <FaBars />
           </div>

@@ -23,7 +23,7 @@ const MarketPlace = () => {
   const [marketItems, setMarketItems] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/getMarketItems')
+    axios.get('http://localhost:5001/getMarketItems')
     .then(response => {
       console.log("Market Info",response.data)
       setMarketItems(response.data);
@@ -31,84 +31,6 @@ const MarketPlace = () => {
   })
   .catch(err=>console.log('Error fetching MarketInfo: ',err))
  }, []);
-
-//  console.log("Market Items:", marketItems);
-  // const fetchMarketItems = async () => {
-  //   try {
-  //     const res = await axios.get('/getMarketItems'); // Adjust the endpoint according to your backend route
-  //     setMarketItems(res.data);
-  //   } catch (error) {
-  //     console.error('Error fetching market items:', error);
-  //   }
-  // };
-
-
-
-  const marketItemsColombo = [
-    { image: require('../Images/sourthern1.jpg'), productName: 'Fresh Vegetables', price: '$10' },
-    { image: require('../Images/sourthern2.jpg'), productName: 'Organic Fruits', price: '$15' },
-    { image: require('../Images/sourthern3.jpg'), productName: 'Farm Eggs', price: '$5' },
-    { image: require('../Images/sourthern4.jpg'), productName: 'Local Honey', price: '$8' },
-    { image: require('../Images/sourthern2.jpg'), productName: 'Homemade Jam', price: '$7' }
-    // Add more items as needed
-  ];
-
-
-  const marketItemsEastern = [
-    { image: require('../Images/sourthern1.jpg'), productName: 'Rice', price: '$8' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Coconuts', price: '$3' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Bananas', price: '$2' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Pineapples', price: '$4' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Mangoes', price: '$5' },
-    // Add more items as needed
-  ];
-  
-  const marketItemsNorthCentral = [
-    { image: require('../Images/sourthern1.jpg'), productName: 'Potatoes', price: '$6' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Onions', price: '$7' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Carrots', price: '$4' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Tomatoes', price: '$5' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Bell Peppers', price: '$3' },
-    // Add more items as needed
-  ];
-  
-  const marketItemsNorthWestern = [
-    { image: require('../Images/sourthern1.jpg'), productName: 'Garlic', price: '$9' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Green Beans', price: '$3' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Lettuce', price: '$2' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Cucumbers', price: '$4' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Radishes', price: '$3' },
-    // Add more items as needed
-  ];
-  
-  const marketItemsSabaragamuwa = [
-    { image: require('../Images/sourthern1.jpg'), productName: 'Pumpkins', price: '$4' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Spinach', price: '$3' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Kale', price: '$2' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Oranges', price: '$5' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Apples', price: '$6' },
-    // Add more items as needed
-  ];
-  
-  const marketItemsUva = [
-    { image: require('../Images/sourthern1.jpg'), productName: 'Papayas', price: '$3' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Passion Fruit', price: '$4' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Grapes', price: '$8' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Watermelons', price: '$10' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Cantaloupes', price: '$6' },
-    // Add more items as needed
-  ];
-  
-  const marketItemsCentral = [
-    { image: require('../Images/sourthern1.jpg'), productName: 'Strawberries', price: '$7' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Blueberries', price: '$9' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Blackberries', price: '$8' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Raspberries', price: '$10' },
-    { image: require('../Images/sourthern1.jpg'), productName: 'Cranberries', price: '$11' },
-    // Add more items as needed
-  ];
-
-
 
  
   return (
@@ -131,8 +53,6 @@ const MarketPlace = () => {
                 previousPrice={crop.previous_week_price}
                 lastWeekPrice={crop.last_week_price}
                 thisWeeksPrice={crop.this_week_price}
-                // Assuming you have the image path stored in the item object as well
-                // You may need to adjust this according to your data structure
                 imageSrc={crop.image_type} 
               />
             ))}
@@ -142,7 +62,7 @@ const MarketPlace = () => {
       <Footer />
     </div>
   );
-            }
+}
 
 
   
