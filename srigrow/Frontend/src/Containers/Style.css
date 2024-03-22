@@ -26,6 +26,7 @@
 }
 
 .navbar-container {
+
   display: flex;
   justify-content: space-between;
   padding-left: 20px;
@@ -991,7 +992,11 @@ button:hover {
 
 
 .admin-panel-container {
-
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  align-items: center; /* Vertical center */
+  height: 100vh; /* Set height to occupy full viewport height */
+  
 }
 
 header {
@@ -1060,6 +1065,9 @@ body {
 .container {
   position: relative;
   width: 100%;
+}
+.RightContent{
+  justify-content: right;
 }
 
 /* =============== Navigation ================ */

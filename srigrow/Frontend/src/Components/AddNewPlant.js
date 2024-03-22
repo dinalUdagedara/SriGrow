@@ -106,14 +106,18 @@ export default class AddNewPlant extends Component {
   render() {
     return (
       <div className="auth-wrapper">
+        
+
+
         <div className="auth-inner">
           <div>
             <div className="auth-inner-admin" style={{ height: '80vh', overflowY: 'auto' }}>
               <form onSubmit={this.handleSubmit}>
                 <h3>Add a Plant to System </h3>
 
-                <div className="mb-3">
-                  <label>Plant Type</label>
+               <div className="mb-3 select-wrapper inputs">
+                <label>1. Plant Type</label>
+                <div className="select-container">
                   <select
                     className="form-control"
                     onChange={e => this.setState({ plantType: e.target.value })}
@@ -125,10 +129,13 @@ export default class AddNewPlant extends Component {
                     <option value="Onion">Onion</option>
                     <option value="Chillie">Chillie</option>
                   </select>
+                  <i className="fas fa-chevron-down dropdown-icon"></i>
                 </div>
+              </div>
 
-                <div className="mb-3">
-                  <label>Variety name</label>
+
+                <div className="mb-3 inputs">
+                  <label>2. Variety name</label>
                   <input type="text" className="form-control" placeholder="Variety Name(Code)"
 
                     onChange={e => this.setState({ varietyCode: e.target.value })}
@@ -183,8 +190,8 @@ export default class AddNewPlant extends Component {
                     </div> */}
 
 
-                <div className="mb-3 checkBoxLocations">
-                  <label>Suitable Areas</label>
+                <div className="mb-3 checkBoxLocations inputs">
+                  <label>3. Suitable Areas</label>
                   <div className="locationCheckBox">
                     <div className="left-checkboxes">
                       {['Ampara', 'Anuradhapura', 'Badulla', 'Batticaloa', 'Colombo', 'Galle', 'Gampaha'].map(area => (
@@ -219,8 +226,8 @@ export default class AddNewPlant extends Component {
 
 
 
-                <div className="mb-3">
-                  <label>Maximum Harvest Time</label>
+                <div className="mb-3 inputs">
+                  <label>4. Maximum Harvest Time</label>
                   <input
                     type="text"
                     className="form-control"
@@ -230,8 +237,8 @@ export default class AddNewPlant extends Component {
 
                 </div>
 
-                <div className="mb-3">
-                  <label>Minimum Harvest Time</label>
+                <div className="mb-3 inputs">
+                  <label>5. Minimum Harvest Time</label>
                   <input
                     type="text"
                     className="form-control"
@@ -241,8 +248,8 @@ export default class AddNewPlant extends Component {
 
                 </div>
 
-                <div className="mb-3">
-                  <label>Minimum Rainfall Requirement</label>
+                <div className="mb-3 inputs">
+                  <label>6. Minimum Rainfall Requirement</label>
                   <input
                     type="text"
                     className="form-control"
@@ -253,8 +260,8 @@ export default class AddNewPlant extends Component {
                 </div>
 
 
-                <div className="mb-3">
-                  <label>Maximum Rainfall Limit</label>
+                <div className="mb-3 inputs">
+                  <label>7. Maximum Rainfall Limit</label>
                   <input
                     type="text"
                     className="form-control"
@@ -264,8 +271,8 @@ export default class AddNewPlant extends Component {
                 </div>
 
 
-                <div className="mb-3">
-                  <label>Climatic Factors</label>
+                <div className="mb-3 inputs">
+                  <label>8. Climatic Factors</label>
                   <input
                     type="text"
                     className="form-control"
@@ -274,8 +281,8 @@ export default class AddNewPlant extends Component {
                   />
                 </div>
 
-                <div className="mb-3">
-                  <label>Soil Conditions</label>
+                <div className="mb-3 inputs">
+                  <label>9. Soil Conditions</label>
                   <input
                     type="text"
                     className="form-control"
@@ -284,8 +291,8 @@ export default class AddNewPlant extends Component {
                   />
                 </div>
 
-                <div className="mb-3">
-                  <label>Special Notes</label>
+                <div className="mb-3 inputs">
+                  <label>10. Special Notes</label>
                   <input
                     type="text"
                     className="form-control"

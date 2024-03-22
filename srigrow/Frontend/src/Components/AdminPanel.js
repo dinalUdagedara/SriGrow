@@ -148,7 +148,7 @@ export default function AdminPanel() {
                         <span class="title">Password</span>
                     </a>
                 </li> */}
-{/* 
+ 
                 <li>
                     <a href="#">
                         <span class="icon">
@@ -156,7 +156,7 @@ export default function AdminPanel() {
                         </span>
                         <span class="title">Sign Out</span>
                     </a>
-                </li> */}
+                </li> 
             </ul>
         </div>
 

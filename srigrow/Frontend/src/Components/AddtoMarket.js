@@ -121,6 +121,7 @@ export default class AddMarketItem extends Component {
                   </div>
                 </div>
               ))}
+              <div className="buttons">
 
               <button type="button" className="button" onClick={this.addCrop}>
                 Add a another Crop
@@ -130,6 +131,7 @@ export default class AddMarketItem extends Component {
                 <button type="submit" className="button">
                   Add Market Items to Database
                 </button>
+              </div>
               </div>
             </form>
           </div>
