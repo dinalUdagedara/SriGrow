@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the saved model
-model_path = r"C:\Users\REBOOT\Desktop\SDGP Srigrow Repo\SDGP-SE-35\srigrow\Backend\ML-model-SDGP.pkl"
+model_path = r"C:\Users\HP\Desktop\ML-Model\ML-model-SDGP.pkl"
 rf_regressor = joblib.load(model_path)
 
 # Define the function to predict maximum precipitation

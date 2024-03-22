@@ -13,6 +13,7 @@ import About from './AboutUs/About';
 import MarketPlace from './MarketPlace/MarketPlace.js';
 import Recentnews from './RecentNews/RecentNews.js';
 import WeatherPrediction from './WeatherPred/weatherPred.js';
+import AdminPanel from './Components/AdminPanel.js'
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path="/weather" element={<WeatherPrediction/>}/>
         <Route path="/recentnews" element={<Recentnews/>} />
         <Route path="/marketplace" element={<MarketPlace/>} />
+        <Route path= "/AdminPanel" element={<AdminPanel/>}></Route>
         
         
       </Routes>
