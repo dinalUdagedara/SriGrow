@@ -26,7 +26,7 @@ function CardComp() {
                     <TiWeatherShower size={60} />
                   </div>
                   <div className='card-text'>
-                    <h3 className='heading'><span style={{ color: 'black' }}>Live Weather </span> Forecast</h3>
+                    <h3 className='heading'><span style={{ color: 'black' }}>Weather </span> prediction</h3>
                     <p className='disc'>Provides real-time weather forecasts and alerts for optimal farming decisions.</p>
                   </div>
                 </div>
@@ -41,7 +41,7 @@ function CardComp() {
                   </div>
                   <div className='card-text'>
                     <h3 className='heading'><span style={{ color: 'black' }}>Agri </span> Advisory</h3>
-                    <p className='disc'>Offers personalized and timely Guidance on Crop selection, pest management, and farming techniques.</p>
+                    <p className='disc'>Offers personalized and timely guidance on crop selection, pest management, and farming techniques.</p>
                   </div>
                 </div>
               </div>
