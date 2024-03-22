@@ -47,17 +47,19 @@ function CardComp() {
               </div>
             </Grid>
             <Grid item xs={6} md={4}>
+              <Link to="/marketplace">
               <div className="card">
                 <div className="card-content">
                   <div className="card-icon">
                     <GoGraph size={60} />
                   </div>
                   <div className='card-text'>
-                    <h3 className='heading'><span style={{ color: 'black' }}>Market </span> Price</h3>
+                    <h3 className='heading'><span style={{ color: 'black' }}>Market </span> Place</h3>
                     <p className='disc'>Displays current market prices and trends for various crops, enabling data-driven selling decisions.</p>
                   </div>
                 </div>
               </div>
+              </Link>
               <br></br>
             </Grid>
             <Grid item xs={6} md={4}>
