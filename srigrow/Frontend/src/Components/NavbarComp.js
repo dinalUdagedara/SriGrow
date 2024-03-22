@@ -6,6 +6,7 @@ import { FaBars } from "react-icons/fa";
 import '../Containers/Style.css';
 
 
+
 const NavbarComp=()=> {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -36,7 +37,7 @@ const NavbarComp=()=> {
           <Link to="/about-us" className="navbar-link">About Us</Link>
           </div>
         <div className="navbar-right">
-          <Link to="/sign-in" className="login-button">Sign-in</Link>
+          <Link to="/AdminPanel" className="login-button">Sign-in</Link>
           <div id="icon" className="mobile-menu-icon" onClick={handleMenuClick}>
             <FaBars />
           </div>
