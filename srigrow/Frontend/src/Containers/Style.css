@@ -1502,3 +1502,14 @@ body {
     left: initial;
   }
 }
+
+
+.footer-link {
+  color: #fefefe; /* Change link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make text bold */
+}
+
+.footer-link:hover {
+  color: #0056b3; /* Change link color on hover */
+}
