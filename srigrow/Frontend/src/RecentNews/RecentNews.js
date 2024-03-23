@@ -13,12 +13,18 @@ import axios from "axios";
 
 const Recentnews = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModallink, setisModallink] = useState(false);
   const [modalContent, setModalContent] = useState(""); // State to hold modal content
+  const [link,setLink] = useState('');
 
   const openModal = (content) => {
     setModalContent(content); // Set modal content
     setIsModalOpen(true);
   };
+  const modelLink = (link)=>{
+    setLink(link);
+    setisModallink(true);
+  }
 
   const [NewsItems, setNewsItems] = useState([]);
   useEffect(() => {
@@ -72,6 +78,7 @@ const Recentnews = () => {
               <button
                 className="button"
                 onClick={() => openModal(item.content)}
+                onClickCapture={()=>modelLink(item.link)}
               >
                 Read More
               </button>
@@ -82,7 +89,9 @@ const Recentnews = () => {
         <PopupWindow
           isOpen={isModalOpen}
           onClose={closeModal}
-          content={modalContent} // Pass modal content as prop
+          content={modalContent}
+          link = {link} 
+           // Pass modal content as prop
         />
       </div>
       <div>

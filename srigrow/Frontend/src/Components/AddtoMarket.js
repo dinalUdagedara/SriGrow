@@ -56,7 +56,7 @@ export default class AddMarketItem extends Component {
 
   render() {
     return (
-      <div className="auth-wrapper">
+      <div className="auth-wrapper  addNewPlantWrapper">
         <div className="auth-inner">
           <div className="auth-inner-admin" style={{ overflowY: 'auto' }}>
             <form onSubmit={this.handleSubmit}>

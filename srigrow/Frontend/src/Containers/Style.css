@@ -1183,7 +1183,12 @@ body {
   color:#81bba0 /* Change link color on hover */
 }
 
+.more-info-link {
+  color: blue; /* Set the link color */
+  text-decoration: underline; /* Add underline to indicate it's a link */
+  margin-right: 10px; /* Add some spacing between the link and the button */
+}
 
-.SuggestInfo{
-
+.more-info-link:hover {
+  color: darkblue; /* Change link color on hover */
 }

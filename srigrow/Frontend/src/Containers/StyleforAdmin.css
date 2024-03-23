@@ -1135,6 +1135,7 @@ body {
 }
 
 .navigation ul li a .title {
+  font-family: Montserrat;
   position: relative;
   display: block;
   padding: 0 10px;

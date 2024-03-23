@@ -91,9 +91,10 @@ export default function AdminPanel() {
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="admin-outline"></ion-icon>
+                        <ion-icon name="person"></ion-icon>
                         </span>
-                        <span class="title">Admin DashBoard</span>
+                        <span className="title" style={{ fontSize: '24px' }}>Admin DashBoard</span>
+
                     </a>
                 </li>
 
@@ -101,7 +102,7 @@ export default function AdminPanel() {
 
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
+                        <ion-icon name="add"></ion-icon>
                         </span>
                         <Link to = '#' className='' onClick={toggleAddPlant}>
                         <span class="title">Add a New Plant</span>
@@ -112,7 +113,7 @@ export default function AdminPanel() {
                 <li className={showAddtoMarket ? 'admin-box active':"admin-box"}>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
+                        <ion-icon name="basket"></ion-icon>
                         </span>
                         <Link to = '#' className='' onClick={toggleAddtoMArket}>
                         <span class="title">Update Market Store</span>
@@ -123,7 +124,7 @@ export default function AdminPanel() {
                 <li className={showAddNews ? 'admin-box active':"admin-box"}>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
+                        <ion-icon name="newspaper"></ion-icon>
                         </span>
                         <Link to = '#' className='' onClick={toggleAddNews}>
                         <span class="title">Update Recent News</span>

@@ -60,7 +60,7 @@ export default class AddNewPlant extends Component {
 
   render() {
     return (
-      <div className="auth-wrapper">
+      <div className="auth-wrapper   addNewPlantWrapper">
         <div className="auth-inner">
           <div>
             <div className="auth-inner-admin" style={{  overflowY: 'auto' }}>
