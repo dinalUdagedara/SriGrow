@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import { Link } from 'react-router-dom';
 // import '../styles/AdminPanel.css'; // Import your CSS file
-import '../Containers/Style.css'
+import '../Containers/StyleforAdmin.css'
 import AddNewPlant from './AddNewPlant';
 import AddtoMArket from './AddtoMarket'
 import AddNews from './AddNews';
@@ -163,7 +163,7 @@ export default function AdminPanel() {
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
-                        <Link to="/" className="title">Sign Ou </Link> 
+                        <Link to="/" className="title">Sign Out</Link> 
                 
                         
                     </a>

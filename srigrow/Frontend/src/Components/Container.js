@@ -33,8 +33,8 @@ const Container = ({cropType}) => {
     const [showCrops, setShowCrops] = useState(false);
     const [selectedProvince, setSelectedProvince] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
-    const [predictedMaxPrecipitation,setpredictedMaxPrecipitation] = useState (0)
-
+    const [predictedMaxPrecipitation,setpredictedMaxPrecipitation] = useState ()
+    var maxPrecipitation = 0
 
     const [date, setDate] = useState();
     const [endDate,setEndDate]=useState();
@@ -97,18 +97,18 @@ const Container = ({cropType}) => {
         
         const [RiceVarities, setRiceVarieties] = useState([]);
         useEffect(()=>{
-            axios.get('http://localhost:5000/getRiceVarieties')
+            axios.get('http://localhost:5001/getRiceVarieties')
             .then(response => {
             setRiceVarieties(response.data);
             })
             .catch(err=>console.log('Error fetching Rice varieties: ',err))
         },[])
 
-        //Onion Variety API
+        //Onion Variety 
 
         const [OnionVarities, setOnionVarieties] = useState([]);
         useEffect(()=>{
-            axios.get('http://localhost:5000/getOnionVarieties')
+            axios.get('http://localhost:5001/getOnionVarieties')
             .then(response => {
             setOnionVarieties(response.data);
             })
@@ -119,7 +119,7 @@ const Container = ({cropType}) => {
 
         const [MaizeVarities, setMaizeVarieties] = useState([]);
         useEffect(()=>{
-            axios.get('http://localhost:5000/getMaizeVarieties')
+            axios.get('http://localhost:5001/getMaizeVarieties')
             .then(response => {
             setMaizeVarieties(response.data);
             })
@@ -130,7 +130,7 @@ const Container = ({cropType}) => {
 
         const [ChillieVarities, setChillieVarieties] = useState([]);
         useEffect(()=>{
-            axios.get('http://localhost:5000/getChillieVarieties')
+            axios.get('http://localhost:5001/getChillieVarieties')
             .then(response => {
             setChillieVarieties(response.data);
         
@@ -196,63 +196,106 @@ const Container = ({cropType}) => {
         setSelectedDistrict(event.target.value);
     };
 
+
     const handleSubmit = () => {
         setShowGuide(false);
         setShowCrops(true);
         setShowDetails(false);
-
-
-
-
-        //Model Calling and Getting Prediction
+    
         // Send data to Flask backend
-        axios.post('http://localhost:5001/predict', {
-            city: selectedDistrict, // Assuming you want to use province as city for now
+        axios.post('http://localhost:5000/predict', {
+            city: selectedDistrict,
             start_date: date,
             end_date: endDate
         })
         .then(response => {
-            // const predictedAveragePrecipitation = response.data
-            setpredictedMaxPrecipitation(response.data)
-            const maxPrecipitation = response.data
-            // Handle successful response (predictions)
-        //   console.log('Response Data:',maxPrecipitation);
-          console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
-            // Display predictions to the user
-            // You can set predictions to state or display them directly
+            // Update predictedMaxPrecipitation state
+            setpredictedMaxPrecipitation(response.data);
+            // Calculate the number of days between start and end dates
+            const startDate = new Date(date);
+            const calculatedEndDate = new Date(endDate);
+            const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
+            const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    
+            // Update formData with the latest values including prediction
+            setformData({
+                selectedProvince: selectedProvince,
+                selectedDistrict: selectedDistrict,
+                startDate: date,
+                endDate: calculatedEndDate,
+                numberOfDays: differenceInDays,
+                prediction: response.data // Use the updated value from response
+            });
+    
+            // Display predictions to the user if needed
+            console.log('Correct Predicted Precipitation', response.data);
         })
         .catch(error => {
             // Handle error
             console.error('Error:', error);
         });
+    };
+    
 
 
-      // Calculate the number of days between start and end dates
-    const startDate = new Date(date);
-    const calculatedEndDate = new Date(endDate); // Changed from endDate to calculatedEndDate
-    const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
-    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    // const handleSubmit = () => {
+        
+    //     setShowGuide(false);
+    //     setShowCrops(true);
+    //     setShowDetails(false);
 
-        // Update formData with the latest values
-    setformData({
-        selectedProvince: selectedProvince,
-        selectedDistrict: selectedDistrict,
-        startDate: date,
-        endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
-        numberOfDays: differenceInDays,  // Save the calculated number of days
-        prediction : predictedMaxPrecipitation
+
+
+
+    //     //Model Calling and Getting Prediction
+    //     // Send data to Flask backend
+    //     axios.post('http://localhost:5000/predict', {
+    //         city: selectedDistrict, // Assuming you want to use province as city for now
+    //         start_date: date,
+    //         end_date: endDate
+    //     })
+    //     .then(response => {
+    //         // const predictedAveragePrecipitation = response.data
+    //         setpredictedMaxPrecipitation(response.data)
+    //          maxPrecipitation = response.data
+    //         // Handle successful response (predictions)
+    //       console.log('Response Data Precipitation:',maxPrecipitation);
+    //       console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
+    //         // Display predictions to the user
+    //         // You can set predictions to state or display them directly
+    //     })
+    //     .catch(error => {
+    //         // Handle error
+    //         console.error('Error:', error);
+    //     });
+
+
+    //   // Calculate the number of days between start and end dates
+    // const startDate = new Date(date);
+    // const calculatedEndDate = new Date(endDate); // Changed from endDate to calculatedEndDate
+    // const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
+    // const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+    //     // Update formData with the latest values
+    // setformData({
+    //     selectedProvince: selectedProvince,
+    //     selectedDistrict: selectedDistrict,
+    //     startDate: date,
+    //     endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
+    //     numberOfDays: differenceInDays,  // Save the calculated number of days
+    //     prediction : predictedMaxPrecipitation
    
-    });
+    // });
       
 
-        
-        console.log("Form Data : ",formData)
-        console.log("form submitted ")
+    // console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
+    //     console.log("Form Data : ",formData)
+    //     console.log("form submitted ")
 
 
 
         
-    }
+    // }
 
     const [formData,setformData] = useState({
         selectedProvince: "",
@@ -323,8 +366,8 @@ const [suitableAreas, setSuitableAreas] = useState([]);
         centerMode: true,
         centerMode: true,
         centerPadding: 0,
-        nextArrow:<nextArrow/>,
-        prevArrow:<prevArrow/>
+        nextArrow:<NextArrow/>,
+        prevArrow:<PrevArrow/>
 
     };
 
@@ -416,14 +459,16 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                             )}
                             
 
-                            console.log({cropType})
+                            
+                            
                             </div>
                             
                             {/* <div className='detail-cont'> */}
-                            {showDetails&& (
+                            {showDetails && (
                                 
 
                                 <div className='detail'>
+                                    console.log({"In ShowDetails"+ {cropType}})
                                 <Grid container spacing={2} className="d flex detail-container">
                                     <div className="left-container">
                                         <h3>Crop details</h3>

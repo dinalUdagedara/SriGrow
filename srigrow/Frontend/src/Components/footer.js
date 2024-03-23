@@ -29,8 +29,8 @@ const Footer=()=>{
             <div className="footer-right">
                 <h4>Contact Us</h4>
                 <br></br>
-                    <p> < FontAwesomeIcon icon="fa-regular fa-envelope" /> hello@website.com</p><br></br>
-                    <p> <IoLocationOutline />IIT</p><br></br>
+                    <p> < FontAwesomeIcon icon="fa-regular fa-envelope" /> info@agrimin.gov.lk</p><br></br>
+                    <p> <IoLocationOutline /> 80/5,"Govijana Mandiraya",<br/>Rajamalwatta Lane,<br/>Battaramulla, Sri Lanka,</p><br></br>
                     <p> <IoCallOutline /> +94 71 52 333 944</p>
             </div>
             <div className="footer-icons">
