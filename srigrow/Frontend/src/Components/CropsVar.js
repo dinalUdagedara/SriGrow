@@ -164,14 +164,16 @@ console.log("Predicted rainsum:",predictedPrecipitation)
 
   return (
     <div className='crops'>
-        <div className='crop-top-cont'>
-          <div className='top-content'>
-          <h1>crop</h1>
-          </div> 
+      {/* search bar for crop varities */}
+      <form className='search-bar' onSubmit={handleSubmit}>
+        <div className='search-container'>
+          <FaSearch className='search-icon' />
+          <input type='text' placeholder='Search...' value={searchTerm} onChange={handleChange} className='search-input' />
+          
+        
         </div>
-        <br></br>
 
-     
+      </form>
       <div className="crops-cards">
         <div className='cards-wrapper'>
           {cardData.map((cardData,index) => (

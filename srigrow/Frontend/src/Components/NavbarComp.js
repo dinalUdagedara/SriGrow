@@ -6,6 +6,7 @@ import { FaBars } from "react-icons/fa";
 import '../Containers/Style.css';
 
 
+
 const NavbarComp=()=> {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -27,11 +28,11 @@ const NavbarComp=()=> {
           <span className="separator"> | </span>
           <Link to="/weather" className="navbar-link">Weather Prediction</Link>
           <span className="separator"> | </span>
-          <Link to="/cropguidance" className="navbar-link">Crop Guide</Link>
+          <Link to="/guide/:cropType" className="navbar-link">Crop Guide</Link>
           <span className="separator"> | </span>
-          <Link to="/recentnews" className="navbar-link">Pests & Disease Alerts</Link>
+          <Link to="/pests-disease-alerts" className="navbar-link">Pests & Disease Alerts</Link>
           <span className="separator"> | </span>
-          <Link to="/marketplace" className="navbar-link">Market Place</Link>
+          <Link to="/marketplace" className="navbar-link">Market Price</Link>
           <span className="separator"> | </span>
           <Link to="/about-us" className="navbar-link">About Us</Link>
           </div>
@@ -46,9 +47,9 @@ const NavbarComp=()=> {
       <div className="mobile-navbar" style={{ display: mobileMenuOpen ? 'block' : 'none' }}>
           <Link to="/" className="navbar-link">Home </Link>
           <Link to="/weather" className="navbar-link">Weather Prediction</Link>
-          <Link to="/cropguidance" className="navbar-link">Crop Guide</Link>
-          <Link to="/recentnews" className="navbar-link">Recent </Link>
-          <Link to="/marketplace" className="navbar-link">Market Place</Link>
+          <Link to="/guide/:cropType" className="navbar-link">Crop Guide</Link>
+          <Link to="/pests-disease-alerts" className="navbar-link">Pests & Disease Alerts</Link>
+          <Link to="/marketplace" className="navbar-link">Market Price</Link>
           <Link to="/about-us" className="navbar-link">About Us</Link>
       </div>
     </div>
