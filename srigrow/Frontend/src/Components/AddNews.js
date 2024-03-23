@@ -68,7 +68,7 @@ export default class AddNewPlant extends Component {
                 <h3>Add News</h3>
 
                 <div className="mb-3">
-                  <label>Date</label>
+                  <label>1. Date</label>
                   <input type="text" className="form-control" placeholder="Date of News origin"
 
                     onChange={e => this.setState({ date: e.target.value })}
@@ -77,7 +77,7 @@ export default class AddNewPlant extends Component {
                 </div>
 
                 <div className="mb-3">
-                  <label>Head Line</label>
+                  <label>2. Head Line</label>
                   <input
                     type="text"
                     className="form-control"
@@ -88,7 +88,7 @@ export default class AddNewPlant extends Component {
                 </div>
 
                 <div className="mb-3">
-                  <label>Content</label>
+                  <label>3. Content</label>
                   <input
                     type="text"
                     className="form-control"
@@ -99,7 +99,7 @@ export default class AddNewPlant extends Component {
                 </div>
 
                 <div className="mb-3">
-                  <label>Link</label>
+                  <label>4. Link</label>
                   <input
                     type="text"
                     className="form-control"

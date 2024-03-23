@@ -6,6 +6,7 @@ import AddNewPlant from './AddNewPlant';
 import AddtoMArket from './AddtoMarket'
 import AddNews from './AddNews';
 import AdminRightPanel from './AdminRightPanel'
+import Home from '../Containers/MainPage'
 
 export default function AdminPanel() {
 
@@ -40,6 +41,14 @@ export default function AdminPanel() {
         setAddPlant(false);
         setShowAddNews(true)
         setShowAdminPanel(false)
+    }
+
+    const [showSignOutt,setShowSignOut] = useState(false)
+    const toggleSignOut = () =>{
+        setshowAddtoMarket(false);
+        setAddPlant(false)
+        setShowAdminPanel(false)
+        setShowAddNews(false)
     }
 
     
@@ -82,7 +91,7 @@ export default function AdminPanel() {
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="logo-apple"></ion-icon>
+                            <ion-icon name="admin-outline"></ion-icon>
                         </span>
                         <span class="title">Admin DashBoard</span>
                     </a>
@@ -154,7 +163,9 @@ export default function AdminPanel() {
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
-                        <span class="title">Sign Out</span>
+                        <Link to="/" className="title">Sign Ou </Link> 
+                
+                        
                     </a>
                 </li> 
             </ul>
@@ -185,6 +196,10 @@ export default function AdminPanel() {
          {
             showAdminPanel && (
                 <AddNewPlant/>
+            )
+         }{
+            showSignOutt && (
+                <Home/>
             )
          }
         
