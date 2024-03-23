@@ -243,6 +243,114 @@ app.post("/addPlant", async (req, res) => {
 
 
 
+
+  const newsSchema = new mongoose.Schema({
+    // plantType: String,
+    // varietyCode: String,
+    // suitableAreas: [String],
+    // MaxTime: Number,
+    // MinTime: Number,
+    // MinRainfall: Number,
+    // MaxRainfall: Number,
+    // ClimaticFactorsDescription: String,
+    // SoilConditionsDescription: String,
+    // SpecialNotes: String
+    date:String,
+    headLine:String,
+    content:String,
+    link:String
+  });
+
+
+  app.post("/addNews",async (req,res)=>{
+    const {
+      // plantType,
+      // varietyCode,
+      // suitableAreas,
+      // MaxTime,
+      // MinTime,
+      // MinRainfall,
+      // MaxRainfall,
+      // ClimaticFactorsDescription,
+      // SoilConditionsDescription,
+      // SpecialNotes
+
+      date,
+      headLine,
+      content,
+      link
+    } = req.body;
+    try {
+
+      let collectionName;
+      collectionName = 'news'
+      // Define the model using the schema and specify the collection name
+      const News = mongoose.model(date, newsSchema, collectionName);
+  
+      // Create a new instance of PlantVariety model with the provided data
+      const newNews = new News({
+        date,
+        headLine,
+        content,
+        link
+      });
+  
+      // Save the new plant variety to the database
+      const savedNews = await newNews.save();
+  
+      // If everything is successful, send a success response
+      res.status(201).json({ status: "ok", data: savedNews });
+    } catch (error) {
+      // If there's an error, send an error response
+      res.status(500).json({ status: "error", error: error.message });
+    }
+
+
+
+  })
+
+
+
+
+  const marketItemSchema = new mongoose.Schema({
+    location: String,
+    crop_details: [{
+      crop_name: String,
+      previous_week_price: String,
+      last_week_price: String,
+      this_week_price: String
+    }]
+  });
+  
+
+
+  app.post("/addMarketItem", async (req, res) => {
+    const { location, crop_details } = req.body;
+  
+    try {
+      // Define the model using the schema and specify the collection name
+      const MarketItem = mongoose.model("MarketItem", marketItemSchema, "market_place_infos");
+  
+      // Create a new instance of MarketItem model with the provided data
+      const newMarketItem = new MarketItem({
+        location,
+        crop_details
+      });
+  
+      // Save the new market item to the database
+      const savedMarketItem = await newMarketItem.save();
+  
+      // If everything is successful, send a success response
+      res.status(201).json({ status: "ok", data: savedMarketItem });
+    } catch (error) {
+      // If there's an error, send an error response
+      res.status(500).json({ status: "error", error: error.message });
+    }
+  });
+  
+
+
+
   
 //   // Now you can use the RiceVariety model to add data to the collection
 //   // For example, to add a single rice variety
@@ -268,7 +376,7 @@ app.post("/addPlant", async (req, res) => {
 //     });
 
 
-app.listen(5000,()=>{
+app.listen(5001,()=>{
     console.log("Server Started...")
 });
 

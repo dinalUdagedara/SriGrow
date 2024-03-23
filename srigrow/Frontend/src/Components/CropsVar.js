@@ -44,7 +44,7 @@ const CropsVar = ({formData,cropType}) => {
   
   const [RiceVarities, setRiceVarieties] = useState([]);
   useEffect(()=>{
-    axios.get('http://localhost:5000/getRiceVarieties')
+    axios.get('http://localhost:5001/getRiceVarieties')
     .then(response => {
       setRiceVarieties(response.data);
     })
@@ -55,7 +55,7 @@ const CropsVar = ({formData,cropType}) => {
 
   const [OnionVarities, setOnionVarieties] = useState([]);
   useEffect(()=>{
-    axios.get('http://localhost:5000/getOnionVarieties')
+    axios.get('http://localhost:5001/getOnionVarieties')
     .then(response => {
       setOnionVarieties(response.data);
     })
@@ -66,7 +66,7 @@ const CropsVar = ({formData,cropType}) => {
 
   const [MaizeVarities, setMaizeVarieties] = useState([]);
   useEffect(()=>{
-    axios.get('http://localhost:5000/getMaizeVarieties')
+    axios.get('http://localhost:5001/getMaizeVarieties')
     .then(response => {
       setMaizeVarieties(response.data);
     })
@@ -77,7 +77,7 @@ const CropsVar = ({formData,cropType}) => {
 
    const [ChillieVarities, setChillieVarieties] = useState([]);
    useEffect(()=>{
-     axios.get('http://localhost:5000/getChillieVarieties')
+     axios.get('http://localhost:5001/getChillieVarieties')
      .then(response => {
        setChillieVarieties(response.data);
   
@@ -90,7 +90,7 @@ const CropsVar = ({formData,cropType}) => {
 
   // Function to fetch crop varieties based on the crop type
   const fetchCropVarieties = (type) => {
-    axios.get(`http://localhost:5000/get${type}Varieties`)
+    axios.get(`http://localhost:5001/get${type}Varieties`)
       .then(response => {
         switch (type) {
           case 'Rice':

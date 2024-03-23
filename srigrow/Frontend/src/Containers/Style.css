@@ -26,6 +26,7 @@
 }
 
 .navbar-container {
+
   display: flex;
   justify-content: space-between;
   padding-left: 20px;
@@ -972,8 +973,110 @@ button:hover {
   border: 1px solid #285A43;
 }
 
+
 /* Style for popup window */
 .modal-overlay {
+
+/* 
+/* Styles for Authentication Pages  */
+
+.mainBox{
+  grid-template-columns: 1fr 2fr;
+}
+.leftBox{
+  background-color: #2DA884;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.admin-panel-container {
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  align-items: center; /* Vertical center */
+  height: 100vh; /* Set height to occupy full viewport height */
+  
+}
+
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h1 {
+  color: #333;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 20;
+}
+
+nav ul li {
+  margin-bottom: 10px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #ddd;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+
+
+
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #2DA884;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+.RightContent{
+  justify-content: right;
+}
+
+/* =============== Navigation ================ */
+.navigation {
+
   position: fixed;
   top: 0;
   left: 0;
@@ -1020,6 +1123,49 @@ button:hover {
   margin-top: 43px;
   margin-left: 15px;
 }
+
 .top-content h1{
   color: #2DA884;
 }
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}
+
+
+.footer-link {
+  color: #fefefe; /* Change link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make text bold */
+}
+
+.footer-link:hover {
+  color: #0056b3; /* Change link color on hover */
+}
+

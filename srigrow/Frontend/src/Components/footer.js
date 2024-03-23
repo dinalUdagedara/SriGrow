@@ -20,10 +20,10 @@ const Footer=()=>{
             <h4>Quick links</h4>
             <br></br>
                 <ul>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Pricing</li>
-                    <li>Blog</li>
+                <li><a href="https://doa.gov.lk/spmdc-salescenter-e/" class="footer-link">Sales Centers</a></li>
+                <li><a href="https://doa.gov.lk/map-gallery/" class="footer-link">Map Gallery</a></li>
+                <li><a href="https://doa.gov.lk/crops/" class="footer-link">Crops</a></li>
+                <li><a href="https://doa.gov.lk/procurement/" class="footer-link">Procurement Notices</a></li>
                 </ul>
             </div>
             <div className="footer-right">
@@ -31,7 +31,7 @@ const Footer=()=>{
                 <br></br>
                     <p> < FontAwesomeIcon icon="fa-regular fa-envelope" /> hello@website.com</p><br></br>
                     <p> <IoLocationOutline />IIT</p><br></br>
-                    <p> <IoCallOutline /> +94 71</p>
+                    <p> <IoCallOutline /> +94 71 52 333 944</p>
             </div>
             <div className="footer-icons">
                 <h4>Follow Us</h4>

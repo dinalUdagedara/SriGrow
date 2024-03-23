@@ -13,6 +13,11 @@ import About from './AboutUs/About';
 import MarketPlace from './MarketPlace/MarketPlace.js';
 import Recentnews from './RecentNews/RecentNews.js';
 import WeatherPrediction from './WeatherPred/weatherPred.js';
+import AdminPanel from './Components/AdminPanel.js';
+import AddtoMarket from './Components/AddtoMarket.js';
+import AddNews from './Components/AddNews.js';
+import AdminRightPanel from './Components/AdminRightPanel.js'
+
 
 
 function App() {
@@ -26,7 +31,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<MainPage />} />
-        {/* <Route path="/guide" element={<Guide />} /> */}
+        <Route path="/guide" element={<Guide />} />
         <Route path="/guide/:cropType" element={<Guide />} />
         {/* <Route path="/details" component={<Guide />} /> */}
         <Route path="/sign-in" element={<Login />} />
@@ -38,6 +43,11 @@ function App() {
         <Route path="/weather" element={<WeatherPrediction/>}/>
         <Route path="/recentnews" element={<Recentnews/>} />
         <Route path="/marketplace" element={<MarketPlace/>} />
+        <Route path= "/AdminPanel" element={<AdminPanel/>}></Route>
+        <Route path= '/AddtoMarket' element={<AddtoMarket/>}></Route>
+        <Route path='/AddNews' element={<AddNews/>}></Route>
+        <Route path='/AdminRightPanel' element={<AdminRightPanel/>}></Route>
+
         
         
       </Routes>
