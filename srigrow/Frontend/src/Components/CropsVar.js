@@ -40,6 +40,14 @@ const CropsVar = ({formData,cropType}) => {
 
   console.log('Form Data Recieved',formData)
 
+  
+  
+    // Accessing the number of days
+    const numberOfDays = formData.numberOfDays;
+    console.log('Number of Days:', numberOfDays);
+
+    
+
   //Rice Varieties API
   
   const [RiceVarities, setRiceVarieties] = useState([]);
@@ -131,7 +139,7 @@ const CropsVar = ({formData,cropType}) => {
   }
 
 // Get the predicted amount of precipitation from formData
-const predictedPrecipitation = formData.prediction ? formData.prediction.max_precipitation : 0;
+const predictedPrecipitation = formData.prediction ? parseFloat(formData.prediction.max_precipitation).toFixed(2) : 0;
 
 console.log("Predicted rainsum:",predictedPrecipitation)
 
@@ -166,7 +174,13 @@ console.log("Predicted rainsum:",predictedPrecipitation)
     <div className='crops'>
         <div className='crop-top-cont'>
           <div className='top-content'>
-          <h1>crop</h1>
+          <h1 style={{ color: 'black' }}>Crop Types Which Are Suitable for Selected Preferences: </h1>
+          <div className='SuggestInfo'>
+          <span >Can Be Grown Within: {numberOfDays} days </span>
+          
+          <span >And Can Face the Predicted Maximum Rainfall of: {predictedPrecipitation} mm </span>
+          </div>
+
           </div> 
         </div>
         <br></br>

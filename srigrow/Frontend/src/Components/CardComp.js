@@ -26,14 +26,14 @@ function CardComp() {
                     <TiWeatherShower size={60} />
                   </div>
                   <div className='card-text'>
-                    <h3 className='heading'><span style={{ color: 'black' }}>Weather </span> prediction</h3>
+                    <h3 className='heading'><span style={{ color: 'black' }}>Real Time </span> Weather Forecast</h3>
                     <p className='disc'>Provides real-time weather forecasts and alerts for optimal farming decisions.</p>
                   </div>
                 </div>
               </div>
               </Link>
             </Grid>
-            <Grid item xs={6} md={4}>
+            {/* <Grid item xs={6} md={4}>
               <div className="card">
                 <div className="card-content">
                   <div className="card-icon">
@@ -41,11 +41,11 @@ function CardComp() {
                   </div>
                   <div className='card-text'>
                     <h3 className='heading'><span style={{ color: 'black' }}>Agri </span> Advisory</h3>
-                    <p className='disc'>Offers personalized and timely guidance on crop selection, pest management, and farming techniques.</p>
+                    <p className='disc'>CHANGE THIS</p>
                   </div>
                 </div>
               </div>
-            </Grid>
+            </Grid> */}
             <Grid item xs={6} md={4}>
               <Link to="/marketplace">
               <div className="card">
@@ -71,7 +71,7 @@ function CardComp() {
                   </div>
                   <div className='card-text'>
                     <h3 className='heading'><span style={{ color: 'black' }}>Crop </span> Guidence</h3>
-                    <p className='disc'>Shares comprehensive and localized information on best practices for cultivating different crops.</p>
+                    <p className='disc'>Shares comprehensive and localized information on best practices for cultivating different crops Using Weather Prediction.</p>
                   </div>
                 </div>
               </div>
@@ -93,17 +93,19 @@ function CardComp() {
               </Link>
             </Grid>
             <Grid item xs={6} md={4}>
+              <Link to = '/sign-in'>
               <div className="card">
                 <div className="card-content">
                   <div className="card-icon">
                     <GrUserManager size={60} />
                   </div>
                   <div className='card-text'>
-                    <h3 className='heading'><span style={{ color: 'black' }}>Other </span>Services </h3>
-                    <p className='disc'>Timely notifications via app on prevalent pests, aiding officers in identifying, managing, and advising farmers on pest control measures for crop protection.</p>
+                    <h3 className='heading'><span style={{ color: 'black' }}>Admin </span>Dashboard </h3>
+                    <p className='disc'>Dashboard for Officers to Manage The System.</p>
                   </div>
                 </div>
               </div>
+              </Link>
             </Grid>
           </Grid>
         </div>

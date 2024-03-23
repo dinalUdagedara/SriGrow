@@ -105,11 +105,11 @@ export default class AddNewPlant extends Component {
 
   render() {
     return (
-      <div className="auth-wrapper">
+      <div className="auth-wrapper addNewPlantWrapper">
         
 
 
-        <div className="auth-inner">
+        <div className="auth-inner addNewPLantInnerWrappe">
           <div>
             <div className="auth-inner-admin" style={{ height: '80vh', overflowY: 'auto' }}>
               <form onSubmit={this.handleSubmit}>

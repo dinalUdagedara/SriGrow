@@ -56,27 +56,28 @@ export default class AddMarketItem extends Component {
 
   render() {
     return (
-      <div className="auth-wrapper">
+      <div className="auth-wrapper  addNewPlantWrapper">
         <div className="auth-inner">
           <div className="auth-inner-admin" style={{ overflowY: 'auto' }}>
             <form onSubmit={this.handleSubmit}>
               <h3>Add Market Item</h3>
 
               <div className="mb-3">
-                <label>Location</label>
+                <label>1. Location</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control custom-border-color"
                   placeholder="Enter location"
                   value={this.state.location}
                   onChange={e => this.setState({ location: e.target.value })}
+                  
                 />
               </div>
 
               {this.state.crop_details.map((crop, index) => (
                 <div key={index}>
                   <div className="mb-3">
-                    <label>Crop Name</label>
+                    <label>2. Crop Name</label>
                     <input
                       type="text"
                       className="form-control"
@@ -87,7 +88,7 @@ export default class AddMarketItem extends Component {
                     />
                   </div>
                   <div className="mb-3">
-                    <label>Previous Week Price</label>
+                    <label>3. Previous Week Price</label>
                     <input
                       type="text"
                       className="form-control"
@@ -98,7 +99,7 @@ export default class AddMarketItem extends Component {
                     />
                   </div>
                   <div className="mb-3">
-                    <label>Last Week Price</label>
+                    <label>4. Last Week Price</label>
                     <input
                       type="text"
                       className="form-control"
@@ -109,7 +110,7 @@ export default class AddMarketItem extends Component {
                     />
                   </div>
                   <div className="mb-3">
-                    <label>This Week Price</label>
+                    <label>5. This Week Price</label>
                     <input
                       type="text"
                       className="form-control"
@@ -122,11 +123,12 @@ export default class AddMarketItem extends Component {
                 </div>
               ))}
               <div className="buttons">
-
               <button type="button" className="button" onClick={this.addCrop}>
                 Add a another Crop
               </button>
+              </div>
 
+              <div className="buttons">
               <div className="d-grid">
                 <button type="submit" className="button">
                   Add Market Items to Database
