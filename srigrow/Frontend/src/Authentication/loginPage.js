@@ -49,13 +49,14 @@ export default class Login extends Component {
   }
   render() {
     return (
+      <div className='auth-body'>
       <div className="auth-wrapper">
           <div className="auth-inner">
       <form onSubmit={this.handleSubmit}>
         <h3>Sign In</h3>
 
         <div className="mb-3">
-          <label>Email address</label><br></br>
+          <label className='auth-text'>Email address</label><br></br>
           <input
             type="email"
             className="form-control"
@@ -84,6 +85,7 @@ export default class Login extends Component {
           or  <a href="/sign-up">SignUp</a>
         </p>
       </form>
+      </div>
       </div>
       </div>
     )

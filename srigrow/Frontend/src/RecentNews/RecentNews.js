@@ -1,5 +1,5 @@
 // CardComponent.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "../RecentNews/RecentNews.css"; // Import the CSS file
 import image01 from "../Images/image01.jpg";
@@ -12,6 +12,7 @@ import NavbarComp from "../Components/NavbarComp";
 import Footer from "../Components/footer";
 import { faL } from "@fortawesome/free-solid-svg-icons";
 import PopupWindow from "../Components/PopupWindow";
+import axios from "axios";
 const Recentnews = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -77,7 +78,7 @@ const Recentnews = () => {
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button className="button">Read More</button>
+            <button className="button" onClick={openModal}>Read More</button>
           </div>
         </div>
         <PopupWindow isOpen={isModalOpen} onClose={closeModal}/>
@@ -85,28 +86,28 @@ const Recentnews = () => {
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button className="button">Read More</button>
+            <button className="button" onClick={openModal}>Read More</button>
           </div>
         </div>
         <div className="news-card" style={{ backgroundImage: `url(${image04})` }}>
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button className="button">Read More</button>
+            <button className="button" onClick={openModal}>Read More</button>
           </div>
         </div>
         <div className="news-card" style={{ backgroundImage: `url(${image05})` }}>
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button className="button">Read More</button>
+            <button className="button" onClick={openModal}>Read More</button>
           </div>
         </div>
         <div className="news-card" style={{ backgroundImage: `url(${image06})` }}>
           <div className="card-date">OCT 17</div>
           <div className="card-info">
             <p>Upcountry Vegetable Prices Expected to Drop</p>
-            <button className="button">Read More</button>
+            <button className="button" onClick={openModal}>Read More</button>
           </div>
         </div>
       </div>
