@@ -19,6 +19,7 @@ import AddNews from './Components/AddNews.js';
 import AdminRightPanel from './Components/AdminRightPanel.js'
 
 
+
 function App() {
   const [path, setPath] = useState('weather');
 
@@ -46,6 +47,7 @@ function App() {
         <Route path= '/AddtoMarket' element={<AddtoMarket/>}></Route>
         <Route path='/AddNews' element={<AddNews/>}></Route>
         <Route path='/AdminRightPanel' element={<AdminRightPanel/>}></Route>
+
         
         
       </Routes>
