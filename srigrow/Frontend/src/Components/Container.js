@@ -439,8 +439,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                             </Select>
                                         </div>
                                         <div className="growing-time-container">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }}>Harvest Timeframe: </p>
-                                        
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }}>Harvest Timeframe: </p>                                         
                                             <Typography variant="body1">
                                                 {selectedOption && (
                                                     <span >
