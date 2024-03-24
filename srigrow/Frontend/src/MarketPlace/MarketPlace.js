@@ -66,7 +66,7 @@ const MarketPlace = () => {
 
 
   
-  
+export default MarketPlace;
   
   // return (
 
@@ -321,4 +321,3 @@ const MarketPlace = () => {
     //   <Footer/>
     // </div>
 
-export default MarketPlace;
