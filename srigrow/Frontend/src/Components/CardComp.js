@@ -33,19 +33,7 @@ function CardComp() {
               </div>
               </Link>
             </Grid>
-            {/* <Grid item xs={6} md={4}>
-              <div className="card">
-                <div className="card-content">
-                  <div className="card-icon">
-                    <GrUserManager size={60} />
-                  </div>
-                  <div className='card-text'>
-                    <h3 className='heading'><span style={{ color: 'black' }}>Agri </span> Advisory</h3>
-                    <p className='disc'>CHANGE THIS</p>
-                  </div>
-                </div>
-              </div>
-            </Grid> */}
+           
             <Grid item xs={6} md={4}>
               <Link to="/marketplace">
               <div className="card">
@@ -102,6 +90,21 @@ function CardComp() {
                   <div className='card-text'>
                     <h3 className='heading'><span style={{ color: 'black' }}>Admin </span>Dashboard </h3>
                     <p className='disc'>Dashboard for Officers to Manage The System.</p>
+                  </div>
+                </div>
+              </div>
+              </Link>
+            </Grid>
+            <Grid item xs={6} md={4}>
+              <Link to='/about-us'>
+              <div className="card">
+                <div className="card-content">
+                  <div className="card-icon">
+                    <GrUserManager size={60} />
+                  </div>
+                  <div className='card-text'>
+                    <h3 className='heading'><span style={{ color: 'black' }}>About </span> Us</h3>
+                    <p className='disc'>Connect with us for the latest updates and insights on social media.</p>
                   </div>
                 </div>
               </div>

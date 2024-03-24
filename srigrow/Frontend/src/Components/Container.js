@@ -379,29 +379,31 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                 <div className="row">
                     <div className="column">
                         <h1>SriGrow</h1>
+                        <div className='crop-nav'>
                         <ul>
-                            <li className={showGuide ? "hover-box active" : "hover-box"}>
-                                <Link to="#" className="option" onClick={toggleGuide}>
+                            <li className={showGuide ? "guide-hover-box active" : "guide-hover-box"}>
+                                <a href="#" className="guide-option" onClick={toggleGuide}>
                                     <PiChalkboardTeacher className="option-icon" />
-                                    <span className="icon-text">Guide</span>
-                                </Link>
+                                    <span className="guide-icon-text">Guide</span>
+                                </a>
                             </li>
-                            <li className={showCrops ? "hover-box active" : "hover-box"} >
-                                <Link to="#" className="option" onClick={toggleCrops}>
+                            <li className={showCrops ? "guide-hover-box active" : "guide-hover-box"} >
+                                <Link to="#" className="guide-option" onClick={toggleCrops}>
                                     <PiPlant className="option-icon" />
-                                    <span className="icon-text">Crops</span>
+                                    <span className="guide-icon-text">Crops</span>
                                 </Link>
                             </li>
-                            <li className={showDetails ? "hover-box active" : "hover-box"}>
-                                <Link to="#" className="option" onClick={toggleDetails} >
+                            <li className={showDetails ? "guide-hover-box active" : "guide-hover-box"}>
+                                <Link to="#" className="guide-option" onClick={toggleDetails} >
                                     <MdHistory className="option-icon" />
-                                    <span className="icon-text">Details</span>
+                                    <span className="guide-icon-text">Details</span>
                                 </Link>
                             </li>
                 
                         </ul>
+                        </div>
                     </div>
-                    <div className="sub-container">
+                    <div className="guide-sub-container">
                         <div className='variety-container'>
                             {showGuide && (
                                 <Grid container spacing={3} className="grid-container" >
@@ -471,10 +473,10 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                     console.log({"In ShowDetails"+ {cropType}})
                                 <Grid container spacing={2} className="d flex detail-container">
                                     <div className="left-container">
-                                        <h3>Crop details</h3>
+                                        <h3 style={{color:'#285A43'}}>Crop details</h3>
                                         <br></br>
                                         <div className="variety-dropdown">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }}>Crop Variety </p>
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color:'#285A43' }}>Crop Variety </p>
                                  
                                             <Select value={selectedOption} onChange={(e) => handleOptionSelect(e.target.value)} className="variety-dropDown-box">
                                                 <MenuItem value="">Select Variety</MenuItem>
@@ -484,7 +486,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                             </Select>
                                         </div>
                                         <div className="growing-time-container">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }}>Harvest Timeframe: </p>                                         
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color:'#285A43'}}>Harvest Timeframe: </p>                                         
                                             <Typography variant="body1">
                                                 {selectedOption && (
                                                     <span >
@@ -520,7 +522,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                         <br></br>
 
                                     <div className="growing-time-input">
-                                    <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }} >Rainfall Requirement: </p>
+                                    <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color:'#285A43' }} >Rainfall Requirement: </p>
                                         <Typography variant="body1">
                                             {selectedOption && (
                                                 <span>
@@ -575,7 +577,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
 
                                     <div className="growing-time-container">
-                                    <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }}>Atmospheric Features:</p>
+                                    <p style={{ fontWeight: 'bold', fontSize: '1.0rem' , color:'#285A43'}}>Atmospheric Features:</p>
                                             
                                             <Typography variant="body1">
                                                 {selectedOption && (
@@ -614,7 +616,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
                                     <div className="location-and-type">
                                         <div className="location-field">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', paddingRight: '110px' }}>Locations Suitable</p>
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', paddingRight: '110px', color:'#285A43' }}>Locations Suitable</p>
                                             <Select
                                                 select
                                                 value={city}
@@ -642,7 +644,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                     <div className="right-container">
                                         <div className="detail-right-container">
                                             <div className="detailPage-slider">
-                                                <Slider {...settings}>
+                                                <Slider {...settings}  prevArrow={null} nextArrow={null}>
                                                     {images.map((img, idx) => (
                                                         <div >
                                                             <img src={img} alt={img} className="slider-img" />
@@ -651,7 +653,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                                 </Slider>
                                             </div>
                                             <div className="right-content">
-                                                <h3>Variety Specilaities</h3>
+                                                <h3 >Variety Specilaities</h3>
                                                 
 
                                                 <ul>

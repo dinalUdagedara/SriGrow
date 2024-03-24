@@ -29,7 +29,7 @@ const NavbarComp=()=> {
           <span className="separator"> | </span>
           <Link to="/cropguidance" className="navbar-link">Crop Guide</Link>
           <span className="separator"> | </span>
-          <Link to="/recentnews" className="navbar-link">Pests & Disease Alerts</Link>
+          <Link to="/recentnews" className="navbar-link">Recent News</Link>
           <span className="separator"> | </span>
           <Link to="/marketplace" className="navbar-link">Market Place</Link>
           <span className="separator"> | </span>
@@ -47,7 +47,7 @@ const NavbarComp=()=> {
           <Link to="/" className="navbar-link">Home </Link>
           <Link to="/weather" className="navbar-link">Weather Prediction</Link>
           <Link to="/cropguidance" className="navbar-link">Crop Guide</Link>
-          <Link to="/recentnews" className="navbar-link">Recent </Link>
+          <Link to="/recentnews" className="navbar-link">Recent News</Link>
           <Link to="/marketplace" className="navbar-link">Market Place</Link>
           <Link to="/about-us" className="navbar-link">About Us</Link>
       </div>
