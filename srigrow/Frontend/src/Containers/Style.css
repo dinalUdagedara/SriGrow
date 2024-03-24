@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   /* overflow-x: hidden; */
+  
 }
 
 
@@ -1175,7 +1176,7 @@ body {
 .footer-link {
   color: #fefefe; /* Change link color */
   text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Make text bold */
+  /* font-weight: bold;  */
 }
 
 .footer-link:hover {
@@ -1183,12 +1184,12 @@ body {
 }
 
 .more-info-link {
-  color: blue; /* Set the link color */
+  color:#999; /* Set the link color */
   text-decoration: underline; /* Add underline to indicate it's a link */
   margin-right: 10px; /* Add some spacing between the link and the button */
 }
 
 .more-info-link:hover {
-  color: darkblue; /* Change link color on hover */
+  color:#999; /* Change link color on hover */
 }
 
