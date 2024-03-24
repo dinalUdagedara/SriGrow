@@ -179,3 +179,7 @@ justify-content: center;
     transition: all 0.3s;
   
 }
+
+.AddMarketButton{
+  margin-left: 100px;
+}
