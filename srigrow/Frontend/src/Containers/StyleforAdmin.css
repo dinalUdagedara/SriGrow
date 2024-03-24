@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   /* overflow-x: hidden; */
+  font-family: Montserrat;
 }
 
 
@@ -1043,7 +1044,7 @@ footer {
 
 
 * {
-  font-family: "Ubuntu", sans-serif;
+  /* font-family: "Ubuntu", sans-serif; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -1513,12 +1514,4 @@ body {
 }
 
 
-.footer-link {
-  color: #fefefe; /* Change link color */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Make text bold */
-}
 
-.footer-link:hover {
-  color: #0056b3; /* Change link color on hover */
-}
