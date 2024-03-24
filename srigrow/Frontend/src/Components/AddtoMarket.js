@@ -123,7 +123,7 @@ export default class AddMarketItem extends Component {
                 </div>
               ))}
               <div className="buttons">
-              <button type="button" className="button" onClick={this.addCrop}>
+              <button type="button" className="button addanother" onClick={this.addCrop}>
                 Add a another Crop
               </button>
               </div>

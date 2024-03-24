@@ -33,7 +33,7 @@ const CropGuidance=()=> {
       <div>
       <NavbarComp/>
     </div>
-      <h1> <span id='crop'>Crop</span> Guidance</h1>
+      <h1> <span id='crop'>Select </span> Crop Type</h1>
       <div className='padding_1'>
       {/* <h4>Select your preferd crop</h4> */}
       </div>
