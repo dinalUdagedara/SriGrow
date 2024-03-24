@@ -7,7 +7,7 @@ import { PiChalkboardTeacher } from "react-icons/pi";
 import { MdHistory } from "react-icons/md";
 import { MdBarChart } from "react-icons/md";
 import { faL } from "@fortawesome/free-solid-svg-icons";
-import { Grid, Select, MenuItem,Typography } from '@mui/material';
+import { Grid, Select, MenuItem, Typography } from '@mui/material';
 import { IoLocation } from "react-icons/io5";
 import { Button } from "bootstrap";
 import CropsVar from "./CropsVar";
@@ -19,25 +19,26 @@ import slide2 from "../Images/cropdetail2.jpg";
 import slide3 from "../Images/cropdetail3.jpg";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import axios from 'axios'
+import Logo from '../Images/logo.png';
 
 
 
 
-const Container = ({cropType}) => {
+const Container = ({ cropType }) => {
 
 
-    console.log("CropType Passed to Contanier",{cropType})
+    console.log("CropType Passed to Contanier", { cropType })
     //const [showContainer, setShowContainer]= useState(false);
     const [showGuide, setShowGuide] = useState(false);
     const [showDetails, setShowDetails] = useState(false)
     const [showCrops, setShowCrops] = useState(false);
     const [selectedProvince, setSelectedProvince] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
-    const [predictedMaxPrecipitation,setpredictedMaxPrecipitation] = useState ()
+    const [predictedMaxPrecipitation, setpredictedMaxPrecipitation] = useState()
     var maxPrecipitation = 0
 
     const [date, setDate] = useState();
-    const [endDate,setEndDate]=useState();
+    const [endDate, setEndDate] = useState();
     const [growingTimeValue, setGrowingTimeValue] = useState('');
     const [inputValue, setInputValue] = useState('');
     const [selectedOption, setSelectedOption] = useState(null);
@@ -93,53 +94,53 @@ const Container = ({cropType}) => {
     //API Calls to Fetch Data
 
 
-        //Rice Varieties API
-        
-        const [RiceVarities, setRiceVarieties] = useState([]);
-        useEffect(()=>{
-            axios.get('http://localhost:5001/getRiceVarieties')
+    //Rice Varieties API
+
+    const [RiceVarities, setRiceVarieties] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:5001/getRiceVarieties')
             .then(response => {
-            setRiceVarieties(response.data);
+                setRiceVarieties(response.data);
             })
-            .catch(err=>console.log('Error fetching Rice varieties: ',err))
-        },[])
+            .catch(err => console.log('Error fetching Rice varieties: ', err))
+    }, [])
 
-        //Onion Variety 
+    //Onion Variety 
 
-        const [OnionVarities, setOnionVarieties] = useState([]);
-        useEffect(()=>{
-            axios.get('http://localhost:5001/getOnionVarieties')
+    const [OnionVarities, setOnionVarieties] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:5001/getOnionVarieties')
             .then(response => {
-            setOnionVarieties(response.data);
+                setOnionVarieties(response.data);
             })
-            .catch(err=>console.log('Error fetching Onion varieties: ',err))
-        },[])
+            .catch(err => console.log('Error fetching Onion varieties: ', err))
+    }, [])
 
-        //Maize Variety API
+    //Maize Variety API
 
-        const [MaizeVarities, setMaizeVarieties] = useState([]);
-        useEffect(()=>{
-            axios.get('http://localhost:5001/getMaizeVarieties')
+    const [MaizeVarities, setMaizeVarieties] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:5001/getMaizeVarieties')
             .then(response => {
-            setMaizeVarieties(response.data);
+                setMaizeVarieties(response.data);
             })
-            .catch(err=>console.log('Error fetching Maize varieties: ',err))
-        },[])
+            .catch(err => console.log('Error fetching Maize varieties: ', err))
+    }, [])
 
-        //Chillie Variety API
+    //Chillie Variety API
 
-        const [ChillieVarities, setChillieVarieties] = useState([]);
-        useEffect(()=>{
-            axios.get('http://localhost:5001/getChillieVarieties')
+    const [ChillieVarities, setChillieVarieties] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:5001/getChillieVarieties')
             .then(response => {
-            setChillieVarieties(response.data);
-        
+                setChillieVarieties(response.data);
+
             })
-            .catch(err=>console.log('Error fetching Chillie varieties: ',err))
-        },[])
+            .catch(err => console.log('Error fetching Chillie varieties: ', err))
+    }, [])
 
 
-  
+
 
     //define lists of provinces and districts
     const provinces = ["Nothern Province", "Western Province", "Central Province", "Eastern province", "Southern Province", "North west Province", "Noth Cenral Province", "Uva Province", "Sabaragamuwa Province"];
@@ -156,7 +157,7 @@ const Container = ({cropType}) => {
 
 
     };
-   
+
     const handleOptionSelect = (option) => {
         setSelectedOption(option);
         setShowDetails(true);
@@ -179,7 +180,7 @@ const Container = ({cropType}) => {
             default:
                 break;
         }
-    
+
         if (variety) {
             setSuitableAreas(variety.suitableAreas);
         }
@@ -201,45 +202,45 @@ const Container = ({cropType}) => {
         setShowGuide(false);
         setShowCrops(true);
         setShowDetails(false);
-    
+
         // Send data to Flask backend
         axios.post('http://localhost:5000/predict', {
             city: selectedDistrict,
             start_date: date,
             end_date: endDate
         })
-        .then(response => {
-            // Update predictedMaxPrecipitation state
-            setpredictedMaxPrecipitation(response.data);
-            // Calculate the number of days between start and end dates
-            const startDate = new Date(date);
-            const calculatedEndDate = new Date(endDate);
-            const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
-            const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-    
-            // Update formData with the latest values including prediction
-            setformData({
-                selectedProvince: selectedProvince,
-                selectedDistrict: selectedDistrict,
-                startDate: date,
-                endDate: calculatedEndDate,
-                numberOfDays: differenceInDays,
-                prediction: response.data // Use the updated value from response
+            .then(response => {
+                // Update predictedMaxPrecipitation state
+                setpredictedMaxPrecipitation(response.data);
+                // Calculate the number of days between start and end dates
+                const startDate = new Date(date);
+                const calculatedEndDate = new Date(endDate);
+                const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
+                const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+                // Update formData with the latest values including prediction
+                setformData({
+                    selectedProvince: selectedProvince,
+                    selectedDistrict: selectedDistrict,
+                    startDate: date,
+                    endDate: calculatedEndDate,
+                    numberOfDays: differenceInDays,
+                    prediction: response.data // Use the updated value from response
+                });
+
+                // Display predictions to the user if needed
+                console.log('Correct Predicted Precipitation', response.data);
+            })
+            .catch(error => {
+                // Handle error
+                console.error('Error:', error);
             });
-    
-            // Display predictions to the user if needed
-            console.log('Correct Predicted Precipitation', response.data);
-        })
-        .catch(error => {
-            // Handle error
-            console.error('Error:', error);
-        });
     };
-    
+
 
 
     // const handleSubmit = () => {
-        
+
     //     setShowGuide(false);
     //     setShowCrops(true);
     //     setShowDetails(false);
@@ -284,9 +285,9 @@ const Container = ({cropType}) => {
     //     endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
     //     numberOfDays: differenceInDays,  // Save the calculated number of days
     //     prediction : predictedMaxPrecipitation
-   
+
     // });
-      
+
 
     // console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
     //     console.log("Form Data : ",formData)
@@ -294,64 +295,64 @@ const Container = ({cropType}) => {
 
 
 
-        
+
     // }
 
-    const [formData,setformData] = useState({
+    const [formData, setformData] = useState({
         selectedProvince: "",
         selectedDistrict: "",
         startDate: "",
         endDate: "",
-        prediction:""
+        prediction: ""
     })
 
 
     // Add a new state to store suitable areas
-const [suitableAreas, setSuitableAreas] = useState([]);
+    const [suitableAreas, setSuitableAreas] = useState([]);
 
 
-            const options = [];
-        // Add crop varieties based on cropType
-        switch (cropType) {
-            case 'Rice':
-                RiceVarities.forEach((variety) => {
-                    options.push(variety.varietyName);
-                });
-                break;
-            case 'Chillie':
-                ChillieVarities.forEach((variety) => {
-                    options.push(variety.varietyName);
-                });
-                break;
-            case 'Maize':
-                MaizeVarities.forEach((variety)=>{
-                    options.push(variety.varietyName)
-                });
-                break;
-            case 'Onion':
-            OnionVarities.forEach((variety)=>{
+    const options = [];
+    // Add crop varieties based on cropType
+    switch (cropType) {
+        case 'Rice':
+            RiceVarities.forEach((variety) => {
+                options.push(variety.varietyName);
+            });
+            break;
+        case 'Chillie':
+            ChillieVarities.forEach((variety) => {
+                options.push(variety.varietyName);
+            });
+            break;
+        case 'Maize':
+            MaizeVarities.forEach((variety) => {
                 options.push(variety.varietyName)
             });
             break;
-           
-            default:
-                // Default behavior
-                break;
-        }
+        case 'Onion':
+            OnionVarities.forEach((variety) => {
+                options.push(variety.varietyName)
+            });
+            break;
+
+        default:
+            // Default behavior
+            break;
+    }
 
 
-    const NextArrow =({onClick}) =>{
-        return(
+    const NextArrow = ({ onClick }) => {
+        return (
             <div className="arrow-next" onClick={onClick}>
-                <FaArrowRight/>
+                <FaArrowRight />
 
             </div>
         )
     };
-    const PrevArrow =({onClick}) =>{
-        return(
+    const PrevArrow = ({ onClick }) => {
+        return (
             <div className="arrow-prev" onClick={onClick}>
-                <FaArrowLeft/>
+                <FaArrowLeft />
 
             </div>
         )
@@ -366,8 +367,8 @@ const [suitableAreas, setSuitableAreas] = useState([]);
         centerMode: true,
         centerMode: true,
         centerPadding: 0,
-        nextArrow:<NextArrow/>,
-        prevArrow:<PrevArrow/>
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />
 
     };
 
@@ -378,29 +379,31 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
                 <div className="row">
                     <div className="column">
-                        <h1>SriGrow</h1>
+                        <Link to='/' className="navbar-logo">
+                            <img src={Logo} alt='logo' className='logo-design' style={{marginLeft:'35px'}} />
+                        </Link>
                         <div className='crop-nav'>
-                        <ul>
-                            <li className={showGuide ? "guide-hover-box active" : "guide-hover-box"}>
-                                <a href="#" className="guide-option" onClick={toggleGuide}>
-                                    <PiChalkboardTeacher className="option-icon" />
-                                    <span className="guide-icon-text">Guide</span>
-                                </a>
-                            </li>
-                            <li className={showCrops ? "guide-hover-box active" : "guide-hover-box"} >
-                                <Link to="#" className="guide-option" onClick={toggleCrops}>
-                                    <PiPlant className="option-icon" />
-                                    <span className="guide-icon-text">Crops</span>
-                                </Link>
-                            </li>
-                            <li className={showDetails ? "guide-hover-box active" : "guide-hover-box"}>
-                                <Link to="#" className="guide-option" onClick={toggleDetails} >
-                                    <MdHistory className="option-icon" />
-                                    <span className="guide-icon-text">Details</span>
-                                </Link>
-                            </li>
-                
-                        </ul>
+                            <ul>
+                                <li className={showGuide ? "guide-hover-box active" : "guide-hover-box"}>
+                                    <a href="#" className="guide-option" onClick={toggleGuide}>
+                                        <PiChalkboardTeacher className="option-icon" />
+                                        <span className="guide-icon-text">Guide</span>
+                                    </a>
+                                </li>
+                                <li className={showCrops ? "guide-hover-box active" : "guide-hover-box"} >
+                                    <Link to="#" className="guide-option" onClick={toggleCrops}>
+                                        <PiPlant className="option-icon" />
+                                        <span className="guide-icon-text">Crops</span>
+                                    </Link>
+                                </li>
+                                <li className={showDetails ? "guide-hover-box active" : "guide-hover-box"}>
+                                    <Link to="#" className="guide-option" onClick={toggleDetails} >
+                                        <MdHistory className="option-icon" />
+                                        <span className="guide-icon-text">Details</span>
+                                    </Link>
+                                </li>
+
+                            </ul>
                         </div>
                     </div>
                     <div className="guide-sub-container">
@@ -427,13 +430,13 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                             ))}
                                         </Select>
                                     </Grid>
-                                    
+
                                     <Grid item xs={3}>
                                         <h2>Date</h2>
                                     </Grid>
                                     <Grid item xs={4}>
                                         <div >
-                                            <input class="input"type="date" onChange={(e) => setDate(e.target.value)} />
+                                            <input class="input" type="date" onChange={(e) => setDate(e.target.value)} />
                                         </div>
 
                                     </Grid>
@@ -450,43 +453,43 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
 
                             )}
-                            
+
                             {showCrops && (
-                                
-                                <CropsVar 
-                                formData = {formData} 
-                                cropType = {cropType}
+
+                                <CropsVar
+                                    formData={formData}
+                                    cropType={cropType}
                                 />
-                            
+
                             )}
-                            
 
-                            
-                            
-                            </div>
-                            
-                            {/* <div className='detail-cont'> */}
-                            {showDetails && (
-                                
 
-                                <div className='detail'>
-                                    console.log({"In ShowDetails"+ {cropType}})
+
+
+                        </div>
+
+                        {/* <div className='detail-cont'> */}
+                        {showDetails && (
+
+
+                            <div className='detail'>
+                                console.log({"In ShowDetails" + { cropType }})
                                 <Grid container spacing={2} className="d flex detail-container">
                                     <div className="left-container">
-                                        <h3 style={{color:'#285A43'}}>Crop details</h3>
+                                        <h3 style={{ color: '#285A43' }}>Crop details</h3>
                                         <br></br>
                                         <div className="variety-dropdown">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color:'#285A43' }}>Crop Variety </p>
-                                 
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color: '#285A43' }}>Crop Variety </p>
+
                                             <Select value={selectedOption} onChange={(e) => handleOptionSelect(e.target.value)} className="variety-dropDown-box">
                                                 <MenuItem value="">Select Variety</MenuItem>
-                                                {options.map((option, index) => (  
+                                                {options.map((option, index) => (
                                                     <MenuItem key={index} value={option}>{option}</MenuItem>
                                                 ))}
                                             </Select>
                                         </div>
                                         <div className="growing-time-container">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color:'#285A43'}}>Harvest Timeframe: </p>                                         
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color: '#285A43' }}>Harvest Timeframe: </p>
                                             <Typography variant="body1">
                                                 {selectedOption && (
                                                     <span >
@@ -498,15 +501,15 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
                                                                 case 'Chillie':
                                                                     const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
-                                                                        return chillieVariety ? `Maximum Time Period is ${chillieVariety.maxTimePeriod} Days` : '';
-                                                                    
+                                                                    return chillieVariety ? `Maximum Time Period is ${chillieVariety.maxTimePeriod} Days` : '';
+
                                                                 case 'Maize':
-                                                                const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
+                                                                    const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
                                                                     return maizeVariety ? `Maximum Time Period is ${maizeVariety.maxTimePeriod} Days` : '';
 
                                                                 case 'Onion':
                                                                     const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
-                                                                        return onionVariety ? `Maximum Time Period is ${onionVariety.maxTimePeriod} Days` : '';
+                                                                    return onionVariety ? `Maximum Time Period is ${onionVariety.maxTimePeriod} Days` : '';
 
                                                                 default:
                                                                     return '';
@@ -516,69 +519,69 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                                     </span>
                                                 )}
                                             </Typography>
-                                            
+
 
                                         </div>
                                         <br></br>
 
-                                    <div className="growing-time-input">
-                                    <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color:'#285A43' }} >Rainfall Requirement: </p>
-                                        <Typography variant="body1">
-                                            {selectedOption && (
-                                                <span>
-                                                    {(() => {
-                                                        switch (cropType) {
-                                                            case 'Rice':
-                                                                const riceVariety = RiceVarities.find(variety => variety.varietyName === selectedOption);
-                                                                if (riceVariety) {
-                                                                    // Concatenate both precipitation information strings
-                                                                    const precipitationInfo = `"Driest conditions" or "lowest amount of rainfall" ${riceVariety.lowPrecipitation} mm. 
+                                        <div className="growing-time-input">
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color: '#285A43' }} >Rainfall Requirement: </p>
+                                            <Typography variant="body1">
+                                                {selectedOption && (
+                                                    <span>
+                                                        {(() => {
+                                                            switch (cropType) {
+                                                                case 'Rice':
+                                                                    const riceVariety = RiceVarities.find(variety => variety.varietyName === selectedOption);
+                                                                    if (riceVariety) {
+                                                                        // Concatenate both precipitation information strings
+                                                                        const precipitationInfo = `"Driest conditions" or "lowest amount of rainfall" ${riceVariety.lowPrecipitation} mm. 
                                                                     "Extreme precipitation" or "extreme rainfall" ${riceVariety.maxPrecipitation} mm.`;
-                                                                    // Return both precipitation information as one string
-                                                                    return precipitationInfo;
-                                                                }
-                                                            case 'Chillie':
-                                                                const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
-                                                                if (chillieVariety) {
-                                                                    // Concatenate both precipitation information strings
-                                                                    const precipitationInfo = `"Driest conditions" or "lowest amount of rainfall" ${chillieVariety.lowPrecipitation} mm. 
+                                                                        // Return both precipitation information as one string
+                                                                        return precipitationInfo;
+                                                                    }
+                                                                case 'Chillie':
+                                                                    const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
+                                                                    if (chillieVariety) {
+                                                                        // Concatenate both precipitation information strings
+                                                                        const precipitationInfo = `"Driest conditions" or "lowest amount of rainfall" ${chillieVariety.lowPrecipitation} mm. 
                                                                     "Extreme precipitation" or "extreme rainfall" ${chillieVariety.maxPrecipitation} mm.`;
-                                                                    // Return both precipitation information as one string
-                                                                    return precipitationInfo;
-                                                                }
-                                                            case 'Maize':
-                                                                const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
-                                                                if (maizeVariety) {
-                                                                    // Concatenate both precipitation information strings
-                                                                    const precipitationInfo = `"Driest conditions" or "lowest amount of rainfall" ${maizeVariety.lowPrecipitation} mm. 
+                                                                        // Return both precipitation information as one string
+                                                                        return precipitationInfo;
+                                                                    }
+                                                                case 'Maize':
+                                                                    const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
+                                                                    if (maizeVariety) {
+                                                                        // Concatenate both precipitation information strings
+                                                                        const precipitationInfo = `"Driest conditions" or "lowest amount of rainfall" ${maizeVariety.lowPrecipitation} mm. 
                                                                     "Extreme precipitation" or "extreme rainfall" ${maizeVariety.maxPrecipitation} mm.`;
-                                                                    // Return both precipitation information as one string
-                                                                    return precipitationInfo;
-                                                                }
-                                                            case 'Onion':
-                                                                const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
-                                                                if (onionVariety) {
-                                                                    // Concatenate both precipitation information strings
-                                                                    const precipitationInfo = `"Driest conditions" or "lowest amount of rainfall" ${onionVariety.lowPrecipitation} mm. 
+                                                                        // Return both precipitation information as one string
+                                                                        return precipitationInfo;
+                                                                    }
+                                                                case 'Onion':
+                                                                    const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
+                                                                    if (onionVariety) {
+                                                                        // Concatenate both precipitation information strings
+                                                                        const precipitationInfo = `"Driest conditions" or "lowest amount of rainfall" ${onionVariety.lowPrecipitation} mm. 
                                                                     "Extreme precipitation" or "extreme rainfall" ${onionVariety.maxPrecipitation} mm.`;
-                                                                    // Return both precipitation information as one string
-                                                                    return precipitationInfo;
-                                                                }
+                                                                        // Return both precipitation information as one string
+                                                                        return precipitationInfo;
+                                                                    }
 
-                                                            default:
-                                                                return '';
-                                                        }
-                                                    })()}
-                                                </span>
-                                            )}
-                                        </Typography>
-                                    </div>
+                                                                default:
+                                                                    return '';
+                                                            }
+                                                        })()}
+                                                    </span>
+                                                )}
+                                            </Typography>
+                                        </div>
 
 
 
-                                    <div className="growing-time-container">
-                                    <p style={{ fontWeight: 'bold', fontSize: '1.0rem' , color:'#285A43'}}>Atmospheric Features:</p>
-                                            
+                                        <div className="growing-time-container">
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color: '#285A43' }}>Atmospheric Features:</p>
+
                                             <Typography variant="body1">
                                                 {selectedOption && (
                                                     <span>
@@ -591,10 +594,10 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                                                 case 'Chillie':
                                                                     const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
                                                                     return chillieVariety ? chillieVariety.atmosphericFeautures : '';
-                                                                    
+
                                                                 case 'Maize':
-                                                                const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
-                                                                return maizeVariety ? maizeVariety.atmosphericFeautures : '';
+                                                                    const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
+                                                                    return maizeVariety ? maizeVariety.atmosphericFeautures : '';
 
                                                                 case 'Onion':
                                                                     const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
@@ -607,44 +610,44 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                                     </span>
                                                 )}
                                             </Typography>
-                                            
+
 
                                         </div>
 
 
 
 
-                                    <div className="location-and-type">
-                                        <div className="location-field">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', paddingRight: '110px', color:'#285A43' }}>Locations Suitable</p>
-                                            <Select
-                                                select
-                                                value={city}
-                                                variant="outlined"
-                                                className="location-textField"
-                                            >
-                                                {/* {cities.map((city) => (
+                                        <div className="location-and-type">
+                                            <div className="location-field">
+                                                <p style={{ fontWeight: 'bold', fontSize: '1.0rem', paddingRight: '110px', color: '#285A43' }}>Locations Suitable</p>
+                                                <Select
+                                                    select
+                                                    value={city}
+                                                    variant="outlined"
+                                                    className="location-textField"
+                                                >
+                                                    {/* {cities.map((city) => (
                                                     <MenuItem key={city} value={city}>
                                                         {city}
                                                     </MenuItem>
                                                 ))} */}
 
-                                            {suitableAreas.map((area) => (
-                                                    <MenuItem key={area} value={area}>
-                                                        {area}
-                                                    </MenuItem>
-                                            ))}
-                                                
-                                            </Select>
+                                                    {suitableAreas.map((area) => (
+                                                        <MenuItem key={area} value={area}>
+                                                            {area}
+                                                        </MenuItem>
+                                                    ))}
+
+                                                </Select>
+                                            </div>
                                         </div>
-                                    </div>
 
                                     </div>
 
                                     <div className="right-container">
                                         <div className="detail-right-container">
                                             <div className="detailPage-slider">
-                                                <Slider {...settings}  prevArrow={null} nextArrow={null}>
+                                                <Slider {...settings} prevArrow={null} nextArrow={null}>
                                                     {images.map((img, idx) => (
                                                         <div >
                                                             <img src={img} alt={img} className="slider-img" />
@@ -654,100 +657,100 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                             </div>
                                             <div className="right-content">
                                                 <h3 >Variety Specilaities</h3>
-                                                
+
 
                                                 <ul>
-                                                   
-                                                            <li>
-                                                            <Typography variant="body1">
-                                                {selectedOption && (
-                                                    <span>
-                                                        {(() => {
-                                                            switch (cropType) {
-                                                                case 'Rice':
-                                                                    const riceVariety = RiceVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return riceVariety ? riceVariety.varietyName : '';
 
-                                                                case 'Chillie':
-                                                                    const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return chillieVariety ? chillieVariety.varietyName : '';
-                                                                    
-                                                                case 'Maize':
-                                                                const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return maizeVariety ? `Soil Condition: ${maizeVariety.varietyName} `: '';
-
-                                                                case 'Onion':
-                                                                    const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return onionVariety ? onionVariety.varietyName : '';
-
-                                                                default:
-                                                                    return '';
-                                                            }
-                                                        })()}
-                                                    </span>
-                                                )}
-                                            </Typography>
-                                                            </li>
-                                           
                                                     <li>
                                                         <Typography variant="body1">
-                                                {selectedOption && (
-                                                    <span>
-                                                        {(() => {
-                                                            switch (cropType) {
-                                                                case 'Rice':
-                                                                    const riceVariety = RiceVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return riceVariety ? `Soil Condition: ${riceVariety.soilCondtion} `: '';
+                                                            {selectedOption && (
+                                                                <span>
+                                                                    {(() => {
+                                                                        switch (cropType) {
+                                                                            case 'Rice':
+                                                                                const riceVariety = RiceVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return riceVariety ? riceVariety.varietyName : '';
 
-                                                                case 'Chillie':
-                                                                    const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return chillieVariety ? `Soil Condition: ${chillieVariety.soilCondtion} `: '';
-                                                                    
-                                                                case 'Maize':
-                                                                const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return maizeVariety ? `Soil Condition: ${maizeVariety.soilCondtion} `: '';
+                                                                            case 'Chillie':
+                                                                                const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return chillieVariety ? chillieVariety.varietyName : '';
 
-                                                                case 'Onion':
-                                                                    const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return onionVariety ? `Soil Condition: ${onionVariety.soilCondtion} `: '';
+                                                                            case 'Maize':
+                                                                                const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return maizeVariety ? `Soil Condition: ${maizeVariety.varietyName} ` : '';
 
-                                                                default:
-                                                                    return '';
-                                                            }
-                                                        })()}
-                                                    </span>
-                                                )}
-                                            </Typography>
-                                                        </li>
+                                                                            case 'Onion':
+                                                                                const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return onionVariety ? onionVariety.varietyName : '';
+
+                                                                            default:
+                                                                                return '';
+                                                                        }
+                                                                    })()}
+                                                                </span>
+                                                            )}
+                                                        </Typography>
+                                                    </li>
+
                                                     <li>
-                                                    <Typography variant="body1">
-                                                {selectedOption && (
-                                                    <span>
-                                                        {(() => {
-                                                            switch (cropType) {
-                                                                case 'Rice':
-                                                                    const riceVariety = RiceVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return riceVariety ? `Atmospheric Features: ${riceVariety.atmosphericFeautures} `: '';
+                                                        <Typography variant="body1">
+                                                            {selectedOption && (
+                                                                <span>
+                                                                    {(() => {
+                                                                        switch (cropType) {
+                                                                            case 'Rice':
+                                                                                const riceVariety = RiceVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return riceVariety ? `Soil Condition: ${riceVariety.soilCondtion} ` : '';
 
-                                                                case 'Chillie':
-                                                                    const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return chillieVariety ? `Atmospheric Features: ${chillieVariety.atmosphericFeautures} `: '';
-                                                                    
-                                                                case 'Maize':
-                                                                const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return maizeVariety ? `Atmospheric Features: ${maizeVariety.atmosphericFeautures} `: '';
+                                                                            case 'Chillie':
+                                                                                const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return chillieVariety ? `Soil Condition: ${chillieVariety.soilCondtion} ` : '';
 
-                                                                case 'Onion':
-                                                                    const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
-                                                                    return onionVariety ? `Atmospheric Features: ${onionVariety.atmosphericFeautures} `: '';
+                                                                            case 'Maize':
+                                                                                const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return maizeVariety ? `Soil Condition: ${maizeVariety.soilCondtion} ` : '';
 
-                                                                default:
-                                                                    return '';
-                                                            }
-                                                        })()}
-                                                    </span>
-                                                )}
-                                            </Typography>
+                                                                            case 'Onion':
+                                                                                const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return onionVariety ? `Soil Condition: ${onionVariety.soilCondtion} ` : '';
+
+                                                                            default:
+                                                                                return '';
+                                                                        }
+                                                                    })()}
+                                                                </span>
+                                                            )}
+                                                        </Typography>
+                                                    </li>
+                                                    <li>
+                                                        <Typography variant="body1">
+                                                            {selectedOption && (
+                                                                <span>
+                                                                    {(() => {
+                                                                        switch (cropType) {
+                                                                            case 'Rice':
+                                                                                const riceVariety = RiceVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return riceVariety ? `Atmospheric Features: ${riceVariety.atmosphericFeautures} ` : '';
+
+                                                                            case 'Chillie':
+                                                                                const chillieVariety = ChillieVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return chillieVariety ? `Atmospheric Features: ${chillieVariety.atmosphericFeautures} ` : '';
+
+                                                                            case 'Maize':
+                                                                                const maizeVariety = MaizeVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return maizeVariety ? `Atmospheric Features: ${maizeVariety.atmosphericFeautures} ` : '';
+
+                                                                            case 'Onion':
+                                                                                const onionVariety = OnionVarities.find(variety => variety.varietyName === selectedOption);
+                                                                                return onionVariety ? `Atmospheric Features: ${onionVariety.atmosphericFeautures} ` : '';
+
+                                                                            default:
+                                                                                return '';
+                                                                        }
+                                                                    })()}
+                                                                </span>
+                                                            )}
+                                                        </Typography>
                                                     </li>
                                                 </ul>
 
@@ -758,10 +761,10 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                     </div>
 
                                 </Grid>
-                             </div>
-                            )}
+                            </div>
+                        )}
 
-                        
+
                     </div>
                 </div>
 
