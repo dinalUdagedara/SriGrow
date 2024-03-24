@@ -1,19 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import '../Containers/Style.css';
 import { FaSearch } from 'react-icons/fa';
-import Rice from '../Images/rice.jpeg';
+import Rice from '../Images/rice2.jpg';
+import Rice1 from '../Images/rice1.jpg';
+import Rice2 from '../Images/rice2.jpg';
+import Rice3 from '../Images/rice2.jpg';
+import Rice4 from '../Images/rice2.jpg';
+import Rice5 from '../Images/rice2.jpg';
 import Potato from '../Images/potato.jpg';
 import Chilli from '../Images/chilli.jpeg';
 import Corn from '../Images/corn.jpg';
 import Onion from '../Images/crop1.jpeg';
-import FingerMillet from '../Images/fingerMillet.jpeg';
+import FingerMillet from '../Images/fingerMillet2.jpg';
 import { LuUser2 } from "react-icons/lu";
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 
-
+const imagesRice=[
+  Rice1,
+  Rice2,
+  Rice3,
+  Rice4,
+  Rice5,
+];
 
 const CropsCard = ({ title, description, image }) => {
+
+
+
+
+
   
   return (
     
@@ -149,7 +165,8 @@ console.log("Predicted rainsum:",predictedPrecipitation)
     ...(cropType === 'Rice' ? RiceVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays && variety.maxPrecipitation > predictedPrecipitation ).map(variety => ({
       title: variety.varietyName,
       description: variety.specialNotes,
-      image: Rice // same image for all rice varieties
+      image: imagesRice[Math.floor(Math.random() * imagesRice.length)]
+
     })) : []),
     ...(cropType === 'Onion' ? OnionVarities.filter(variety => variety.suitableAreas.includes(formData.selectedDistrict) && variety.maxTimePeriod < formData.numberOfDays && variety.maxPrecipitation > predictedPrecipitation ).map(variety => ({
       title: variety.varietyName,

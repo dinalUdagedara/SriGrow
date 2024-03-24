@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import '../CropGuide/cropGuidance.css';
 import Chilli from '../Images/Chilli_cg.jpg';
 import Onion from '../Images/big_onion_cg.jpg';
-import FingerMillet from '../Images/finger_millet_cg.jpg';
+import FingerMillet from '../Images/fingerMillet2.jpg';
 import Maize from '../Images/maize_cg.jpg';
 import Rice from '../Images/rice_cg.jpg';
 import NavbarComp from '../Components/NavbarComp';

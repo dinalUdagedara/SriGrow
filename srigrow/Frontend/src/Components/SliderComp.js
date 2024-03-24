@@ -1,9 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import Slider from "react-slick";
-import slider3 from '../Images/slider3.jpg';
-import slider4 from '../Images/slider4.jpg';
-import slider5 from '../Images/slider5.jpg';
-import slider6 from '../Images/slider6.jpg';
+
+import slider7 from '../Images/slider7.jpg';
+import slider8 from '../Images/slider8.jpg';
+import slider9 from '../Images/slider9.jpg';
+import slider10 from '../Images/slider10.jpg';
+import slider11 from '../Images/slider11.jpg';
+import slider12 from '../Images/slider12.jpg';
+import slider13 from '../Images/slider13.jpg';
+import slider14 from '../Images/slider14.jpg';
+import slider15 from '../Images/slider15.jpg';
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../Containers/Style.css';
