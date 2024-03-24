@@ -40,8 +40,8 @@ export default class SignUp extends Component {
       console.log(data,"userRegister")
       console.log(data.status)
       if(data.status == "ok"){
-        // alert ("SignUp Complete Please login using your details now");
-        // window.location.href="./sign-in";
+        alert ("SignUp Complete Please login using your details now");
+        window.location.href="./sign-in";
       }else if(data.error == "Invalid Password"){
         alert ("Email or the Password you Entered is Incorrect Please Try Again");
       }else if (data.error == "User Exists"){
