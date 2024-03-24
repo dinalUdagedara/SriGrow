@@ -174,7 +174,7 @@ console.log("Predicted rainsum:",predictedPrecipitation)
     <div className='crops'>
         <div className='crop-top-cont'>
           <div className='top-content'>
-          <h1 style={{ color: 'black' }}>Crop Types Which Are Suitable for Selected Preferences: </h1>
+          <h1 style={{ color: '#285A43' }}>Crop Types Which Are Suitable for Selected Preferences: </h1>
           <div className='SuggestInfo'>
           <span >Can Be Grown Within: {numberOfDays} days </span>
           

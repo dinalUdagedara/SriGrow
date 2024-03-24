@@ -197,105 +197,105 @@ const Container = ({cropType}) => {
     };
 
 
-    const handleSubmit = () => {
-        setShowGuide(false);
-        setShowCrops(true);
-        setShowDetails(false);
-    
-        // Send data to Flask backend
-        axios.post('http://localhost:5000/predict', {
-            city: selectedDistrict,
-            start_date: date,
-            end_date: endDate
-        })
-        .then(response => {
-            // Update predictedMaxPrecipitation state
-            setpredictedMaxPrecipitation(response.data);
-            // Calculate the number of days between start and end dates
-            const startDate = new Date(date);
-            const calculatedEndDate = new Date(endDate);
-            const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
-            const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-    
-            // Update formData with the latest values including prediction
-            setformData({
-                selectedProvince: selectedProvince,
-                selectedDistrict: selectedDistrict,
-                startDate: date,
-                endDate: calculatedEndDate,
-                numberOfDays: differenceInDays,
-                prediction: response.data // Use the updated value from response
-            });
-    
-            // Display predictions to the user if needed
-            console.log('Correct Predicted Precipitation', response.data);
-        })
-        .catch(error => {
-            // Handle error
-            console.error('Error:', error);
-        });
-    };
-    
-
-
     // const handleSubmit = () => {
-        
     //     setShowGuide(false);
     //     setShowCrops(true);
     //     setShowDetails(false);
-
-
-
-
-    //     //Model Calling and Getting Prediction
+    
     //     // Send data to Flask backend
     //     axios.post('http://localhost:5000/predict', {
-    //         city: selectedDistrict, // Assuming you want to use province as city for now
+    //         city: selectedDistrict,
     //         start_date: date,
     //         end_date: endDate
     //     })
     //     .then(response => {
-    //         // const predictedAveragePrecipitation = response.data
-    //         setpredictedMaxPrecipitation(response.data)
-    //          maxPrecipitation = response.data
-    //         // Handle successful response (predictions)
-    //       console.log('Response Data Precipitation:',maxPrecipitation);
-    //       console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
-    //         // Display predictions to the user
-    //         // You can set predictions to state or display them directly
+    //         // Update predictedMaxPrecipitation state
+    //         setpredictedMaxPrecipitation(response.data);
+    //         // Calculate the number of days between start and end dates
+    //         const startDate = new Date(date);
+    //         const calculatedEndDate = new Date(endDate);
+    //         const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
+    //         const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    
+    //         // Update formData with the latest values including prediction
+    //         setformData({
+    //             selectedProvince: selectedProvince,
+    //             selectedDistrict: selectedDistrict,
+    //             startDate: date,
+    //             endDate: calculatedEndDate,
+    //             numberOfDays: differenceInDays,
+    //             prediction: response.data // Use the updated value from response
+    //         });
+    
+    //         // Display predictions to the user if needed
+    //         console.log('Correct Predicted Precipitation', response.data);
     //     })
     //     .catch(error => {
     //         // Handle error
     //         console.error('Error:', error);
     //     });
+    // };
+    
 
 
-    //   // Calculate the number of days between start and end dates
-    // const startDate = new Date(date);
-    // const calculatedEndDate = new Date(endDate); // Changed from endDate to calculatedEndDate
-    // const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
-    // const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    const handleSubmit = () => {
+        
+        setShowGuide(false);
+        setShowCrops(true);
+        setShowDetails(false);
 
-    //     // Update formData with the latest values
-    // setformData({
-    //     selectedProvince: selectedProvince,
-    //     selectedDistrict: selectedDistrict,
-    //     startDate: date,
-    //     endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
-    //     numberOfDays: differenceInDays,  // Save the calculated number of days
-    //     prediction : predictedMaxPrecipitation
+
+
+
+        //Model Calling and Getting Prediction
+        // Send data to Flask backend
+        axios.post('http://localhost:5000/predict', {
+            city: selectedDistrict, // Assuming you want to use province as city for now
+            start_date: date,
+            end_date: endDate
+        })
+        .then(response => {
+            // const predictedAveragePrecipitation = response.data
+            setpredictedMaxPrecipitation(response.data)
+             maxPrecipitation = response.data
+            // Handle successful response (predictions)
+          console.log('Response Data Precipitation:',maxPrecipitation);
+          console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
+            // Display predictions to the user
+            // You can set predictions to state or display them directly
+        })
+        .catch(error => {
+            // Handle error
+            console.error('Error:', error);
+        });
+
+
+      // Calculate the number of days between start and end dates
+    const startDate = new Date(date);
+    const calculatedEndDate = new Date(endDate); // Changed from endDate to calculatedEndDate
+    const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
+    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+        // Update formData with the latest values
+    setformData({
+        selectedProvince: selectedProvince,
+        selectedDistrict: selectedDistrict,
+        startDate: date,
+        endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
+        numberOfDays: differenceInDays,  // Save the calculated number of days
+        prediction : predictedMaxPrecipitation
    
-    // });
+    });
       
 
-    // console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
-    //     console.log("Form Data : ",formData)
-    //     console.log("form submitted ")
+    console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
+        console.log("Form Data : ",formData)
+        console.log("form submitted ")
 
 
 
         
-    // }
+    }
 
     const [formData,setformData] = useState({
         selectedProvince: "",
@@ -379,29 +379,31 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                 <div className="row">
                     <div className="column">
                         <h1>SriGrow</h1>
+                        <div className='crop-nav'>
                         <ul>
-                            <li className={showGuide ? "hover-box active" : "hover-box"}>
-                                <Link to="#" className="option" onClick={toggleGuide}>
+                            <li className={showGuide ? "guide-hover-box active" : "guide-hover-box"}>
+                                <a href="#" className="guide-option" onClick={toggleGuide}>
                                     <PiChalkboardTeacher className="option-icon" />
-                                    <span className="icon-text">Guide</span>
-                                </Link>
+                                    <span className="guide-icon-text">Guide</span>
+                                </a>
                             </li>
-                            <li className={showCrops ? "hover-box active" : "hover-box"} >
-                                <Link to="#" className="option" onClick={toggleCrops}>
+                            <li className={showCrops ? "guide-hover-box active" : "guide-hover-box"} >
+                                <Link to="#" className="guide-option" onClick={toggleCrops}>
                                     <PiPlant className="option-icon" />
-                                    <span className="icon-text">Crops</span>
+                                    <span className="guide-icon-text">Crops</span>
                                 </Link>
                             </li>
-                            <li className={showDetails ? "hover-box active" : "hover-box"}>
-                                <Link to="#" className="option" onClick={toggleDetails} >
+                            <li className={showDetails ? "guide-hover-box active" : "guide-hover-box"}>
+                                <Link to="#" className="guide-option" onClick={toggleDetails} >
                                     <MdHistory className="option-icon" />
-                                    <span className="icon-text">Details</span>
+                                    <span className="guide-icon-text">Details</span>
                                 </Link>
                             </li>
                 
                         </ul>
+                        </div>
                     </div>
-                    <div className="sub-container">
+                    <div className="guide-sub-container">
                         <div className='variety-container'>
                             {showGuide && (
                                 <Grid container spacing={3} className="grid-container" >
@@ -471,10 +473,10 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                     console.log({"In ShowDetails"+ {cropType}})
                                 <Grid container spacing={2} className="d flex detail-container">
                                     <div className="left-container">
-                                        <h3>Crop details</h3>
+                                        <h3 style={{color:'#285A43'}}>Crop details</h3>
                                         <br></br>
                                         <div className="variety-dropdown">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }}>Crop Variety </p>
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color:'#285A43' }}>Crop Variety </p>
                                  
                                             <Select value={selectedOption} onChange={(e) => handleOptionSelect(e.target.value)} className="variety-dropDown-box">
                                                 <MenuItem value="">Select Variety</MenuItem>
@@ -484,7 +486,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                             </Select>
                                         </div>
                                         <div className="growing-time-container">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }}>Harvest Timeframe: </p>                                         
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color:'#285A43'}}>Harvest Timeframe: </p>                                         
                                             <Typography variant="body1">
                                                 {selectedOption && (
                                                     <span >
@@ -520,7 +522,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                         <br></br>
 
                                     <div className="growing-time-input">
-                                    <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }} >Rainfall Requirement: </p>
+                                    <p style={{ fontWeight: 'bold', fontSize: '1.0rem', color:'#285A43' }} >Rainfall Requirement: </p>
                                         <Typography variant="body1">
                                             {selectedOption && (
                                                 <span>
@@ -575,7 +577,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
 
                                     <div className="growing-time-container">
-                                    <p style={{ fontWeight: 'bold', fontSize: '1.0rem' }}>Atmospheric Features:</p>
+                                    <p style={{ fontWeight: 'bold', fontSize: '1.0rem' , color:'#285A43'}}>Atmospheric Features:</p>
                                             
                                             <Typography variant="body1">
                                                 {selectedOption && (
@@ -614,7 +616,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
 
                                     <div className="location-and-type">
                                         <div className="location-field">
-                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', paddingRight: '110px' }}>Locations Suitable</p>
+                                            <p style={{ fontWeight: 'bold', fontSize: '1.0rem', paddingRight: '110px', color:'#285A43' }}>Locations Suitable</p>
                                             <Select
                                                 select
                                                 value={city}
@@ -642,7 +644,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                     <div className="right-container">
                                         <div className="detail-right-container">
                                             <div className="detailPage-slider">
-                                                <Slider {...settings}>
+                                                <Slider {...settings}  prevArrow={null} nextArrow={null}>
                                                     {images.map((img, idx) => (
                                                         <div >
                                                             <img src={img} alt={img} className="slider-img" />
@@ -651,7 +653,7 @@ const [suitableAreas, setSuitableAreas] = useState([]);
                                                 </Slider>
                                             </div>
                                             <div className="right-content">
-                                                <h3>Variety Specilaities</h3>
+                                                <h3 >Variety Specilaities</h3>
                                                 
 
                                                 <ul>
