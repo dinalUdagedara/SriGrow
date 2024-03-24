@@ -4,37 +4,44 @@ import "../AboutUs/About.css";
 import NavbarComp from '../Components/NavbarComp';
 import Footer from '../Components/footer';
 
+import Dinal from '../Images/TeamMembers/Dinal.jpg';
+import Chamara from '../Images/TeamMembers/Chamara.jpg';
+import Rasmiya from '../Images/TeamMembers/Rasmiya.jpg';
+import Dunura from '../Images/TeamMembers/Dunura.jpg';
+import Gagan from '../Images/TeamMembers/Gagan.jpg';
+import BGImage from '../Images/slider7.jpg';
+
 const About = () => {
     const people = [
         {
             id: 1,
-            name: 'Thuan',
-            description: 'Thuan is an autonomous machine capable of sensing its environment, carrying out computations to make decisions, and performing actions in the real world.',
-            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrI3IAJQYJYJdN_PGzTo1qyn6kl8ZaF3a0LDkTsnu5RhYi5z6qXV_Jl64pm2hryrQ3jwE&usqp=CAU'
+            name: 'Dinal Udagedara',
+            description: 'Group 35 SE SDGP Project Leader',
+            imageUrl: Dinal
         },
         {
             id: 2,
-            name: 'John Doe',
-            description: 'John Doe is a software engineer with a passion for building web applications.',
-            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrI3IAJQYJYJdN_PGzTo1qyn6kl8ZaF3a0LDkTsnu5RhYi5z6qXV_Jl64pm2hryrQ3jwE&usqp=CAU'
+            name: 'Chamara Rajapaksha',
+            description: 'Group Memeber of 35 SE',
+            imageUrl: Chamara
         },
         {
             id: 3,
-            name: 'Jane Doe',
-            description: 'Jane Doe is a graphic designer specializing in branding and illustration.',
-            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrI3IAJQYJYJdN_PGzTo1qyn6kl8ZaF3a0LDkTsnu5RhYi5z6qXV_Jl64pm2hryrQ3jwE&usqp=CAU'
+            name: 'Dunura Hansaja',
+            description: 'Group Memeber of 35 SE',
+            imageUrl: Dunura
         },
         {
             id: 4,
-            name: 'Alice Smith',
-            description: 'Alice Smith is a marketing expert with experience in digital campaigns and social media management.',
-            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrI3IAJQYJYJdN_PGzTo1qyn6kl8ZaF3a0LDkTsnu5RhYi5z6qXV_Jl64pm2hryrQ3jwE&usqp=CAU'
+            name: 'Gagan Kalsara',
+            description: 'Group Memeber of 35 SE',
+            imageUrl: Gagan
         },
         {
             id: 5,
-            name: 'Bob Johnson',
-            description: 'Bob Johnson is a data scientist who enjoys exploring complex datasets to find valuable insights.',
-            imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrI3IAJQYJYJdN_PGzTo1qyn6kl8ZaF3a0LDkTsnu5RhYi5z6qXV_Jl64pm2hryrQ3jwE&usqp=CAU'
+            name: 'Rasmiya Jeyaraj',
+            description: 'Group Memeber of 35 SE.',
+            imageUrl: Rasmiya
         }
     ];
 
@@ -60,7 +67,6 @@ const About = () => {
             <h2 className='about-heading'>About Us</h2>
             <br></br>
             <div className='transition-details'>
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrI3IAJQYJYJdN_PGzTo1qyn6kl8ZaF3a0LDkTsnu5RhYi5z6qXV_Jl64pm2hryrQ3jwE&usqp=CAU' alt='group-process-image' />
                 <p>Agriculture in Sri Lanka is vital, supporting a significant portion of the population and directly impacting the nation's economy. However, the sector faces multifaceted challenges, including erratic weather, soil conditions, and pests, leading to reduced crop yields and financial instability. Trained agricultural officers play a crucial role in assisting farmers, yet they lack real-time data and digital resources, hindering their effectiveness. Our project aims to address these challenges by developing a mobile application tailored for these officers. This app will provide them with the tools needed to deliver timely, localized agricultural advice, ultimately improving the livelihoods of Sri Lankan farmers.</p>
             </div>
             <div>
@@ -68,17 +74,17 @@ const About = () => {
                     <div className='p-5 grid grid-cols-3'>
                         {people.map(person => (
                             <div key={person.id} className='about-card'>
-                                <img className='rounded-xl' src={person.imageUrl} alt='image' />
+                                <img className='rounded-xl imagePerson' src={person.imageUrl} alt='image' />
                                 <div className='card-cont'>
                                     <h5>{person.name}</h5>
                                     <p>{person.description}</p>
                                 </div>
-                                <div className="bottom-logos">
+                                {/* <div className="bottom-logos">
                                     <img className="facebook-logo" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-128.png"/>
                                     <img className="instagram-logo" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png"/>
                                     <img className="Linding-logo" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png"/>
                                     <img className="Twitter-logo" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png" />
-                                </div>
+                                </div> */}
                             </div>
                         ))}
                     </div>
