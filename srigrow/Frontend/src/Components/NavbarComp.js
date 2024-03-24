@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import { Component } from "react";
 import { FaBars } from "react-icons/fa";
 import '../Containers/Style.css';
+import Logo from "../Images/logo.png"
 
 
 const NavbarComp=()=> {
@@ -18,8 +19,8 @@ const NavbarComp=()=> {
       <div className="navbar">
       <div className="navbar-container">
         <div className="navbar-left">
-          <Link to="/" className="navbar-logo">
-            SriGrow
+          <Link to='/' className="navbar-logo">
+            <img src={Logo} alt='logo'className='logo-design'/>
           </Link>
           </div>
           <div className='navbar-center'>
