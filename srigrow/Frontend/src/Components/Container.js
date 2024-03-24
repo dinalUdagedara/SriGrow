@@ -197,105 +197,105 @@ const Container = ({cropType}) => {
     };
 
 
-    // const handleSubmit = () => {
-    //     setShowGuide(false);
-    //     setShowCrops(true);
-    //     setShowDetails(false);
-    
-    //     // Send data to Flask backend
-    //     axios.post('http://localhost:5000/predict', {
-    //         city: selectedDistrict,
-    //         start_date: date,
-    //         end_date: endDate
-    //     })
-    //     .then(response => {
-    //         // Update predictedMaxPrecipitation state
-    //         setpredictedMaxPrecipitation(response.data);
-    //         // Calculate the number of days between start and end dates
-    //         const startDate = new Date(date);
-    //         const calculatedEndDate = new Date(endDate);
-    //         const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
-    //         const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-    
-    //         // Update formData with the latest values including prediction
-    //         setformData({
-    //             selectedProvince: selectedProvince,
-    //             selectedDistrict: selectedDistrict,
-    //             startDate: date,
-    //             endDate: calculatedEndDate,
-    //             numberOfDays: differenceInDays,
-    //             prediction: response.data // Use the updated value from response
-    //         });
-    
-    //         // Display predictions to the user if needed
-    //         console.log('Correct Predicted Precipitation', response.data);
-    //     })
-    //     .catch(error => {
-    //         // Handle error
-    //         console.error('Error:', error);
-    //     });
-    // };
-    
-
-
     const handleSubmit = () => {
-        
         setShowGuide(false);
         setShowCrops(true);
         setShowDetails(false);
-
-
-
-
-        //Model Calling and Getting Prediction
+    
         // Send data to Flask backend
         axios.post('http://localhost:5000/predict', {
-            city: selectedDistrict, // Assuming you want to use province as city for now
+            city: selectedDistrict,
             start_date: date,
             end_date: endDate
         })
         .then(response => {
-            // const predictedAveragePrecipitation = response.data
-            setpredictedMaxPrecipitation(response.data)
-             maxPrecipitation = response.data
-            // Handle successful response (predictions)
-          console.log('Response Data Precipitation:',maxPrecipitation);
-          console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
-            // Display predictions to the user
-            // You can set predictions to state or display them directly
+            // Update predictedMaxPrecipitation state
+            setpredictedMaxPrecipitation(response.data);
+            // Calculate the number of days between start and end dates
+            const startDate = new Date(date);
+            const calculatedEndDate = new Date(endDate);
+            const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
+            const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    
+            // Update formData with the latest values including prediction
+            setformData({
+                selectedProvince: selectedProvince,
+                selectedDistrict: selectedDistrict,
+                startDate: date,
+                endDate: calculatedEndDate,
+                numberOfDays: differenceInDays,
+                prediction: response.data // Use the updated value from response
+            });
+    
+            // Display predictions to the user if needed
+            console.log('Correct Predicted Precipitation', response.data);
         })
         .catch(error => {
             // Handle error
             console.error('Error:', error);
         });
+    };
+    
 
 
-      // Calculate the number of days between start and end dates
-    const startDate = new Date(date);
-    const calculatedEndDate = new Date(endDate); // Changed from endDate to calculatedEndDate
-    const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
-    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    // const handleSubmit = () => {
+        
+    //     setShowGuide(false);
+    //     setShowCrops(true);
+    //     setShowDetails(false);
 
-        // Update formData with the latest values
-    setformData({
-        selectedProvince: selectedProvince,
-        selectedDistrict: selectedDistrict,
-        startDate: date,
-        endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
-        numberOfDays: differenceInDays,  // Save the calculated number of days
-        prediction : predictedMaxPrecipitation
+
+
+
+    //     //Model Calling and Getting Prediction
+    //     // Send data to Flask backend
+    //     axios.post('http://localhost:5000/predict', {
+    //         city: selectedDistrict, // Assuming you want to use province as city for now
+    //         start_date: date,
+    //         end_date: endDate
+    //     })
+    //     .then(response => {
+    //         // const predictedAveragePrecipitation = response.data
+    //         setpredictedMaxPrecipitation(response.data)
+    //          maxPrecipitation = response.data
+    //         // Handle successful response (predictions)
+    //       console.log('Response Data Precipitation:',maxPrecipitation);
+    //       console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
+    //         // Display predictions to the user
+    //         // You can set predictions to state or display them directly
+    //     })
+    //     .catch(error => {
+    //         // Handle error
+    //         console.error('Error:', error);
+    //     });
+
+
+    //   // Calculate the number of days between start and end dates
+    // const startDate = new Date(date);
+    // const calculatedEndDate = new Date(endDate); // Changed from endDate to calculatedEndDate
+    // const differenceInTime = calculatedEndDate.getTime() - startDate.getTime();
+    // const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+    //     // Update formData with the latest values
+    // setformData({
+    //     selectedProvince: selectedProvince,
+    //     selectedDistrict: selectedDistrict,
+    //     startDate: date,
+    //     endDate: calculatedEndDate, // Changed from endDate to calculatedEndDate
+    //     numberOfDays: differenceInDays,  // Save the calculated number of days
+    //     prediction : predictedMaxPrecipitation
    
-    });
+    // });
       
 
-    console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
-        console.log("Form Data : ",formData)
-        console.log("form submitted ")
+    // console.log('Correct Predicted Precipitation',predictedMaxPrecipitation)
+    //     console.log("Form Data : ",formData)
+    //     console.log("form submitted ")
 
 
 
         
-    }
+    // }
 
     const [formData,setformData] = useState({
         selectedProvince: "",
